@@ -1,34 +1,92 @@
-<div class="main-panel">
-    <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-transparent navbar-absolute fixed-top ">
-        <div class="container-fluid">
-            <div class="navbar-wrapper">
-                <a class="navbar-brand" href="javascript:;"><?= $breadCrumb; ?></a>
-            </div>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="navbar-toggler-icon icon-bar"></span>
-                <span class="navbar-toggler-icon icon-bar"></span>
-                <span class="navbar-toggler-icon icon-bar"></span>
-            </button>
-            <div class="collapse navbar-collapse justify-content-end">
-                <ul class="navbar-nav">
-                    <li class="nav-item dropdown">
-                        <a class="nav-link" href="javascript:;" id="navbarDropdownProfile" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <i class="material-icons">person</i>
-                            <p class="d-lg-none d-md-block">
-                                Account
-                            </p>
-                        </a>
-                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownProfile">
-                            <a class="dropdown-item" href="#">Profile</a>
-                            <a class="dropdown-item" href="#">Settings</a>
-                            <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="#">Log out</a>
-                        </div>
-                    </li>
-                </ul>
-            </div>
+<!-- top navigation -->
+<div class="top_nav">
+    <div class="nav_menu">
+        <div class="nav toggle">
+            <a id="menu_toggle"><i class="fa fa-bars"></i></a>
         </div>
-    </nav>
-    <!-- End Navbar -->
+        <nav class="nav navbar-nav">
+            <ul class=" navbar-right">
+                <li class="nav-item dropdown open" style="padding-left: 15px;">
+                    <a href="javascript:;" class="user-profile dropdown-toggle" aria-haspopup="true" id="navbarDropdown" data-toggle="dropdown" aria-expanded="false">
+                        <img src="/production/images/img.jpg" alt="">John Doe
+                    </a>
+                    <div class="dropdown-menu dropdown-usermenu pull-right" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="javascript:;"> Profile</a>
+                        <a class="dropdown-item" href="javascript:;">
+                            <span class="badge bg-red pull-right">50%</span>
+                            <span>Settings</span>
+                        </a>
+                        <a class="dropdown-item" href="javascript:;">Help</a>
+                        <a class="dropdown-item" href="login.html"><i class="fa fa-sign-out pull-right"></i> Log Out</a>
+                    </div>
+                </li>
+
+                <li role="presentation" class="nav-item dropdown open">
+                    <a href="javascript:;" class="dropdown-toggle info-number" id="navbarDropdown1" data-toggle="dropdown" aria-expanded="false">
+                        <i class="fa fa-envelope-o"></i>
+                        <span class="badge bg-green">6</span>
+                    </a>
+                    <ul class="dropdown-menu list-unstyled msg_list" role="menu" aria-labelledby="navbarDropdown1">
+                        <li class="nav-item">
+                            <a class="dropdown-item">
+                                <span class="image"><img src="/production/images/img.jpg" alt="Profile Image" /></span>
+                                <span>
+                                    <span>John Smith</span>
+                                    <span class="time">3 mins ago</span>
+                                </span>
+                                <span class="message">
+                                    Film festivals used to be do-or-die moments for movie makers. They were where...
+                                </span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="dropdown-item">
+                                <span class="image"><img src="/production/images/img.jpg" alt="Profile Image" /></span>
+                                <span>
+                                    <span>John Smith</span>
+                                    <span class="time">3 mins ago</span>
+                                </span>
+                                <span class="message">
+                                    Film festivals used to be do-or-die moments for movie makers. They were where...
+                                </span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="dropdown-item">
+                                <span class="image"><img src="/production/images/img.jpg" alt="Profile Image" /></span>
+                                <span>
+                                    <span>John Smith</span>
+                                    <span class="time">3 mins ago</span>
+                                </span>
+                                <span class="message">
+                                    Film festivals used to be do-or-die moments for movie makers. They were where...
+                                </span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="dropdown-item">
+                                <span class="image"><img src="/production/images/img.jpg" alt="Profile Image" /></span>
+                                <span>
+                                    <span>John Smith</span>
+                                    <span class="time">3 mins ago</span>
+                                </span>
+                                <span class="message">
+                                    Film festivals used to be do-or-die moments for movie makers. They were where...
+                                </span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <div class="text-center">
+                                <a class="dropdown-item">
+                                    <strong>See All Alerts</strong>
+                                    <i class="fa fa-angle-right"></i>
+                                </a>
+                            </div>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</div>
+<!-- /top navigation -->

@@ -4,165 +4,53 @@
 <div class="content">
     <div class="container-fluid">
         <div class="row">
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-body">
+                        <form>
+                            <div class="form-group">
+                                <label class="bmd-label-floating" for="exampleFormControlSelect1">Example select</label>
+                                <select class="selectpicker" data-size="7" data-style="btn btn-primary btn-round" title="Single Select">
+                                    <option disabled selected>Single Option</option>
+                                    <option value="2">Foobar</option>
+                                    <option value="3">Is great</option>
+                                    <option value="4">Is bum</option>
+                                    <option value="5">Is wow</option>
+                                    <option value="6">boom</option>
+                                </select>
+                            </div>
+                            <button type="submit" class="btn btn-primary pull-right">Update Profile</button>
+                            <div class="clearfix"></div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-header card-header-primary">
-                        <h4 class="card-title ">Simple Table</h4>
-                        <p class="card-category"> Here is a subtitle for this table</p>
+                        <h4 class="card-title ">Jadwal Dokter</h4>
+                        <p class="card-category"> Poliklinik Bedah</p>
                     </div>
                     <div class="card-body">
                         <div class="table-responsive">
                             <table class="table">
                                 <thead class=" text-primary">
-                                    <th>
-                                        ID
+                                    <th width="5%">
+                                        No
                                     </th>
                                     <th>
-                                        Name
+                                        Hari
                                     </th>
                                     <th>
-                                        Country
+                                        Jam Kerja
                                     </th>
                                     <th>
-                                        City
+                                        Dokter
                                     </th>
-                                    <th>
-                                        Salary
-                                    </th>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>
-                                            1
-                                        </td>
-                                        <td>
-                                            Dakota Rice
-                                        </td>
-                                        <td>
-                                            Niger
-                                        </td>
-                                        <td>
-                                            Oud-Turnhout
-                                        </td>
-                                        <td class="text-primary">
-                                            $36,738
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            2
-                                        </td>
-                                        <td>
-                                            Minerva Hooper
-                                        </td>
-                                        <td>
-                                            Curaçao
-                                        </td>
-                                        <td>
-                                            Sinaai-Waas
-                                        </td>
-                                        <td class="text-primary">
-                                            $23,789
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            3
-                                        </td>
-                                        <td>
-                                            Sage Rodriguez
-                                        </td>
-                                        <td>
-                                            Netherlands
-                                        </td>
-                                        <td>
-                                            Baileux
-                                        </td>
-                                        <td class="text-primary">
-                                            $56,142
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            4
-                                        </td>
-                                        <td>
-                                            Philip Chaney
-                                        </td>
-                                        <td>
-                                            Korea, South
-                                        </td>
-                                        <td>
-                                            Overland Park
-                                        </td>
-                                        <td class="text-primary">
-                                            $38,735
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            5
-                                        </td>
-                                        <td>
-                                            Doris Greene
-                                        </td>
-                                        <td>
-                                            Malawi
-                                        </td>
-                                        <td>
-                                            Feldkirchen in Kärnten
-                                        </td>
-                                        <td class="text-primary">
-                                            $63,542
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            6
-                                        </td>
-                                        <td>
-                                            Mason Porter
-                                        </td>
-                                        <td>
-                                            Chile
-                                        </td>
-                                        <td>
-                                            Gloucester
-                                        </td>
-                                        <td class="text-primary">
-                                            $78,615
-                                        </td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-12">
-                <div class="card card-plain">
-                    <div class="card-header card-header-primary">
-                        <h4 class="card-title mt-0"> Table on Plain Background</h4>
-                        <p class="card-category"> Here is a subtitle for this table</p>
-                    </div>
-                    <div class="card-body">
-                        <div class="table-responsive">
-                            <table class="table table-hover">
-                                <thead class="">
-                                    <th>
-                                        ID
-                                    </th>
-                                    <th>
-                                        Name
-                                    </th>
-                                    <th>
-                                        Country
-                                    </th>
-                                    <th>
-                                        City
-                                    </th>
-                                    <th>
-                                        Salary
+                                    <th width="10%">
+                                        Aksi
                                     </th>
                                 </thead>
                                 <tbody>
@@ -171,16 +59,21 @@
                                             1
                                         </td>
                                         <td>
-                                            Dakota Rice
+                                            Senin
                                         </td>
                                         <td>
-                                            Niger
+                                            08.00 - 13.00
                                         </td>
                                         <td>
-                                            Oud-Turnhout
+                                            Dr. Nuril
                                         </td>
                                         <td>
-                                            $36,738
+                                            <a class="btn btn-warning" style="padding: 12px; margin: 0px;">
+                                                <i class="material-icons" style="color: white;">create</i>
+                                            </a>
+                                            <a class="btn btn-danger" style="padding: 12px; margin: 0px;">
+                                                <i class="material-icons" style="color: white;">delete</i>
+                                            </a>
                                         </td>
                                     </tr>
                                     <tr>
@@ -188,16 +81,21 @@
                                             2
                                         </td>
                                         <td>
-                                            Minerva Hooper
+                                            Rabu
                                         </td>
                                         <td>
-                                            Curaçao
+                                            13.00 - 18.00
                                         </td>
                                         <td>
-                                            Sinaai-Waas
+                                            Dr. Nuril
                                         </td>
                                         <td>
-                                            $23,789
+                                            <a class="btn btn-warning" style="padding: 12px; margin: 0px;">
+                                                <i class="material-icons" style="color: white;">create</i>
+                                            </a>
+                                            <a class="btn btn-danger" style="padding: 12px; margin: 0px;">
+                                                <i class="material-icons" style="color: white;">delete</i>
+                                            </a>
                                         </td>
                                     </tr>
                                     <tr>
@@ -205,16 +103,21 @@
                                             3
                                         </td>
                                         <td>
-                                            Sage Rodriguez
+                                            Selasa
                                         </td>
                                         <td>
-                                            Netherlands
+                                            09.00 - 14.00
                                         </td>
                                         <td>
-                                            Baileux
+                                            Dr. Muslichin
                                         </td>
                                         <td>
-                                            $56,142
+                                            <a class="btn btn-warning" style="padding: 12px; margin: 0px;">
+                                                <i class="material-icons" style="color: white;">create</i>
+                                            </a>
+                                            <a class="btn btn-danger" style="padding: 12px; margin: 0px;">
+                                                <i class="material-icons" style="color: white;">delete</i>
+                                            </a>
                                         </td>
                                     </tr>
                                     <tr>
@@ -222,50 +125,21 @@
                                             4
                                         </td>
                                         <td>
-                                            Philip Chaney
+                                            Jum'at
                                         </td>
                                         <td>
-                                            Korea, South
+                                            15.00 - 20.00
                                         </td>
                                         <td>
-                                            Overland Park
+                                            Dr. Muslichin
                                         </td>
                                         <td>
-                                            $38,735
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            5
-                                        </td>
-                                        <td>
-                                            Doris Greene
-                                        </td>
-                                        <td>
-                                            Malawi
-                                        </td>
-                                        <td>
-                                            Feldkirchen in Kärnten
-                                        </td>
-                                        <td>
-                                            $63,542
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            6
-                                        </td>
-                                        <td>
-                                            Mason Porter
-                                        </td>
-                                        <td>
-                                            Chile
-                                        </td>
-                                        <td>
-                                            Gloucester
-                                        </td>
-                                        <td>
-                                            $78,615
+                                            <a class="btn btn-warning" style="padding: 12px; margin: 0px;">
+                                                <i class="material-icons" style="color: white;">create</i>
+                                            </a>
+                                            <a class="btn btn-danger" style="padding: 12px; margin: 0px;">
+                                                <i class="material-icons" style="color: white;">delete</i>
+                                            </a>
                                         </td>
                                     </tr>
                                 </tbody>
