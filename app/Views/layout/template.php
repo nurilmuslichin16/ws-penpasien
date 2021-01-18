@@ -18,7 +18,7 @@ The above copyright notice and this permission notice shall be included in all c
     <link rel="icon" type="image/png" href="/img/favicon.png">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <title>
-        PENPAS RAWAT JALAN
+        <?= $title; ?>
     </title>
     <meta content='width=device-width, initial-scale=1.0, shrink-to-fit=no' name='viewport' />
     <!--     Fonts and icons     -->
@@ -74,50 +74,6 @@ The above copyright notice and this permission notice shall be included in all c
         </div>
     </footer>
     </div>
-    </div>
-    <div class="fixed-plugin">
-        <div class="dropdown show-dropdown">
-            <a href="#" data-toggle="dropdown">
-                <i class="fa fa-cog fa-2x"> </i>
-            </a>
-            <ul class="dropdown-menu">
-                <li class="header-title"> Sidebar Filters</li>
-                <li class="adjustments-line">
-                    <a href="javascript:void(0)" class="switch-trigger active-color">
-                        <div class="badge-colors ml-auto mr-auto">
-                            <span class="badge filter badge-purple" data-color="purple"></span>
-                            <span class="badge filter badge-azure" data-color="azure"></span>
-                            <span class="badge filter badge-green" data-color="green"></span>
-                            <span class="badge filter badge-warning" data-color="orange"></span>
-                            <span class="badge filter badge-danger" data-color="danger"></span>
-                            <span class="badge filter badge-rose active" data-color="rose"></span>
-                        </div>
-                        <div class="clearfix"></div>
-                    </a>
-                </li>
-                <li class="header-title">Images</li>
-                <li class="active">
-                    <a class="img-holder switch-trigger" href="javascript:void(0)">
-                        <img src="/img/sidebar-1.jpg" alt="">
-                    </a>
-                </li>
-                <li>
-                    <a class="img-holder switch-trigger" href="javascript:void(0)">
-                        <img src="/img/sidebar-2.jpg" alt="">
-                    </a>
-                </li>
-                <li>
-                    <a class="img-holder switch-trigger" href="javascript:void(0)">
-                        <img src="/img/sidebar-3.jpg" alt="">
-                    </a>
-                </li>
-                <li>
-                    <a class="img-holder switch-trigger" href="javascript:void(0)">
-                        <img src="/img/sidebar-4.jpg" alt="">
-                    </a>
-                </li>
-            </ul>
-        </div>
     </div>
     <!--   Core JS Files   -->
     <script src="/js/core/jquery.min.js"></script>
@@ -177,45 +133,6 @@ The above copyright notice and this permission notice shall be included in all c
 
                 fixed_plugin_open = $('.sidebar .sidebar-wrapper .nav li.active a p').html();
 
-                if (window_width > 767 && fixed_plugin_open == 'Dashboard') {
-                    if ($('.fixed-plugin .dropdown').hasClass('show-dropdown')) {
-                        $('.fixed-plugin .dropdown').addClass('open');
-                    }
-
-                }
-
-                $('.fixed-plugin a').click(function(event) {
-                    // Alex if we click on switch, stop propagation of the event, so the dropdown will not be hide, otherwise we set the  section active
-                    if ($(this).hasClass('switch-trigger')) {
-                        if (event.stopPropagation) {
-                            event.stopPropagation();
-                        } else if (window.event) {
-                            window.event.cancelBubble = true;
-                        }
-                    }
-                });
-
-                $('.fixed-plugin .active-color span').click(function() {
-                    $full_page_background = $('.full-page-background');
-
-                    $(this).siblings().removeClass('active');
-                    $(this).addClass('active');
-
-                    var new_color = $(this).data('color');
-
-                    if ($sidebar.length != 0) {
-                        $sidebar.attr('data-color', new_color);
-                    }
-
-                    if ($full_page.length != 0) {
-                        $full_page.attr('filter-color', new_color);
-                    }
-
-                    if ($sidebar_responsive.length != 0) {
-                        $sidebar_responsive.attr('data-color', new_color);
-                    }
-                });
-
                 $('.fixed-plugin .background-color .badge').click(function() {
                     $(this).siblings().removeClass('active');
                     $(this).addClass('active');
@@ -224,44 +141,6 @@ The above copyright notice and this permission notice shall be included in all c
 
                     if ($sidebar.length != 0) {
                         $sidebar.attr('data-background-color', new_color);
-                    }
-                });
-
-                $('.fixed-plugin .img-holder').click(function() {
-                    $full_page_background = $('.full-page-background');
-
-                    $(this).parent('li').siblings().removeClass('active');
-                    $(this).parent('li').addClass('active');
-
-
-                    var new_image = $(this).find("img").attr('src');
-
-                    if ($sidebar_img_container.length != 0 && $('.switch-sidebar-image input:checked').length != 0) {
-                        $sidebar_img_container.fadeOut('fast', function() {
-                            $sidebar_img_container.css('background-image', 'url("' + new_image + '")');
-                            $sidebar_img_container.fadeIn('fast');
-                        });
-                    }
-
-                    if ($full_page_background.length != 0 && $('.switch-sidebar-image input:checked').length != 0) {
-                        var new_image_full_page = $('.fixed-plugin li.active .img-holder').find('img').data('src');
-
-                        $full_page_background.fadeOut('fast', function() {
-                            $full_page_background.css('background-image', 'url("' + new_image_full_page + '")');
-                            $full_page_background.fadeIn('fast');
-                        });
-                    }
-
-                    if ($('.switch-sidebar-image input:checked').length == 0) {
-                        var new_image = $('.fixed-plugin li.active .img-holder').find("img").attr('src');
-                        var new_image_full_page = $('.fixed-plugin li.active .img-holder').find('img').data('src');
-
-                        $sidebar_img_container.css('background-image', 'url("' + new_image + '")');
-                        $full_page_background.css('background-image', 'url("' + new_image_full_page + '")');
-                    }
-
-                    if ($sidebar_responsive.length != 0) {
-                        $sidebar_responsive.css('background-image', 'url("' + new_image + '")');
                     }
                 });
 

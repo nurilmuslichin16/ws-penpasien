@@ -6,7 +6,7 @@
         <div class="sidebar-wrapper">
             <ul class="nav">
                 <li class="nav-item active  ">
-                    <a class="nav-link" href="./dashboard.html">
+                    <a class="nav-link" href="/">
                         <i class="material-icons">dashboard</i>
                         <p>Dashboard</p>
                     </a>
@@ -17,19 +17,25 @@
                 </div>
 
                 <li class="nav-item ">
-                    <a class="nav-link" href="./user.html">
+                    <a class="nav-link" href="/dokter">
                         <i class="material-icons">groups</i>
                         <p>Dokter</p>
                     </a>
                 </li>
                 <li class="nav-item ">
-                    <a class="nav-link" href="./tables.html">
+                    <a class="nav-link" href="/jadwal-dokter">
                         <i class="material-icons">event_note</i>
                         <p>Jadwal Dokter</p>
                     </a>
                 </li>
                 <li class="nav-item ">
-                    <a class="nav-link" href="./typography.html">
+                    <a class="nav-link" href="/cuti-dokter">
+                        <i class="material-icons">block</i>
+                        <p>Cuti Dokter</p>
+                    </a>
+                </li>
+                <li class="nav-item ">
+                    <a class="nav-link" href="/poliklinik">
                         <i class="material-icons">medical_services</i>
                         <p>Poliklinik</p>
                     </a>
@@ -40,19 +46,19 @@
                 </div>
 
                 <li class="nav-item ">
-                    <a class="nav-link" href="./icons.html">
+                    <a class="nav-link" href="/pendaftaran">
                         <i class="material-icons">local_hospital</i>
                         <p>Pendaftaran</p>
                     </a>
                 </li>
                 <li class="nav-item ">
-                    <a class="nav-link" href="./map.html">
+                    <a class="nav-link" href="/nomor-antrian">
                         <i class="material-icons">filter_1</i>
                         <p>Nomor Antrian</p>
                     </a>
                 </li>
                 <li class="nav-item ">
-                    <a class="nav-link" href="./notifications.html">
+                    <a class="nav-link" href="/pasien">
                         <i class="material-icons">accessible</i>
                         <p>Pasien</p>
                     </a>
@@ -63,13 +69,13 @@
                 </div>
 
                 <li class="nav-item ">
-                    <a class="nav-link" href="./icons.html">
+                    <a class="nav-link" href="/profile">
                         <i class="material-icons">person</i>
                         <p>Profile</p>
                     </a>
                 </li>
                 <li class="nav-item ">
-                    <a class="nav-link" href="./map.html">
+                    <a class="nav-link" href="/manajemen-user">
                         <i class="material-icons">people</i>
                         <p>Manajemen User</p>
                     </a>

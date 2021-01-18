@@ -6,8 +6,12 @@ class Home extends BaseController
 {
 	public function index()
 	{
-		// return view('pages/dashboard');
-		return view('pages/dashboard.php');
+		$data = [
+			'title' 		=> "Dashboard | Penpas Rawat Jalan",
+			'breadCrumb' 	=> "Dashboard"
+		];
+
+		return view('pages/dashboard', $data);
 	}
 
 	//--------------------------------------------------------------------
