@@ -14,6 +14,16 @@ class JadwalDokter extends BaseController
         return view('pages/jadwal-dokter/main', $data);
     }
 
+    public function detail()
+    {
+        $data = [
+            'title'         => "Detail | Jadwal Dokter",
+            'breadCrumb'    => "Jadwal Dokter \ Detail"
+        ];
+
+        return view('pages/jadwal-dokter/detail', $data);
+    }
+
     //--------------------------------------------------------------------
 
 }

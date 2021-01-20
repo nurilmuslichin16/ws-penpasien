@@ -9,7 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" href="/production/images/favicon.ico" type="image/ico" />
 
-    <title>Gentelella Alela! | </title>
+    <title><?= $title; ?></title>
 
     <!-- Bootstrap -->
     <link href="/vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -19,6 +19,9 @@
     <link href="/vendors/nprogress/nprogress.css" rel="stylesheet">
     <!-- iCheck -->
     <link href="/vendors/iCheck/skins/flat/green.css" rel="stylesheet">
+
+    <link href="/src/css/jquery.dataTables.min.css">
+    <link href="/vendors/datatables.net-bs/css/dataTables.bootstrap.min.css" rel="stylesheet">
 
     <!-- bootstrap-progressbar -->
     <link href="/vendors/bootstrap-progressbar/css/bootstrap-progressbar-3.3.4.min.css" rel="stylesheet">
@@ -92,6 +95,8 @@
 
     <!-- Custom Theme Scripts -->
     <script src="/build/js/custom.min.js"></script>
+    <script src="/vendors/datatables.net/js/jquery.dataTables.min.js"></script>
+    <script src="/vendors/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
 
 </body>
 

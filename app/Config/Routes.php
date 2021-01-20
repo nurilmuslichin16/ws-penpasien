@@ -33,6 +33,7 @@ $routes->setAutoRoute(true);
 // route since we don't have to scan directories.
 $routes->get('/', 'Home::index');
 $routes->get('/jadwal-dokter', 'JadwalDokter::index');
+$routes->get('/jadwal-dokter/detail', 'JadwalDokter::detail');
 $routes->get('/cuti-dokter', 'CutiDokter::index');
 $routes->get('/nomor-antrian', 'Antrian::index');
 $routes->get('/manajemen-user', 'ManajUser::index');
