@@ -1,275 +1,126 @@
 <?= $this->extend('layout/template'); ?>
 
 <?= $this->section('content'); ?>
-<div class="content">
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-md-12">
-                <div class="card">
-                    <div class="card-header card-header-primary">
-                        <h4 class="card-title ">Simple Table</h4>
-                        <p class="card-category"> Here is a subtitle for this table</p>
-                    </div>
-                    <div class="card-body">
-                        <div class="table-responsive">
-                            <table class="table">
-                                <thead class=" text-primary">
-                                    <th>
-                                        ID
-                                    </th>
-                                    <th>
-                                        Name
-                                    </th>
-                                    <th>
-                                        Country
-                                    </th>
-                                    <th>
-                                        City
-                                    </th>
-                                    <th>
-                                        Salary
-                                    </th>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>
-                                            1
-                                        </td>
-                                        <td>
-                                            Dakota Rice
-                                        </td>
-                                        <td>
-                                            Niger
-                                        </td>
-                                        <td>
-                                            Oud-Turnhout
-                                        </td>
-                                        <td class="text-primary">
-                                            $36,738
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            2
-                                        </td>
-                                        <td>
-                                            Minerva Hooper
-                                        </td>
-                                        <td>
-                                            Curaçao
-                                        </td>
-                                        <td>
-                                            Sinaai-Waas
-                                        </td>
-                                        <td class="text-primary">
-                                            $23,789
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            3
-                                        </td>
-                                        <td>
-                                            Sage Rodriguez
-                                        </td>
-                                        <td>
-                                            Netherlands
-                                        </td>
-                                        <td>
-                                            Baileux
-                                        </td>
-                                        <td class="text-primary">
-                                            $56,142
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            4
-                                        </td>
-                                        <td>
-                                            Philip Chaney
-                                        </td>
-                                        <td>
-                                            Korea, South
-                                        </td>
-                                        <td>
-                                            Overland Park
-                                        </td>
-                                        <td class="text-primary">
-                                            $38,735
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            5
-                                        </td>
-                                        <td>
-                                            Doris Greene
-                                        </td>
-                                        <td>
-                                            Malawi
-                                        </td>
-                                        <td>
-                                            Feldkirchen in Kärnten
-                                        </td>
-                                        <td class="text-primary">
-                                            $63,542
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            6
-                                        </td>
-                                        <td>
-                                            Mason Porter
-                                        </td>
-                                        <td>
-                                            Chile
-                                        </td>
-                                        <td>
-                                            Gloucester
-                                        </td>
-                                        <td class="text-primary">
-                                            $78,615
-                                        </td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                </div>
+<!-- page content -->
+<div class="right_col" role="main">
+    <div class="">
+        <div class="page-title mb-4">
+            <div class="title_left">
+                &nbsp;<?= $breadCrumb; ?>
             </div>
-            <div class="col-md-12">
-                <div class="card card-plain">
-                    <div class="card-header card-header-primary">
-                        <h4 class="card-title mt-0"> Table on Plain Background</h4>
-                        <p class="card-category"> Here is a subtitle for this table</p>
+        </div>
+
+        <div class="clearfix"></div>
+
+        <div class="row">
+            <div class="col-md-12 col-sm-12 ">
+                <a href="#" class="btn btn-primary btn-sm">
+                    <i class="fa fa-print"></i>&nbsp; Cetak Data
+                </a>
+            </div>
+        </div>
+
+        <div class="clearfix"></div>
+
+        <div class="row mt-3">
+            <div class="col-3">
+                <i class="fa fa-check-square-o"></i>
+                <label for="heard">Tanggal Daftar:</label>
+                <input class="form-control" class='date' type="date" name="date" required='required' />
+            </div>
+            <div class="col-3">
+                <i class="fa fa-check-square"></i>
+                <label for="heard">Tanggal Periksa:</label>
+                <input class="form-control" class='date' type="date" name="date" required='required' />
+            </div>
+            <div class="col-6">
+                <i class="fa fa-stethoscope"></i>
+                <label for="heard">Poliklinik:</label>
+                <select id="heard" class="form-control">
+                    <option value="">All</option>
+                    <option value="press">Bedah Umum</option>
+                    <option value="net">Umum</option>
+                    <option value="mouth">Gigi dan Mulut</option>
+                    <option value="mouth">Kulit dan Kelamin</option>
+                    <option value="mouth">Penyakit Dalam</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="clearfix"></div>
+
+        <div class="row mt-3">
+            <div class="col-6">
+                <i class="fa fa-info-circle"></i>
+                <label for="heard">Status:</label>
+                <select id="heard" class="form-control">
+                    <option value="">All</option>
+                    <option value="press">Batal</option>
+                    <option value="net">Menunggu</option>
+                    <option value="mouth">Terdaftar</option>
+                </select>
+            </div>
+            <div class="col-6">
+                <i class="fa fa-user-md"></i>
+                <label for="heard">Dokter:</label>
+                <select id="heard" class="form-control">
+                    <option value="">All</option>
+                    <option value="press">Dr. Nuril</option>
+                    <option value="net">Dr. Muslichin</option>
+                    <option value="mouth">Dr. Titan</option>
+                    <option value="mouth">Dr. Choriul</option>
+                    <option value="mouth">Dr. Ningsih'at</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="row" style="display: block; margin-top: 12px;">
+            <div class="col-md-12 col-sm-12 ">
+                <div class="x_panel">
+                    <div class="x_title">
+                        <h2>Daftar Pendaftaran Rawat Jalan</h2>
+                        <div class="clearfix"></div>
                     </div>
-                    <div class="card-body">
-                        <div class="table-responsive">
-                            <table class="table table-hover">
-                                <thead class="">
-                                    <th>
-                                        ID
-                                    </th>
-                                    <th>
-                                        Name
-                                    </th>
-                                    <th>
-                                        Country
-                                    </th>
-                                    <th>
-                                        City
-                                    </th>
-                                    <th>
-                                        Salary
-                                    </th>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>
-                                            1
-                                        </td>
-                                        <td>
-                                            Dakota Rice
-                                        </td>
-                                        <td>
-                                            Niger
-                                        </td>
-                                        <td>
-                                            Oud-Turnhout
-                                        </td>
-                                        <td>
-                                            $36,738
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            2
-                                        </td>
-                                        <td>
-                                            Minerva Hooper
-                                        </td>
-                                        <td>
-                                            Curaçao
-                                        </td>
-                                        <td>
-                                            Sinaai-Waas
-                                        </td>
-                                        <td>
-                                            $23,789
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            3
-                                        </td>
-                                        <td>
-                                            Sage Rodriguez
-                                        </td>
-                                        <td>
-                                            Netherlands
-                                        </td>
-                                        <td>
-                                            Baileux
-                                        </td>
-                                        <td>
-                                            $56,142
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            4
-                                        </td>
-                                        <td>
-                                            Philip Chaney
-                                        </td>
-                                        <td>
-                                            Korea, South
-                                        </td>
-                                        <td>
-                                            Overland Park
-                                        </td>
-                                        <td>
-                                            $38,735
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            5
-                                        </td>
-                                        <td>
-                                            Doris Greene
-                                        </td>
-                                        <td>
-                                            Malawi
-                                        </td>
-                                        <td>
-                                            Feldkirchen in Kärnten
-                                        </td>
-                                        <td>
-                                            $63,542
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            6
-                                        </td>
-                                        <td>
-                                            Mason Porter
-                                        </td>
-                                        <td>
-                                            Chile
-                                        </td>
-                                        <td>
-                                            Gloucester
-                                        </td>
-                                        <td>
-                                            $78,615
-                                        </td>
-                                    </tr>
-                                </tbody>
-                            </table>
+                    <div class="x_content">
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <div class="card-box table-responsive">
+                                    <table id="datatable" class="table table-hover" style="width:100%">
+                                        <thead>
+                                            <tr>
+                                                <th width="5%">#</th>
+                                                <th>Nomor Pendaftaran</th>
+                                                <th>Nama Pasien</th>
+                                                <th>Tanggal Daftar</th>
+                                                <th>Tanggal Periksa</th>
+                                                <th>Poliklinik</th>
+                                                <th>Dokter</th>
+                                                <th>Status</th>
+                                                <th width="5%">Aksi</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <th>1</th>
+                                                <td>1102802283</td>
+                                                <td>Nuril Muslichin</td>
+                                                <td>12 Jan 2021</td>
+                                                <td>15 Jan 2021</td>
+                                                <td>Umum</td>
+                                                <td>Dr. Muslichin</td>
+                                                <td>
+                                                    <span class="badge badge-warning">Menunggu</span>
+                                                </td>
+                                                <td>
+                                                    <a href="#" class="btn btn-primary btn-sm">
+                                                        <i class="fa fa-bars"></i>
+                                                    </a>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -277,4 +128,5 @@
         </div>
     </div>
 </div>
+<!-- /page content -->
 <?= $this->endSection('content'); ?>

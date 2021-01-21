@@ -8,7 +8,7 @@ class Dokter extends BaseController
     {
         $data = [
             'title'         => "Dokter | Penpas Rawat Jalan",
-            'breadCrumb'    => "Dokter"
+            'breadCrumb'    => "Data Masters \ Dokter"
         ];
 
         return view('pages/dokter/main', $data);

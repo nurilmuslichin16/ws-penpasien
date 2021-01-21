@@ -8,7 +8,7 @@ class Poliklinik extends BaseController
     {
         $data = [
             'title'         => "Poliklinik | Penpas Rawat Jalan",
-            'breadCrumb'    => "Poliklinik"
+            'breadCrumb'    => "Data Masters \ Poliklinik"
         ];
 
         return view('pages/poliklinik/main', $data);

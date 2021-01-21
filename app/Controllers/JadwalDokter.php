@@ -8,7 +8,7 @@ class JadwalDokter extends BaseController
     {
         $data = [
             'title'         => "Jadwal Dokter | Penpas Rawat Jalan",
-            'breadCrumb'    => "Jadwal Dokter"
+            'breadCrumb'    => "Data Masters \ Jadwal Dokter"
         ];
 
         return view('pages/jadwal-dokter/main', $data);
@@ -18,7 +18,7 @@ class JadwalDokter extends BaseController
     {
         $data = [
             'title'         => "Detail | Jadwal Dokter",
-            'breadCrumb'    => "Jadwal Dokter \ Detail"
+            'breadCrumb'    => "Data Masters \ Jadwal Dokter \ Detail"
         ];
 
         return view('pages/jadwal-dokter/detail', $data);

@@ -8,7 +8,7 @@ class CutiDokter extends BaseController
     {
         $data = [
             'title'         => "Cuti Dokter | Penpas Rawat Jalan",
-            'breadCrumb'    => "Cuti Dokter"
+            'breadCrumb'    => "Data Masters \ Cuti Dokter"
         ];
 
         return view('pages/cuti-dokter/main', $data);

@@ -8,7 +8,7 @@ class Kamar extends BaseController
     {
         $data = [
             'title'         => "Kamar | Penpas Rawat Jalan",
-            'breadCrumb'    => "Kamar"
+            'breadCrumb'    => "Data Masters \ Kamar"
         ];
 
         return view('pages/kamar/main', $data);

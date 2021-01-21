@@ -35,6 +35,8 @@ $routes->get('/', 'Home::index');
 $routes->get('/jadwal-dokter', 'JadwalDokter::index');
 $routes->get('/jadwal-dokter/detail', 'JadwalDokter::detail');
 $routes->get('/cuti-dokter', 'CutiDokter::index');
+$routes->get('/rawat-jalan', 'Pendaftaran::index');
+$routes->get('/rawat-inap', 'Pendaftaran::rawatInap');
 $routes->get('/nomor-antrian', 'Antrian::index');
 $routes->get('/manajemen-user', 'ManajUser::index');
 
