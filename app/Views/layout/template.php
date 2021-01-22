@@ -100,6 +100,9 @@
 
     <!-- Form Validation -->
     <script src="/vendors/parsleyjs/dist/parsley.min.js"></script>
+
+    <!-- Form Wizard -->
+    <script src="/vendors/jQuery-Smart-Wizard/js/jquery.smartWizard.js"></script>
 </body>
 
 </html>

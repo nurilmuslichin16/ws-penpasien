@@ -57,6 +57,9 @@
                                                 <td>Pekalongan, 16 Feb 2021</td>
                                                 <td>Kramatsari 2 Gg.8. Pekalongan</td>
                                                 <td>
+                                                    <a href="#" class="btn btn-primary btn-sm">
+                                                        <i class="fa fa-bars"></i>
+                                                    </a>
                                                     <a href="#" class="btn btn-warning btn-sm">
                                                         <i class="fa fa-pencil"></i>
                                                     </a>
