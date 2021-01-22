@@ -4,9 +4,9 @@
 <!-- page content -->
 <div class="right_col" role="main">
     <div class="">
-        <div class="page-title">
+        <div class="page-title mb-4">
             <div class="title_left">
-                <h3>Jadwal Dokter</h3>
+                &nbsp;<?= $breadCrumb; ?>
             </div>
         </div>
 
@@ -16,7 +16,7 @@
             <div class="col-md-12">
                 <div class="x_panel">
                     <div class="x_title">
-                        <h2><?= $breadCrumb; ?></h2>
+                        <h2>Jadwal Dokter</h2>
                         <div class="clearfix"></div>
                     </div>
                     <div class="x_content">

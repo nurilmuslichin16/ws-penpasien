@@ -38,6 +38,8 @@ $routes->get('/cuti-dokter', 'CutiDokter::index');
 $routes->get('/rawat-jalan', 'Pendaftaran::index');
 $routes->get('/rawat-inap', 'Pendaftaran::rawatInap');
 $routes->get('/nomor-antrian', 'Antrian::index');
+$routes->get('/ubah-profile', 'Profile::index');
+$routes->get('/ubah-password', 'Profile::ubahPassword');
 $routes->get('/manajemen-user', 'ManajUser::index');
 
 /**

@@ -98,6 +98,8 @@
     <script src="/vendors/datatables.net/js/jquery.dataTables.min.js"></script>
     <script src="/vendors/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
 
+    <!-- Form Validation -->
+    <script src="/vendors/parsleyjs/dist/parsley.min.js"></script>
 </body>
 
 </html>

@@ -26,12 +26,12 @@
             <div class="col-3">
                 <i class="fa fa-check-square-o"></i>
                 <label for="heard">Tanggal Daftar:</label>
-                <input class="form-control" class='date' type="date" name="date" required='required' />
+                <input class="form-control" class='date' type="date" name="date" />
             </div>
             <div class="col-3">
                 <i class="fa fa-check-square"></i>
                 <label for="heard">Tanggal Periksa:</label>
-                <input class="form-control" class='date' type="date" name="date" required='required' />
+                <input class="form-control" class='date' type="date" name="date" />
             </div>
             <div class="col-6">
                 <i class="fa fa-stethoscope"></i>

@@ -8,10 +8,20 @@ class Profile extends BaseController
     {
         $data = [
             'title'         => "Profile | Penpas Rawat Jalan",
-            'breadCrumb'    => "Profile"
+            'breadCrumb'    => "Profile \ Ubah Profile"
         ];
 
-        return view('pages/profile/main', $data);
+        return view('pages/profile/ubah-profile', $data);
+    }
+
+    public function ubahPassword()
+    {
+        $data = [
+            'title'         => "Profile | Penpas Rawat Jalan",
+            'breadCrumb'    => "Profile \ Ubah Password"
+        ];
+
+        return view('pages/profile/ubah-password', $data);
     }
 
     //--------------------------------------------------------------------
