@@ -17,7 +17,7 @@
                 <a href="/tambah-dokter" class="btn btn-success btn-sm">
                     <i class="fa fa-plus"></i>&nbsp; Tambah Dokter
                 </a>
-                <a href="#" class="btn btn-primary btn-sm">
+                <a href="/cetak-dokter" class="btn btn-primary btn-sm">
                     <i class="fa fa-print"></i>&nbsp; Cetak Data
                 </a>
             </div>
