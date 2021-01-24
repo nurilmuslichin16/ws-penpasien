@@ -24,6 +24,26 @@ class Pendaftaran extends BaseController
         return view('pages/rawat-inap/main', $data);
     }
 
+    public function cetakRawatJalan()
+    {
+        $data = [
+            'title'         => "Cetak Data Rawat Jalan | Penpas Rawat Jalan",
+            'breadCrumb'    => "Pendaftaran \ Rawat Jalan \ Cetak Data"
+        ];
+
+        return view('pages/rawat-jalan/cetak', $data);
+    }
+
+    public function cetakRawatInap()
+    {
+        $data = [
+            'title'         => "Cetak Data Rawat Inap | Penpas Rawat Jalan",
+            'breadCrumb'    => "Pendaftaran \ Rawat Inap \ Cetak Data"
+        ];
+
+        return view('pages/rawat-inap/cetak', $data);
+    }
+
     //--------------------------------------------------------------------
 
 }

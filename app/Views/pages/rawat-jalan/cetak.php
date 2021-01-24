@@ -6,7 +6,7 @@
     <div class="">
         <div class="page-title mb-4">
             <div class="title_left">
-                <a href="/dokter" class="btn btn-secondary btn-sm">
+                <a href="/rawat-jalan" class="btn btn-secondary btn-sm">
                     <i class="fa fa-arrow-left"></i>&nbsp; Kembali
                 </a>
                 &nbsp;<?= $breadCrumb; ?>
@@ -21,7 +21,7 @@
                     <div class="x_title">
                         <h2>
                             <i class="fa fa-filter"></i>&nbsp;
-                            Cetak Data Dokter
+                            Cetak Data Pendaftaran Pasien Rawat Jalan
                         </h2>
                         <div class="clearfix"></div>
                     </div>
@@ -31,31 +31,31 @@
                             <div class="row">
                                 <div class="col-sm-12 col-md-6">
                                     <i class="fa fa-check-square-o"></i>
-                                    <label for="heard">Umur Awal:</label>
-                                    <input class="form-control" type="number" name="date" />
+                                    <label for="heard">Tanggal Daftar [Dari]:</label>
+                                    <input class="form-control" class='date' type="date" name="date" />
                                 </div>
                                 <div class="col-sm-12 col-md-6">
                                     <i class="fa fa-check-square"></i>
-                                    <label for="heard">Umur Akhir:</label>
-                                    <input class="form-control" type="number" name="date" />
+                                    <label for="heard">Tanggal Daftar [Sampai]:</label>
+                                    <input class="form-control" class='date' type="date" name="date" />
                                 </div>
                             </div>
                             <div class="row mt-3">
                                 <div class="col-sm-12 col-md-6">
-                                    <i class="fa fa-user"></i>
-                                    <label for="heard">Jenis Kelamin:</label>
-                                    <p class="mt-2">
-                                        Laki-Laki&nbsp;
-                                        <input type="radio" class="flat" name="gender" id="genderM" value="M" checked="" required />
-                                        &nbsp;
-                                        &nbsp;
-                                        Perempuan&nbsp;
-                                        <input type="radio" class="flat" name="gender" id="genderF" value="F" />
-                                    </p>
+                                    <i class="fa fa-check-square-o"></i>
+                                    <label for="heard">Tanggal Periksa [Dari]:</label>
+                                    <input class="form-control" class='date' type="date" name="date" />
                                 </div>
                                 <div class="col-sm-12 col-md-6">
+                                    <i class="fa fa-check-square"></i>
+                                    <label for="heard">Tanggal Periksa [Sampai]:</label>
+                                    <input class="form-control" class='date' type="date" name="date" />
+                                </div>
+                            </div>
+                            <div class="row mt-3">
+                                <div class="col-sm-12 col-md-12">
                                     <i class="fa fa-stethoscope"></i>
-                                    <label for="heard">Spesialis:</label>
+                                    <label for="heard">Poliklinik:</label>
                                     <select id="heard" class="form-control">
                                         <option value="">All</option>
                                         <option value="press">Bedah Umum</option>
@@ -63,6 +63,32 @@
                                         <option value="mouth">Gigi dan Mulut</option>
                                         <option value="mouth">Kulit dan Kelamin</option>
                                         <option value="mouth">Penyakit Dalam</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="row mt-3">
+                                <div class="col-sm-12 col-md-12">
+                                    <i class="fa fa-user-md"></i>
+                                    <label for="heard">Dokter:</label>
+                                    <select id="heard" class="form-control">
+                                        <option value="">All</option>
+                                        <option value="press">Dr. Nuril</option>
+                                        <option value="net">Dr. Muslichin</option>
+                                        <option value="mouth">Dr. Titan</option>
+                                        <option value="mouth">Dr. Choriul</option>
+                                        <option value="mouth">Dr. Ningsih'at</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="row mt-3">
+                                <div class="col-sm-12 col-md-12">
+                                    <i class="fa fa-info-circle"></i>
+                                    <label for="heard">Status:</label>
+                                    <select id="heard" class="form-control">
+                                        <option value="">All</option>
+                                        <option value="press">Batal</option>
+                                        <option value="net">Menunggu</option>
+                                        <option value="mouth">Terdaftar</option>
                                     </select>
                                 </div>
                             </div>

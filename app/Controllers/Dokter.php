@@ -27,8 +27,8 @@ class Dokter extends BaseController
     public function cetak()
     {
         $data = [
-            'title'         => "Tambah Dokter | Penpas Rawat Jalan",
-            'breadCrumb'    => "Data Masters \ Dokter \ Cetak Data Dokter"
+            'title'         => "Cetak Data Dokter | Penpas Rawat Jalan",
+            'breadCrumb'    => "Data Masters \ Dokter \ Cetak Data"
         ];
 
         return view('pages/dokter/cetak', $data);

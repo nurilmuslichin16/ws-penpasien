@@ -14,10 +14,10 @@
 
         <div class="row">
             <div class="col-md-12 col-sm-12 ">
-                <a href="#" class="btn btn-success btn-sm">
+                <a href="/tambah-pasien" class="btn btn-success btn-sm">
                     <i class="fa fa-plus"></i>&nbsp; Tambah Pasien
                 </a>
-                <a href="#" class="btn btn-primary btn-sm">
+                <a href="/cetak-pasien" class="btn btn-primary btn-sm">
                     <i class="fa fa-print"></i>&nbsp; Cetak Data
                 </a>
             </div>

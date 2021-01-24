@@ -14,7 +14,7 @@
 
         <div class="row">
             <div class="col-md-12 col-sm-12 ">
-                <a href="#" class="btn btn-primary btn-sm">
+                <a href="/cetak-rawat-inap" class="btn btn-primary btn-sm">
                     <i class="fa fa-print"></i>&nbsp; Cetak Data
                 </a>
             </div>
@@ -34,8 +34,8 @@
                 <select id="heard" class="form-control">
                     <option value="">All</option>
                     <option value="press">Batal</option>
-                    <option value="net">Belum Konfirmasi</option>
-                    <option value="mouth">Sudah Konfirmasi</option>
+                    <option value="net">Menunggu</option>
+                    <option value="mouth">Selesai</option>
                 </select>
             </div>
             <div class="col-4">

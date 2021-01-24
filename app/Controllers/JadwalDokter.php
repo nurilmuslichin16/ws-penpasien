@@ -27,7 +27,7 @@ class JadwalDokter extends BaseController
     public function cetak()
     {
         $data = [
-            'title'         => "Cetak Data | Penpas Rawat Jalan",
+            'title'         => "Cetak Data Jadwal Dokter | Penpas Rawat Jalan",
             'breadCrumb'    => "Data Masters \ Jadwal Dokter \ Cetak Data"
         ];
 

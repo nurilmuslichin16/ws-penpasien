@@ -30,7 +30,7 @@
 
                             <div class="row">
                                 <div class="col-sm-12 col-md-12">
-                                    <i class="fa fa-check-square-o"></i>
+                                    <i class="fa fa-user-md"></i>
                                     <label for="heard">Dokter:</label>
                                     <select id="heard" class="form-control">
                                         <option value="">All</option>
@@ -60,7 +60,7 @@
                             <div class="row justify-content-end">
                                 <div class="mr-2">
                                     <button class="btn btn-primary" type="reset">Reset</button>
-                                    <button type="submit" class="btn btn-success">Submit</button>
+                                    <button type="submit" class="btn btn-success">Cetak</button>
                                 </div>
                             </div>
 
