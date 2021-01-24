@@ -4,13 +4,21 @@
 <!-- page content -->
 <div class="right_col" role="main">
     <div class="">
-        <div class="page-title mb-4">
+        <div class="page-title">
             <div class="title_left">
                 &nbsp;<?= $breadCrumb; ?>
             </div>
         </div>
 
         <div class="clearfix"></div>
+
+        <div class="row mt-2 mb-2">
+            <div class="col-md-12 col-sm-12 ">
+                <a href="/cetak-jadwal-dokter" class="btn btn-primary btn-sm">
+                    <i class="fa fa-print"></i>&nbsp; Cetak Data
+                </a>
+            </div>
+        </div>
 
         <div class="row">
             <div class="col-md-12">

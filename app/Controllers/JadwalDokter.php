@@ -17,11 +17,21 @@ class JadwalDokter extends BaseController
     public function detail()
     {
         $data = [
-            'title'         => "Detail | Jadwal Dokter",
+            'title'         => "Detail | Penpas Rawat Jalan",
             'breadCrumb'    => "Data Masters \ Jadwal Dokter \ Detail"
         ];
 
         return view('pages/jadwal-dokter/detail', $data);
+    }
+
+    public function cetak()
+    {
+        $data = [
+            'title'         => "Cetak Data | Penpas Rawat Jalan",
+            'breadCrumb'    => "Data Masters \ Jadwal Dokter \ Cetak Data"
+        ];
+
+        return view('pages/jadwal-dokter/cetak', $data);
     }
 
     //--------------------------------------------------------------------

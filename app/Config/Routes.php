@@ -36,6 +36,7 @@ $routes->get('/tambah-dokter', 'Dokter::tambah');
 $routes->get('/cetak-dokter', 'Dokter::cetak');
 $routes->get('/jadwal-dokter', 'JadwalDokter::index');
 $routes->get('/jadwal-dokter/detail', 'JadwalDokter::detail');
+$routes->get('/cetak-jadwal-dokter', 'JadwalDokter::cetak');
 $routes->get('/cuti-dokter', 'CutiDokter::index');
 $routes->get('/rawat-jalan', 'Pendaftaran::index');
 $routes->get('/rawat-inap', 'Pendaftaran::rawatInap');

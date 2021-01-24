@@ -14,12 +14,9 @@
 
         <div class="row">
             <div class="col-md-12 col-sm-12 ">
-                <a href="#" class="btn btn-success btn-sm">
+                <button type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target=".bs-example-modal-lg">
                     <i class="fa fa-plus"></i>&nbsp; Tambah Poliklinik
-                </a>
-                <a href="#" class="btn btn-primary btn-sm">
-                    <i class="fa fa-print"></i>&nbsp; Cetak Data
-                </a>
+                </button>
             </div>
         </div>
 
@@ -115,4 +112,37 @@
     </div>
 </div>
 <!-- /page content -->
+
+<!-- modals -->
+<div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+
+            <form id="demo-form2" data-parsley-validate class="form-horizontal form-label-left">
+                <div class="modal-header">
+                    <h2 class="modal-title" id="myModalLabel">Tambah Cuti Dokter</h2>
+                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+
+                    <div class="item form-group">
+                        <label class="col-form-label col-md-2 col-sm-2 label-align">Nama Poliklinik <span class="required">*</span>
+                        </label>
+                        <div class="col-md-9 col-sm-9 ">
+                            <input type="text" id="last-name" name="last-name" required="required" class="form-control ">
+                        </div>
+                    </div>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Tutup</button>
+                    <button type="submit" class="btn btn-primary">Simpan</button>
+                </div>
+            </form>
+
+        </div>
+    </div>
+</div>
+<!-- /modals -->
 <?= $this->endSection('content'); ?>
