@@ -120,7 +120,7 @@
 
             <form id="demo-form2" data-parsley-validate class="form-horizontal form-label-left">
                 <div class="modal-header">
-                    <h2 class="modal-title" id="myModalLabel">Tambah Cuti Dokter</h2>
+                    <h2 class="modal-title" id="myModalLabel">Tambah Poliklinik</h2>
                     <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span>
                     </button>
                 </div>

@@ -24,6 +24,16 @@ class ManajUser extends BaseController
         return view('pages/manaj-user/user-mobile', $data);
     }
 
+    public function cetakUserMobile()
+    {
+        $data = [
+            'title'         => "Cetak Data Pengguna Mobile | Penpas Rawat Jalan",
+            'breadCrumb'    => "Manajemen Pengguna \ Pengguna Mobile \ Cetak Data"
+        ];
+
+        return view('pages/manaj-user/cetak-user-mobile', $data);
+    }
+
     //--------------------------------------------------------------------
 
 }

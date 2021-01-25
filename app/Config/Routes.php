@@ -49,6 +49,7 @@ $routes->get('/ubah-profile', 'Profile::index');
 $routes->get('/ubah-password', 'Profile::ubahPassword');
 $routes->get('/pengguna-web', 'ManajUser::index');
 $routes->get('/pengguna-mobile', 'ManajUser::userMobile');
+$routes->get('/cetak-pengguna-mobile', 'ManajUser::cetakUserMobile');
 
 /**
  * --------------------------------------------------------------------
