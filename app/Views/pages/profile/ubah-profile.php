@@ -30,17 +30,10 @@
                             </div>
 
                             <div class="item form-group">
-                                <label class="col-form-label col-md-3 col-sm-3 label-align" for="first-name">Nama Depan <span class="required">*</span>
+                                <label class="col-form-label col-md-3 col-sm-3 label-align" for="first-name">Nama Lengkap <span class="required">*</span>
                                 </label>
                                 <div class="col-md-9 col-sm-9 ">
                                     <input type="text" id="first-name" required="required" class="form-control">
-                                </div>
-                            </div>
-                            <div class="item form-group">
-                                <label class="col-form-label col-md-3 col-sm-3 label-align" for="last-name">Nama Belakang <span class="required">*</span>
-                                </label>
-                                <div class="col-md-9 col-sm-9 ">
-                                    <input type="text" id="last-name" name="last-name" required="required" class="form-control">
                                 </div>
                             </div>
                             <div class="item form-group">
@@ -60,13 +53,6 @@
                                         Perempuan&nbsp;
                                         <input type="radio" class="flat" name="gender" id="genderF" value="F" />
                                     </p>
-                                </div>
-                            </div>
-                            <div class="item form-group">
-                                <label class="col-form-label col-md-3 col-sm-3 label-align">Tanggal Lahir <span class="required">*</span>
-                                </label>
-                                <div class="col-md-9 col-sm-9 ">
-                                    <input class="form-control" class='date' type="date" name="date" required='required' />
                                 </div>
                             </div>
                             <div class="ln_solid"></div>
