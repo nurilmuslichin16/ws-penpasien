@@ -2,13 +2,25 @@
 
 namespace App\Controllers;
 
+use App\Models\PoliklinikModel;
+
 class Poliklinik extends BaseController
 {
+    protected $poliklinikModel;
+
+    public function __construct()
+    {
+        $this->poliklinikModel = new PoliklinikModel();
+    }
+
     public function index()
     {
         $data = [
-            'title'         => "Poliklinik | Penpas Rawat Jalan",
-            'breadCrumb'    => "Data Masters \ Poliklinik"
+            'title'         => "Poliklinik | SIPENPAS",
+            'menu_open'     => "Data Master",
+            'menu_active'   => "Poliklinik",
+            'breadCrumb'    => ["Data Master", "Poliklinik"],
+            'poliklinik'    => $this->poliklinikModel->findAll()
         ];
 
         return view('pages/poliklinik/main', $data);

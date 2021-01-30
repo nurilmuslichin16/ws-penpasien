@@ -1,167 +1,131 @@
 <?= $this->extend('layout/template'); ?>
 
 <?= $this->section('content'); ?>
-<!-- page content -->
-<div class="right_col" role="main">
-    <div class="">
-        <div class="page-title mb-4">
-            <div class="title_left">
-                &nbsp;<?= $breadCrumb; ?>
+<!-- Content Wrapper. Contains page content -->
+<div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-sm-12">
+                    <ol class="breadcrumb float-sm-left">
+                        <?php foreach ($breadCrumb as $key => $b) : ?>
+                            <li class="<?= $key === array_key_last($breadCrumb) ? "breadcrumb-item active" : "breadcrumb-item" ?>"><?= $b; ?></li>
+                        <?php endforeach; ?>
+                    </ol>
+                </div>
             </div>
-        </div>
+        </div><!-- /.container-fluid -->
+    </section>
 
-        <div class="clearfix"></div>
-
-        <div class="row">
-            <div class="col-md-12 col-sm-12 ">
-                <button type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target=".bs-example-modal-lg">
-                    <i class="fa fa-plus"></i>&nbsp; Tambah Kamar
-                </button>
-            </div>
-        </div>
-
-        <div class="row" style="display: block; margin-top: 12px;">
-            <div class="col-md-12 col-sm-12 ">
-                <div class="x_panel">
-                    <div class="x_title">
-                        <h2>Kamar</h2>
-                        <div class="clearfix"></div>
-                    </div>
-                    <div class="x_content">
-                        <div class="row">
-                            <div class="col-sm-12">
-                                <div class="card-box table-responsive">
-                                    <table id="datatable" class="table table-hover" style="width:100%">
-                                        <thead>
-                                            <tr>
-                                                <th width="5%">#</th>
-                                                <th>Nama Kamar</th>
-                                                <th width="15%">Terpakai</th>
-                                                <th width="15%">Kosong</th>
-                                                <th width="10%">Aksi</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr>
-                                                <th>1</th>
-                                                <td>Merak</td>
-                                                <td>1 Tempat Tidur</td>
-                                                <td>4 Tempat Tidur</td>
-                                                <td>
-                                                    <a href="#" class="btn btn-warning btn-sm">
-                                                        <i class="fa fa-pencil"></i>
-                                                    </a>
-                                                    <a href="#" class="btn btn-danger btn-sm">
-                                                        <i class="fa fa-trash"></i>
-                                                    </a>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <th>2</th>
-                                                <td>Anggrek</td>
-                                                <td>0 Tempat Tidur</td>
-                                                <td>5 Tempat Tidur</td>
-                                                <td>
-                                                    <a href="#" class="btn btn-warning btn-sm">
-                                                        <i class="fa fa-pencil"></i>
-                                                    </a>
-                                                    <a href="#" class="btn btn-danger btn-sm">
-                                                        <i class="fa fa-trash"></i>
-                                                    </a>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <th>3</th>
-                                                <td>Melati</td>
-                                                <td>2 Tempat Tidur</td>
-                                                <td>1 Tempat Tidur</td>
-                                                <td>
-                                                    <a href="#" class="btn btn-warning btn-sm">
-                                                        <i class="fa fa-pencil"></i>
-                                                    </a>
-                                                    <a href="#" class="btn btn-danger btn-sm">
-                                                        <i class="fa fa-trash"></i>
-                                                    </a>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <th>4</th>
-                                                <td>Merpati</td>
-                                                <td>2 Tempat Tidur</td>
-                                                <td>2 Tempat Tidur</td>
-                                                <td>
-                                                    <a href="#" class="btn btn-warning btn-sm">
-                                                        <i class="fa fa-pencil"></i>
-                                                    </a>
-                                                    <a href="#" class="btn btn-danger btn-sm">
-                                                        <i class="fa fa-trash"></i>
-                                                    </a>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <th>5</th>
-                                                <td>Dara</td>
-                                                <td>0 Tempat Tidur</td>
-                                                <td>3 Tempat Tidur</td>
-                                                <td>
-                                                    <a href="#" class="btn btn-warning btn-sm">
-                                                        <i class="fa fa-pencil"></i>
-                                                    </a>
-                                                    <a href="#" class="btn btn-danger btn-sm">
-                                                        <i class="fa fa-trash"></i>
-                                                    </a>
-                                                </td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
+    <!-- Main content -->
+    <section class="content">
+        <div class="container-fluid">
+            <div class="row">
+                <!-- col -->
+                <div class="col-12">
+                    <div class="card card-primary">
+                        <div class="card-header">
+                            <h3 class="card-title"><i class="fa fa-plus-square"></i> &nbsp;Tambah Kamar</h3>
+                        </div>
+                        <!-- /.card-header -->
+                        <!-- form start -->
+                        <form>
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-sm-12 col-md-4">
+                                        <div class="form-group">
+                                            <label for="nama_kamar">Nama Kamar</label>
+                                            <input type="text" class="form-control" id="nama_kamar" name="nama_kamar" placeholder="Contoh: Melati">
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-12 col-md-4">
+                                        <div class="form-group">
+                                            <label for="tipe_kamar">Tipe Kamar</label>
+                                            <select class="form-control select2" id="tipe_kamar" name="tipe_kamar" style="width: 100%;">
+                                                <option selected="selected">Pilih Tipe</option>
+                                                <option value="Bedah Umum">VVIP</option>
+                                                <option>VIP</option>
+                                                <option>Kelas A</option>
+                                                <option>Kelas B</option>
+                                                <option>Kelas C</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-12 col-md-4">
+                                        <div class="form-group">
+                                            <label for="jumlah_tempat_tidur">Jumlah Tempat Tidur</label>
+                                            <input type="number" class="form-control" id="jumlah_tempat_tidur" name="jumlah_tempat_tidur" placeholder="Contoh: 8">
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
+                            <!-- /.card-body -->
+
+                            <div class="card-footer">
+                                <button type="submit" class="btn btn-primary">Submit</button> &nbsp;
+                                <button type="reset" class="btn btn-default">Reset</button>
+                            </div>
+                        </form>
                     </div>
                 </div>
+                <div class="col-12">
+                    <div class="card card-primary">
+                        <div class="card-header">
+                            <h3 class="card-title"><i class="fa fa-list"></i> &nbsp;Daftar Kamar</h3>
+                        </div>
+                        <!-- /.card-header -->
+                        <div class="card-body">
+                            <table id="example1" class="table table-bordered table-hover">
+                                <thead>
+                                    <tr>
+                                        <th width="5%">#</th>
+                                        <th>Nama Kamar</th>
+                                        <th>Tipe Kamar</th>
+                                        <th>Jumlah Tempat Tidur</th>
+                                        <th>Tempat Tidur Terpakai</th>
+                                        <th>Sisa Tempat Tidur</th>
+                                        <th width="10%">Aksi</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <?php
+                                    $no = 1;
+                                    foreach ($kamar as $k) : ?>
+                                        <tr>
+                                            <td><?= $no; ?></td>
+                                            <td><?= $k['nama_kamar']; ?></td>
+                                            <td><?= $k['tipe']; ?></td>
+                                            <td><?= $k['stok_tempat_tidur']; ?> &nbsp;<small>Tempat Tidur</small></td>
+                                            <td><?= $k['tempat_tidur_terpakai']; ?> &nbsp;<small>Tempat Tidur</small></td>
+                                            <td><?= $k['stok_tempat_tidur'] - $k['tempat_tidur_terpakai']; ?> &nbsp;<small>Tempat Tidur</small></td>
+                                            <td>
+                                                <div class="btn-group">
+                                                    <a href="#" class="btn btn-sm btn-warning">
+                                                        <i class="fas fa-pencil-alt"></i>
+                                                    </a>
+                                                    <a href="#" class="btn btn-sm btn-danger">
+                                                        <i class="fas fa-trash"></i>
+                                                    </a>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    <?php $no++;
+                                    endforeach; ?>
+                                </tbody>
+                            </table>
+                        </div>
+                        <!-- /.card-body -->
+                    </div>
+                    <!-- /.card -->
+                </div>
+                <!-- /.col -->
             </div>
+            <!-- /.row -->
         </div>
-    </div>
+        <!-- /.container-fluid -->
+    </section>
+    <!-- /.content -->
 </div>
-<!-- /page content -->
-
-<!-- modals -->
-<div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-hidden="true">
-    <div class="modal-dialog modal-lg">
-        <div class="modal-content">
-
-            <form id="demo-form2" data-parsley-validate class="form-horizontal form-label-left">
-                <div class="modal-header">
-                    <h2 class="modal-title" id="myModalLabel">Tambah Kamar</h2>
-                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-
-                    <div class="item form-group">
-                        <label class="col-form-label col-md-2 col-sm-2 label-align">Nama Kamar <span class="required">*</span>
-                        </label>
-                        <div class="col-md-9 col-sm-9 ">
-                            <input type="text" id="last-name" name="last-name" required="required" class="form-control ">
-                        </div>
-                    </div>
-                    <div class="item form-group">
-                        <label class="col-form-label col-md-2 col-sm-2 label-align">Tempat Tidur <span class="required">*</span>
-                        </label>
-                        <div class="col-md-9 col-sm-9 ">
-                            <input type="number" id="last-name" name="last-name" required="required" class="form-control ">
-                        </div>
-                    </div>
-
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Tutup</button>
-                    <button type="submit" class="btn btn-primary">Simpan</button>
-                </div>
-            </form>
-
-        </div>
-    </div>
-</div>
-<!-- /modals -->
+<!-- /.content-wrapper -->
 <?= $this->endSection('content'); ?>

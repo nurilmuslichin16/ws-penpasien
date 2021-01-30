@@ -31,10 +31,10 @@
                         </p>
                     </a>
                 </li>
-                <li class="nav-header">Master</li>
+                <li class="nav-header">Fungsional</li>
                 <li class="<?= $menu_open == "Data Master" ? "nav-item menu-open" : "nav-item"; ?>">
                     <a href="#" class="<?= $menu_open == "Data Master" ? "nav-link active" : "nav-link"; ?>">
-                        <i class="nav-icon fas fa-copy"></i>
+                        <i class="nav-icon fas fa-database"></i>
                         <p>
                             Data Master
                             <i class="fas fa-angle-left right"></i>
@@ -43,31 +43,51 @@
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
                             <a href="/dokter" class="<?= $menu_active == "Dokter" ? "nav-link active" : "nav-link"; ?>">
-                                <i class="far fa-circle nav-icon"></i>
+                                &nbsp;
+                                &nbsp;
+                                &nbsp;
+                                &nbsp;
+                                <i class="far fa fa-user-md nav-icon"></i>
                                 <p>Dokter</p>
                             </a>
                         </li>
                         <li class="nav-item">
                             <a href="/jadwal-dokter" class="<?= $menu_active == "Jadwal Dokter" ? "nav-link active" : "nav-link"; ?>">
-                                <i class="far fa-circle nav-icon"></i>
+                                &nbsp;
+                                &nbsp;
+                                &nbsp;
+                                &nbsp;
+                                <i class="far fa-calendar-check nav-icon"></i>
                                 <p>Jadwal Dokter</p>
                             </a>
                         </li>
                         <li class="nav-item">
                             <a href="/cuti-dokter" class="<?= $menu_active == "Cuti Dokter" ? "nav-link active" : "nav-link"; ?>">
-                                <i class="far fa-circle nav-icon"></i>
+                                &nbsp;
+                                &nbsp;
+                                &nbsp;
+                                &nbsp;
+                                <i class="far fa-calendar-times nav-icon"></i>
                                 <p>Cuti Dokter</p>
                             </a>
                         </li>
                         <li class="nav-item">
                             <a href="/poliklinik" class="<?= $menu_active == "Poliklinik" ? "nav-link active" : "nav-link"; ?>">
-                                <i class="far fa-circle nav-icon"></i>
+                                &nbsp;
+                                &nbsp;
+                                &nbsp;
+                                &nbsp;
+                                <i class="far fa fa-stethoscope nav-icon"></i>
                                 <p>Poliklinik</p>
                             </a>
                         </li>
                         <li class="nav-item">
                             <a href="/kamar" class="<?= $menu_active == "Kamar" ? "nav-link active" : "nav-link"; ?>">
-                                <i class="far fa-circle nav-icon"></i>
+                                &nbsp;
+                                &nbsp;
+                                &nbsp;
+                                &nbsp;
+                                <i class="far fa fa-bed nav-icon"></i>
                                 <p>Kamar</p>
                             </a>
                         </li>
@@ -75,7 +95,7 @@
                 </li>
                 <li class="nav-item">
                     <a href="#" class="nav-link">
-                        <i class="nav-icon fas fa-chart-pie"></i>
+                        <i class="nav-icon fas fa-book-medical"></i>
                         <p>
                             Pendaftaran
                             <i class="right fas fa-angle-left"></i>
@@ -84,13 +104,21 @@
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
                             <a href="/rawat-jalan" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
+                                &nbsp;
+                                &nbsp;
+                                &nbsp;
+                                &nbsp;
+                                <i class="far fa fa-capsules nav-icon"></i>
                                 <p>Rawat Jalan</p>
                             </a>
                         </li>
                         <li class="nav-item">
                             <a href="/rawat-inap" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
+                                &nbsp;
+                                &nbsp;
+                                &nbsp;
+                                &nbsp;
+                                <i class="far fa fa-procedures nav-icon"></i>
                                 <p>Rawat Inap</p>
                             </a>
                         </li>
@@ -98,7 +126,7 @@
                 </li>
                 <li class="nav-item">
                     <a href="/nomor-antrian" class="nav-link">
-                        <i class="nav-icon fas fa-tachometer-alt"></i>
+                        <i class="nav-icon fas fa-hourglass-start"></i>
                         <p>
                             Nomor Antrian
                         </p>
@@ -106,7 +134,7 @@
                 </li>
                 <li class="nav-item">
                     <a href="/pasien" class="nav-link">
-                        <i class="nav-icon fas fa-tachometer-alt"></i>
+                        <i class="nav-icon fas fa-user-injured"></i>
                         <p>
                             Pasien
                         </p>
@@ -123,40 +151,60 @@
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
                             <a href="/laporan-dokter" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
+                                &nbsp;
+                                &nbsp;
+                                &nbsp;
+                                &nbsp;
+                                <i class="far fa-copy nav-icon"></i>
                                 <p>Dokter</p>
                             </a>
                         </li>
                         <li class="nav-item">
                             <a href="/laporan-jadwal-dokter" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
+                                &nbsp;
+                                &nbsp;
+                                &nbsp;
+                                &nbsp;
+                                <i class="far fa-copy nav-icon"></i>
                                 <p>Jadwal Dokter</p>
                             </a>
                         </li>
                         <li class="nav-item">
                             <a href="/laporan-pasien" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
+                                &nbsp;
+                                &nbsp;
+                                &nbsp;
+                                &nbsp;
+                                <i class="far fa-copy nav-icon"></i>
                                 <p>Pasien</p>
                             </a>
                         </li>
                         <li class="nav-item">
                             <a href="/laporan-rawat-jalan" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
+                                &nbsp;
+                                &nbsp;
+                                &nbsp;
+                                &nbsp;
+                                <i class="far fa-copy nav-icon"></i>
                                 <p>Rawat Jalan</p>
                             </a>
                         </li>
                         <li class="nav-item">
                             <a href="/laporan-rawat-inap" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
+                                &nbsp;
+                                &nbsp;
+                                &nbsp;
+                                &nbsp;
+                                <i class="far fa-copy nav-icon"></i>
                                 <p>Rawat Inap</p>
                             </a>
                         </li>
                     </ul>
                 </li>
-                <li class="nav-header">Pengguna</li>
+                <li class="nav-header">Non Fungsional</li>
                 <li class="nav-item">
                     <a href="#" class="nav-link">
-                        <i class="nav-icon far fa-plus-square"></i>
+                        <i class="nav-icon far fa-user-circle"></i>
                         <p>
                             Profile
                             <i class="fas fa-angle-left right"></i>
@@ -165,13 +213,21 @@
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
                             <a href="/ubah-profile" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
+                                &nbsp;
+                                &nbsp;
+                                &nbsp;
+                                &nbsp;
+                                <i class="far fa fa-pencil-alt nav-icon"></i>
                                 <p>Ubah Profile</p>
                             </a>
                         </li>
                         <li class="nav-item">
                             <a href="/ubah-password" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
+                                &nbsp;
+                                &nbsp;
+                                &nbsp;
+                                &nbsp;
+                                <i class="far fa fa-key nav-icon"></i>
                                 <p>Ubah Password</p>
                             </a>
                         </li>
@@ -179,7 +235,7 @@
                 </li>
                 <li class="nav-item">
                     <a href="#" class="nav-link">
-                        <i class="nav-icon fas fa-search"></i>
+                        <i class="nav-icon fas fa-users"></i>
                         <p>
                             Manajemen Pengguna
                             <i class="fas fa-angle-left right"></i>
@@ -188,13 +244,21 @@
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
                             <a href="/pengguna-web" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
+                                &nbsp;
+                                &nbsp;
+                                &nbsp;
+                                &nbsp;
+                                <i class="far fa fa-globe nav-icon"></i>
                                 <p>Pengguna Web</p>
                             </a>
                         </li>
                         <li class="nav-item">
                             <a href="/pengguna-mobile" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
+                                &nbsp;
+                                &nbsp;
+                                &nbsp;
+                                &nbsp;
+                                <i class="far fa fa-mobile nav-icon"></i>
                                 <p>Pengguna Mobile</p>
                             </a>
                         </li>
