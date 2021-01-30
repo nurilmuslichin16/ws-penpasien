@@ -2,38 +2,41 @@
 
 namespace App\Controllers;
 
+use App\Models\DokterModel;
+
 class Dokter extends BaseController
 {
+    protected $dokterModel;
+
+    public function __construct()
+    {
+        $this->dokterModel = new DokterModel();
+    }
+
     public function index()
     {
         $data = [
-            'title'         => "Dokter | Penpas Rawat Jalan",
-            'breadCrumb'    => "Data Masters \ Dokter"
+            'title'         => "Dokter | SIPENPAS",
+            'menu_open'     => "Data Master",
+            'menu_active'   => "Dokter",
+            'breadCrumb'    => ["Data Master", "Dokter"],
+            'dokter'        => $this->dokterModel->findAll()
         ];
 
         return view('pages/dokter/main', $data);
     }
 
+    //--------------------------------------------------------------------
+
     public function tambah()
     {
         $data = [
-            'title'         => "Tambah Dokter | Penpas Rawat Jalan",
-            'breadCrumb'    => "Data Masters \ Dokter \ Tambah Dokter"
+            'title'         => "Tambah Dokter | SIPENPAS",
+            'menu_open'     => "Data Master",
+            'menu_active'   => "Dokter",
+            'breadCrumb'    => ["Data Master", "Dokter", "Tambah Dokter"]
         ];
 
         return view('pages/dokter/tambah', $data);
     }
-
-    public function cetak()
-    {
-        $data = [
-            'title'         => "Cetak Data Dokter | Penpas Rawat Jalan",
-            'breadCrumb'    => "Data Masters \ Dokter \ Cetak Data"
-        ];
-
-        return view('pages/dokter/cetak', $data);
-    }
-
-    //--------------------------------------------------------------------
-
 }

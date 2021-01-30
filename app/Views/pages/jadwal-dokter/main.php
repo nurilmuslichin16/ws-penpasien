@@ -1,112 +1,54 @@
 <?= $this->extend('layout/template'); ?>
 
 <?= $this->section('content'); ?>
-<!-- page content -->
-<div class="right_col" role="main">
-    <div class="">
-        <div class="page-title">
-            <div class="title_left">
-                &nbsp;<?= $breadCrumb; ?>
-            </div>
-        </div>
-
-        <div class="clearfix"></div>
-
-        <div class="row mt-2 mb-2">
-            <div class="col-md-12 col-sm-12 ">
-                <a href="/cetak-jadwal-dokter" class="btn btn-primary btn-sm">
-                    <i class="fa fa-print"></i>&nbsp; Cetak Data
-                </a>
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="col-md-12">
-                <div class="x_panel">
-                    <div class="x_title">
-                        <h2>Jadwal Dokter</h2>
-                        <div class="clearfix"></div>
-                    </div>
-                    <div class="x_content">
-                        <div class="bs-docs-section">
-                            <h2 id="glyphicons-glyphs">Pilih Poliklinik</h2>
-                            <p>Silahkan pilih terlebih dahulu untuk menampilkan dokter berdasarkan poliklinik.</p>
-                            <div class="bs-glyphicons">
-                                <ul class="bs-glyphicons-list">
-                                    <li onclick="goTo(1)">
-                                        <span class="glyphicon glyphicon-certificate" aria-hidden="true"></span>
-                                        <span class="glyphicon-class">glyphicon glyphicon-asterisk</span>
-                                    </li>
-
-                                    <li>
-                                        <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
-                                        <span class="glyphicon-class">glyphicon glyphicon-plus</span>
-                                    </li>
-
-                                    <li>
-                                        <span class="glyphicon glyphicon-euro" aria-hidden="true"></span>
-                                        <span class="glyphicon-class">glyphicon glyphicon-euro</span>
-                                    </li>
-
-                                    <li>
-                                        <span class="glyphicon glyphicon-eur" aria-hidden="true"></span>
-                                        <span class="glyphicon-class">glyphicon glyphicon-eur</span>
-                                    </li>
-
-                                    <li>
-                                        <span class="glyphicon glyphicon-minus" aria-hidden="true"></span>
-                                        <span class="glyphicon-class">glyphicon glyphicon-minus</span>
-                                    </li>
-
-                                    <li>
-                                        <span class="glyphicon glyphicon-cloud" aria-hidden="true"></span>
-                                        <span class="glyphicon-class">glyphicon glyphicon-cloud</span>
-                                    </li>
-
-                                    <li>
-                                        <span class="glyphicon glyphicon-envelope" aria-hidden="true"></span>
-                                        <span class="glyphicon-class">glyphicon glyphicon-envelope</span>
-                                    </li>
-
-                                    <li>
-                                        <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
-                                        <span class="glyphicon-class">glyphicon glyphicon-pencil</span>
-                                    </li>
-
-                                    <li>
-                                        <span class="glyphicon glyphicon-glass" aria-hidden="true"></span>
-                                        <span class="glyphicon-class">glyphicon glyphicon-glass</span>
-                                    </li>
-
-                                    <li>
-                                        <span class="glyphicon glyphicon-music" aria-hidden="true"></span>
-                                        <span class="glyphicon-class">glyphicon glyphicon-music</span>
-                                    </li>
-
-                                    <li>
-                                        <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
-                                        <span class="glyphicon-class">glyphicon glyphicon-search</span>
-                                    </li>
-
-                                    <li>
-                                        <span class="glyphicon glyphicon-heart" aria-hidden="true"></span>
-                                        <span class="glyphicon-class">glyphicon glyphicon-heart</span>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
+<!-- Content Wrapper. Contains page content -->
+<div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-sm-12">
+                    <ol class="breadcrumb float-sm-left">
+                        <?php foreach ($breadCrumb as $key => $b) : ?>
+                            <li class="<?= $key === array_key_last($breadCrumb) ? "breadcrumb-item active" : "breadcrumb-item" ?>"><?= $b; ?></li>
+                        <?php endforeach; ?>
+                    </ol>
                 </div>
             </div>
+        </div><!-- /.container-fluid -->
+    </section>
+
+    <!-- Main content -->
+    <section class="content">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-12">
+                    <div class="card card-primary">
+                        <div class="card-header">
+                            <h3 class="card-title"><i class="fa fa-stethoscope"></i> &nbsp;Pilih Poliklinik</h3>
+                        </div>
+                        <!-- /.card-header -->
+                        <div class="card-body">
+                            <small>*Silahkan pilih poliklinik untuk menampilkan jadwal berdasarkan poliklinik.</small>
+                            <div class="row mt-3">
+                                <?php foreach ($poliklinik as $p) : ?>
+                                    <div class="col-md-3 col-sm-12 mb-3">
+                                        <a href="#" class="btn btn-block btn-outline-primary btn-sm"><?= $p['nama_poliklinik']; ?></a>
+                                    </div>
+                                <?php endforeach; ?>
+                            </div>
+                        </div>
+                        <!-- /.card-body -->
+                    </div>
+                    <!-- /.card -->
+                </div>
+                <!-- /.col -->
+            </div>
+            <!-- /.row -->
         </div>
-    </div>
+        <!-- /.container-fluid -->
+    </section>
+    <!-- /.content -->
 </div>
-<!-- /page content -->
-
-<script>
-    function goTo(id) {
-        window.location = "/jadwal-dokter/detail"
-    }
-</script>
-
+<!-- /.content-wrapper -->
 <?= $this->endSection('content'); ?>

@@ -24,15 +24,16 @@
                 <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
                 <li class="nav-item">
-                    <a href="/" class="nav-link active">
+                    <a href="/" class="<?= $menu_open == "Dashboard" ? "nav-link active" : "nav-link"; ?>">
                         <i class="nav-icon fas fa-tachometer-alt"></i>
                         <p>
                             Dashboard
                         </p>
                     </a>
                 </li>
-                <li class="nav-item">
-                    <a href="#" class="nav-link">
+                <li class="nav-header">Master</li>
+                <li class="<?= $menu_open == "Data Master" ? "nav-item menu-open" : "nav-item"; ?>">
+                    <a href="#" class="<?= $menu_open == "Data Master" ? "nav-link active" : "nav-link"; ?>">
                         <i class="nav-icon fas fa-copy"></i>
                         <p>
                             Data Master
@@ -41,31 +42,31 @@
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="/dokter" class="nav-link">
+                            <a href="/dokter" class="<?= $menu_active == "Dokter" ? "nav-link active" : "nav-link"; ?>">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Dokter</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="/jadwal-dokter" class="nav-link">
+                            <a href="/jadwal-dokter" class="<?= $menu_active == "Jadwal Dokter" ? "nav-link active" : "nav-link"; ?>">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Jadwal Dokter</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="/cuti-dokter" class="nav-link">
+                            <a href="/cuti-dokter" class="<?= $menu_active == "Cuti Dokter" ? "nav-link active" : "nav-link"; ?>">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Cuti Dokter</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="/poliklinik" class="nav-link">
+                            <a href="/poliklinik" class="<?= $menu_active == "Poliklinik" ? "nav-link active" : "nav-link"; ?>">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Poliklinik</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="/kamar" class="nav-link">
+                            <a href="/kamar" class="<?= $menu_active == "Kamar" ? "nav-link active" : "nav-link"; ?>">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Kamar</p>
                             </a>
