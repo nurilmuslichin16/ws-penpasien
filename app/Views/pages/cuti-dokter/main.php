@@ -86,7 +86,7 @@
                                         <tr>
                                             <td><?= $no; ?></td>
                                             <td><?= $c['id_dokter']; ?></td>
-                                            <td><?= $c['tanggal_cuti']; ?></td>
+                                            <td><?= format_indo($c['tanggal_cuti']); ?></td>
                                             <td>
                                                 <div class="btn-group">
                                                     <a href="#" class="btn btn-sm btn-warning">

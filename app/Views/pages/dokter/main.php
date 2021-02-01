@@ -38,6 +38,7 @@
                                         <th width="5%">#</th>
                                         <th>Nama</th>
                                         <th>Jenis Kelamin</th>
+                                        <th>Tempat, Tanggal Lahir</th>
                                         <th>Poliklinik</th>
                                         <th>Alamat</th>
                                         <th width="10%">Aksi</th>
@@ -51,8 +52,9 @@
                                             <td><?= $no; ?></td>
                                             <td><?= $d['nama_depan']; ?> <?= $d['nama_belakang']; ?></td>
                                             <td><?= $d['jekel'] == 0 ? "Laki-Laki" : "Perempuan" ?></td>
+                                            <td><?= $d['tempat_lahir']; ?>, <?= format_indo($d['tanggal_lahir']); ?></td>
                                             <td><?= $d['id_poli']; ?></td>
-                                            <td><?= $d['alamat']; ?></td>
+                                            <td><?= substr($d['alamat'], 0, 50); ?> ...</td>
                                             <td>
                                                 <div class="btn-group">
                                                     <a href="#" class="btn btn-sm btn-info">

@@ -93,8 +93,8 @@
                         </li>
                     </ul>
                 </li>
-                <li class="nav-item">
-                    <a href="#" class="nav-link">
+                <li class="<?= $menu_open == "Pendaftaran" ? "nav-item menu-open" : "nav-item"; ?>">
+                    <a href="#" class="<?= $menu_open == "Pendaftaran" ? "nav-link active" : "nav-link"; ?>">
                         <i class="nav-icon fas fa-book-medical"></i>
                         <p>
                             Pendaftaran
@@ -103,7 +103,7 @@
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="/rawat-jalan" class="nav-link">
+                            <a href="/rawat-jalan" class="<?= $menu_active == "Rawat Jalan" ? "nav-link active" : "nav-link"; ?>">
                                 &nbsp;
                                 &nbsp;
                                 &nbsp;
@@ -113,7 +113,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="/rawat-inap" class="nav-link">
+                            <a href="/rawat-inap" class="<?= $menu_active == "Rawat Inap" ? "nav-link active" : "nav-link"; ?>">
                                 &nbsp;
                                 &nbsp;
                                 &nbsp;
@@ -125,7 +125,7 @@
                     </ul>
                 </li>
                 <li class="nav-item">
-                    <a href="/nomor-antrian" class="nav-link">
+                    <a href="/nomor-antrian" class="<?= $menu_open == "Nomor Antrian" ? "nav-link active" : "nav-link"; ?>">
                         <i class="nav-icon fas fa-hourglass-start"></i>
                         <p>
                             Nomor Antrian
@@ -133,7 +133,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="/pasien" class="nav-link">
+                    <a href="/pasien" class="<?= $menu_open == "Pasien" ? "nav-link active" : "nav-link"; ?>">
                         <i class="nav-icon fas fa-user-injured"></i>
                         <p>
                             Pasien

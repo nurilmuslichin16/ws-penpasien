@@ -1,106 +1,137 @@
 <?= $this->extend('layout/template'); ?>
 
 <?= $this->section('content'); ?>
-<!-- page content -->
-<div class="right_col" role="main">
-    <div class="">
-        <div class="page-title mb-4">
-            <div class="title_left">
-                &nbsp;<?= $breadCrumb; ?>
+<!-- Content Wrapper. Contains page content -->
+<div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-sm-12">
+                    <ol class="breadcrumb float-sm-left">
+                        <?php foreach ($breadCrumb as $key => $b) : ?>
+                            <li class="<?= $key === array_key_last($breadCrumb) ? "breadcrumb-item active" : "breadcrumb-item" ?>"><?= $b; ?></li>
+                        <?php endforeach; ?>
+                    </ol>
+                </div>
             </div>
-        </div>
+        </div><!-- /.container-fluid -->
+    </section>
 
-        <div class="clearfix"></div>
-
-        <div class="row">
-            <div class="col-md-12 col-sm-12 ">
-                <a href="/cetak-rawat-inap" class="btn btn-primary btn-sm">
-                    <i class="fa fa-print"></i>&nbsp; Cetak Data
-                </a>
-            </div>
-        </div>
-
-        <div class="clearfix"></div>
-
-        <div class="row mt-3">
-            <div class="col-4">
-                <i class="fa fa-check-square-o"></i>
-                <label for="heard">Tanggal Daftar:</label>
-                <input class="form-control" class='date' type="date" name="date" required='required' />
-            </div>
-            <div class="col-4">
-                <i class="fa fa-info-circle"></i>
-                <label for="heard">Status:</label>
-                <select id="heard" class="form-control">
-                    <option value="">All</option>
-                    <option value="press">Batal</option>
-                    <option value="net">Menunggu</option>
-                    <option value="mouth">Selesai</option>
-                </select>
-            </div>
-            <div class="col-4">
-                <i class="fa fa-hospital-o"></i>
-                <label for="heard">Kamar:</label>
-                <select id="heard" class="form-control">
-                    <option value="">All</option>
-                    <option value="press">Anggrek</option>
-                    <option value="net">Melati</option>
-                    <option value="mouth">Mawar</option>
-                    <option value="mouth">Sekar</option>
-                    <option value="mouth">Sari</option>
-                </select>
-            </div>
-        </div>
-
-        <div class="row" style="display: block; margin-top: 12px;">
-            <div class="col-md-12 col-sm-12 ">
-                <div class="x_panel">
-                    <div class="x_title">
-                        <h2>Daftar Pendaftaran Rawat Jalan</h2>
-                        <div class="clearfix"></div>
-                    </div>
-                    <div class="x_content">
-                        <div class="row">
-                            <div class="col-sm-12">
-                                <div class="card-box table-responsive">
-                                    <table id="datatable" class="table table-hover" style="width:100%">
-                                        <thead>
-                                            <tr>
-                                                <th width="5%">#</th>
-                                                <th>Nomor Pendaftaran</th>
-                                                <th>Nama Pasien</th>
-                                                <th>Tanggal Daftar</th>
-                                                <th>Kamar</th>
-                                                <th>Status</th>
-                                                <th width="5%">Aksi</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr>
-                                                <th>1</th>
-                                                <td>1102802283</td>
-                                                <td>Nuril Muslichin</td>
-                                                <td>12 Jan 2021</td>
-                                                <td>Merak</td>
-                                                <td>
-                                                    <span class="badge badge-warning">Menunggu</span>
-                                                </td>
-                                                <td>
-                                                    <a href="#" class="btn btn-primary btn-sm">
-                                                        <i class="fa fa-bars"></i>
-                                                    </a>
-                                                </td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
+    <!-- Main content -->
+    <section class="content">
+        <div class="container-fluid">
+            <div class="card card-primary">
+                <div class="card-body">
+                    <p>
+                        <i class="fas fa-filter"></i>&nbsp; <strong>Filter</strong>
+                    </p>
+                    <div class="row">
+                        <div class="col-sm-12 col-md-4">
+                            <div class="form-group">
+                                <label for="tanggal_daftar">Tanggal Daftar</label>
+                                <input type="date" class="form-control" id="tanggal_daftar" name="tanggal_daftar">
+                            </div>
+                        </div>
+                        <div class="col-sm-12 col-md-4">
+                            <div class="form-group">
+                                <label for="status">Status</label>
+                                <select class="form-control select2" id="status" name="status" style="width: 100%;">
+                                    <option selected="selected">Pilih Status</option>
+                                    <option value="Bedah Umum">Menunggu</option>
+                                    <option>Terdaftar</option>
+                                    <option>Batal</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-sm-12 col-md-4">
+                            <div class="form-group">
+                                <label for="kamar">Kamar</label>
+                                <select class="form-control select2" id="kamar" name="kamar" style="width: 100%;">
+                                    <option selected="selected">Pilih Kamar</option>
+                                    <option value="press">Anggrek</option>
+                                    <option value="net">Melati</option>
+                                    <option value="mouth">Mawar</option>
+                                    <option value="mouth">Sekar</option>
+                                    <option value="mouth">Sari</option>
+                                </select>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+            <div class="row">
+                <div class="col-12">
+                    <div class="card card-primary">
+                        <div class="card-header">
+                            <h3 class="card-title"><i class="fa fa-list"></i> &nbsp;Daftar Rawat Inap</h3>
+                        </div>
+                        <!-- /.card-header -->
+                        <div class="card-body">
+                            <a href="/tambah-rawat-jalan" class="btn btn-primary mb-3">
+                                <i class="fas fa-plus-square"></i>&nbsp; Pendaftaran Rawat Jalan
+                            </a>
+                            <table id="example1" class="table table-bordered table-hover">
+                                <thead>
+                                    <tr>
+                                        <th width="5%">#</th>
+                                        <th>Nomor Pendaftaran</th>
+                                        <th>Nama Pasien</th>
+                                        <th>Tanggal Daftar</th>
+                                        <th>Kamar</th>
+                                        <th>Status</th>
+                                        <th width="10%">Aksi</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <?php
+                                    $no = 1;
+                                    foreach ($rawat_inap as $ri) : ?>
+                                        <tr>
+                                            <td><?= $no; ?></td>
+                                            <td><?= $ri['no_pendaftaran']; ?></td>
+                                            <td><?= $ri['no_rm']; ?></td>
+                                            <td><?= format_indo($ri['tanggal_daftar']); ?></td>
+                                            <td><?= $ri['id_kamar']; ?></td>
+                                            <td>
+                                                <?php if ($ri['status'] == 0) { ?>
+                                                    <span class="right badge badge-warning">Menunggu</span>
+                                                <?php } elseif ($ri['status'] == 1) { ?>
+                                                    <span class="right badge badge-success">Terdaftar</span>
+                                                <?php } else { ?>
+                                                    <span class="right badge badge-danger">Batal</span>
+                                                <?php } ?>
+                                            </td>
+                                            <td>
+                                                <div class="btn-group">
+                                                    <a href="#" class="btn btn-sm btn-info">
+                                                        <i class="fas fa-bars"></i>
+                                                    </a>
+                                                    <a href="#" class="btn btn-sm btn-warning">
+                                                        <i class="fas fa-pencil-alt"></i>
+                                                    </a>
+                                                    <a href="#" class="btn btn-sm btn-danger">
+                                                        <i class="fas fa-trash"></i>
+                                                    </a>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    <?php $no++;
+                                    endforeach; ?>
+                                </tbody>
+                            </table>
+                        </div>
+                        <!-- /.card-body -->
+                    </div>
+                    <!-- /.card -->
+                </div>
+                <!-- /.col -->
+            </div>
+            <!-- /.row -->
         </div>
-    </div>
+        <!-- /.container-fluid -->
+    </section>
+    <!-- /.content -->
 </div>
-<!-- /page content -->
+<!-- /.content-wrapper -->
 <?= $this->endSection('content'); ?>

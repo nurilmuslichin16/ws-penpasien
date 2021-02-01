@@ -2,13 +2,28 @@
 
 namespace App\Controllers;
 
+use App\Models\RawatInapModel;
+use App\Models\RawatJalanModel;
+
 class Pendaftaran extends BaseController
 {
+    protected $rawatJalan;
+    protected $rawatInap;
+
+    public function __construct()
+    {
+        $this->rawatJalan = new RawatJalanModel();
+        $this->rawatInap = new RawatInapModel();
+    }
+
     public function index()
     {
         $data = [
-            'title'         => "Rawat Jalan | Penpas Rawat Jalan",
-            'breadCrumb'    => "Pendaftaran \ Rawat Jalan"
+            'title'         => "Rawat Jalan | SIPENPAS",
+            'menu_open'     => "Pendaftaran",
+            'menu_active'   => "Rawat Jalan",
+            'breadCrumb'    => ["Pendaftaran", "Rawat Jalan"],
+            'rawat_jalan'   => $this->rawatJalan->findAll()
         ];
 
         return view('pages/rawat-jalan/main', $data);
@@ -17,8 +32,11 @@ class Pendaftaran extends BaseController
     public function rawatInap()
     {
         $data = [
-            'title'         => "Rawat Inap | Penpas Rawat Jalan",
-            'breadCrumb'    => "Pendaftaran \ Rawat Inap"
+            'title'         => "Rawat Inap | SIPENPAS",
+            'menu_open'     => "Pendaftaran",
+            'menu_active'   => "Rawat Inap",
+            'breadCrumb'    => ["Pendaftaran", "Rawat Inap"],
+            'rawat_inap'    => $this->rawatInap->findAll()
         ];
 
         return view('pages/rawat-inap/main', $data);

@@ -1,122 +1,70 @@
 <?= $this->extend('layout/template'); ?>
 
 <?= $this->section('content'); ?>
-<!-- page content -->
-<div class="right_col" role="main">
-    <div class="">
-        <div class="page-title mb-4">
-            <div class="title_left">
-                &nbsp;<?= $breadCrumb; ?>
+<!-- Content Wrapper. Contains page content -->
+<div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-sm-12">
+                    <ol class="breadcrumb float-sm-left">
+                        <?php foreach ($breadCrumb as $key => $b) : ?>
+                            <li class="<?= $key === array_key_last($breadCrumb) ? "breadcrumb-item active" : "breadcrumb-item" ?>"><?= $b; ?></li>
+                        <?php endforeach; ?>
+                    </ol>
+                </div>
             </div>
-        </div>
+        </div><!-- /.container-fluid -->
+    </section>
 
-        <div class="clearfix"></div>
-
-        <div class="row">
-            <div class="col-md-12 col-sm-12  ">
-                <div class="x_panel" style="height:600px;">
-                    <div class="x_title">
-                        <h2>Nomor Antrian</h2>
-                        <div class="clearfix"></div>
+    <!-- Main content -->
+    <section class="content">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-sm-12 col-md-3">
+                    <div class="card card-info">
+                        <div class="card-header">
+                            <h3 class="mb-0" style="text-align: center;">UMUM</h3>
+                        </div>
+                        <div class="card-body">
+                            <h1 style="text-align: center;">A-001</h1>
+                        </div>
+                        <div class="card-footer">
+                            <a href="#" class="btn btn-warning">
+                                <i class="fas fa-chevron-left"></i>&nbsp; Prev
+                            </a>
+                            &nbsp;
+                            <a href="#" class="btn btn-info float-right">
+                                Next &nbsp;<i class="fas fa-chevron-right"></i>
+                            </a>
+                        </div>
                     </div>
-
-                    <div class="x_content">
-                        <div class="bs-docs-section">
-                            <div class="bs-glyphicons">
-                                <ul class="bs-glyphicons-list">
-                                    <li>
-                                        <b class="mt-0" style="font-size: 22px;">BU - 1</b>
-                                        <span class="glyphicon-class mb-2">Bedah Umum</span>
-                                        <div class="row mt-1">
-                                            <div class="col-6">
-                                                <a href="#" class="btn btn-secondary btn-sm">
-                                                    <i class="fa fa-arrow-left"></i>
-                                                </a>
-                                            </div>
-                                            <div class="col-6">
-                                                <a href="#" class="btn btn-secondary btn-sm">
-                                                    <i class="fa fa-arrow-right"></i>
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </li>
-
-                                    <li>
-                                        <b class="mt-0" style="font-size: 22px;">M - 5</b>
-                                        <span class="glyphicon-class mb-2">Mata</span>
-                                        <div class="row mt-1">
-                                            <div class="col-6">
-                                                <a href="#" class="btn btn-secondary btn-sm">
-                                                    <i class="fa fa-arrow-left"></i>
-                                                </a>
-                                            </div>
-                                            <div class="col-6">
-                                                <a href="#" class="btn btn-secondary btn-sm">
-                                                    <i class="fa fa-arrow-right"></i>
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </li>
-
-                                    <li>
-                                        <b class="mt-0" style="font-size: 22px;">KK - 10</b>
-                                        <span class="glyphicon-class mb-2">Kulit dan Kelamin</span>
-                                        <div class="row mt-1">
-                                            <div class="col-6">
-                                                <a href="#" class="btn btn-secondary btn-sm">
-                                                    <i class="fa fa-arrow-left"></i>
-                                                </a>
-                                            </div>
-                                            <div class="col-6">
-                                                <a href="#" class="btn btn-secondary btn-sm">
-                                                    <i class="fa fa-arrow-right"></i>
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </li>
-
-                                    <li>
-                                        <b class="mt-0" style="font-size: 22px;">GM - 3</b>
-                                        <span class="glyphicon-class mb-2">Gigi dan Mulut</span>
-                                        <div class="row mt-1">
-                                            <div class="col-6">
-                                                <a href="#" class="btn btn-secondary btn-sm">
-                                                    <i class="fa fa-arrow-left"></i>
-                                                </a>
-                                            </div>
-                                            <div class="col-6">
-                                                <a href="#" class="btn btn-secondary btn-sm">
-                                                    <i class="fa fa-arrow-right"></i>
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </li>
-
-                                    <li>
-                                        <b class="mt-0" style="font-size: 22px;">PD - 2</b>
-                                        <span class="glyphicon-class mb-2">Penyakit Dalam</span>
-                                        <div class="row mt-1">
-                                            <div class="col-6">
-                                                <a href="#" class="btn btn-secondary btn-sm">
-                                                    <i class="fa fa-arrow-left"></i>
-                                                </a>
-                                            </div>
-                                            <div class="col-6">
-                                                <a href="#" class="btn btn-secondary btn-sm">
-                                                    <i class="fa fa-arrow-right"></i>
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </li>
-
-                                </ul>
-                            </div>
+                </div>
+                <div class="col-sm-12 col-md-3">
+                    <div class="card card-info">
+                        <div class="card-header">
+                            <h3 class="mb-0" style="text-align: center;">BPJS</h3>
+                        </div>
+                        <div class="card-body">
+                            <h1 style="text-align: center;">B-001</h1>
+                        </div>
+                        <div class="card-footer">
+                            <a href="#" class="btn btn-warning">
+                                <i class="fas fa-chevron-left"></i>&nbsp; Prev
+                            </a>
+                            &nbsp;
+                            <a href="#" class="btn btn-info float-right">
+                                Next &nbsp;<i class="fas fa-chevron-right"></i>
+                            </a>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
+
+    </section>
+    <!-- /.content -->
 </div>
-<!-- /page content -->
-<?= $this->endSection('content'); ?>
+<!-- /.content-wrapper -->
+<?= $this->endSection(); ?>

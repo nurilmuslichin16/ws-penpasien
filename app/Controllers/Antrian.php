@@ -8,7 +8,10 @@ class Antrian extends BaseController
     {
         $data = [
             'title'         => "Nomor Antrian | SIPENPAS",
-            'breadCrumb'    => "Pendaftaran \ Nomor Antrian"
+            'menu_open'     => "Nomor Antrian",
+            'menu_active'   => "-",
+            'breadCrumb'    => ["Nomor Antrian"],
+            //'antrian'     => $this->pasienModel->findAll()
         ];
 
         return view('pages/nomor-antrian/main', $data);

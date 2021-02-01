@@ -1,83 +1,92 @@
 <?= $this->extend('layout/template'); ?>
 
 <?= $this->section('content'); ?>
-<!-- page content -->
-<div class="right_col" role="main">
-    <div class="">
-        <div class="page-title mb-4">
-            <div class="title_left">
-                &nbsp;<?= $breadCrumb; ?>
-            </div>
-        </div>
-
-        <div class="clearfix"></div>
-
-        <div class="row">
-            <div class="col-md-12 col-sm-12 ">
-                <a href="/tambah-pasien" class="btn btn-success btn-sm">
-                    <i class="fa fa-plus"></i>&nbsp; Tambah Pasien
-                </a>
-                <a href="/cetak-pasien" class="btn btn-primary btn-sm">
-                    <i class="fa fa-print"></i>&nbsp; Cetak Data
-                </a>
-            </div>
-        </div>
-
-        <div class="row" style="display: block; margin-top: 12px;">
-            <div class="col-md-12 col-sm-12 ">
-                <div class="x_panel">
-                    <div class="x_title">
-                        <h2>Pasien</h2>
-                        <div class="clearfix"></div>
-                    </div>
-                    <div class="x_content">
-                        <div class="row">
-                            <div class="col-sm-12">
-                                <div class="card-box table-responsive">
-                                    <table id="datatable" class="table table-hover" style="width:100%">
-                                        <thead>
-                                            <tr>
-                                                <th width="5%">#</th>
-                                                <th>NIK</th>
-                                                <th>Nomor Rekam Medis</th>
-                                                <th>Nama</th>
-                                                <th>Jenis Kelamin</th>
-                                                <th>Tempat & Tanggal Lahir</th>
-                                                <th>Alamat</th>
-                                                <th width="10%">Aksi</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr>
-                                                <th>1</th>
-                                                <td>0299302291102</td>
-                                                <td>21-1-01-20</td>
-                                                <td>Nuril Muslichin</td>
-                                                <td>Laki-Laki</td>
-                                                <td>Pekalongan, 16 Feb 2021</td>
-                                                <td>Kramatsari 2 Gg.8. Pekalongan</td>
-                                                <td>
-                                                    <a href="#" class="btn btn-primary btn-sm">
-                                                        <i class="fa fa-bars"></i>
-                                                    </a>
-                                                    <a href="#" class="btn btn-warning btn-sm">
-                                                        <i class="fa fa-pencil"></i>
-                                                    </a>
-                                                    <a href="#" class="btn btn-danger btn-sm">
-                                                        <i class="fa fa-trash"></i>
-                                                    </a>
-                                                </td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+<!-- Content Wrapper. Contains page content -->
+<div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-sm-12">
+                    <ol class="breadcrumb float-sm-left">
+                        <?php foreach ($breadCrumb as $key => $b) : ?>
+                            <li class="<?= $key === array_key_last($breadCrumb) ? "breadcrumb-item active" : "breadcrumb-item" ?>"><?= $b; ?></li>
+                        <?php endforeach; ?>
+                    </ol>
                 </div>
             </div>
+        </div><!-- /.container-fluid -->
+    </section>
+
+    <!-- Main content -->
+    <section class="content">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-12">
+                    <div class="card card-primary">
+                        <div class="card-header">
+                            <h3 class="card-title"><i class="fa fa-list"></i> &nbsp;Daftar Pasien</h3>
+                        </div>
+                        <!-- /.card-header -->
+                        <div class="card-body">
+                            <a href="/tambah-pasien" class="btn btn-primary mb-3">
+                                <i class="fas fa-plus-square"></i>&nbsp; Tambah Pasien
+                            </a>
+                            <table id="example1" class="table table-bordered table-hover">
+                                <thead>
+                                    <tr>
+                                        <th width="5%">#</th>
+                                        <th>NIK</th>
+                                        <th>Nomor Rekam Medis</th>
+                                        <th>Nama</th>
+                                        <th>Jenis Kelamin</th>
+                                        <th>Tempat & Tanggal Lahir</th>
+                                        <th>Alamat</th>
+                                        <th width="10%">Aksi</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <?php
+                                    $no = 1;
+                                    foreach ($pasien as $p) : ?>
+                                        <tr>
+                                            <td><?= $no; ?></td>
+                                            <td><?= $p['nik']; ?></td>
+                                            <td><?= $p['no_rm']; ?></td>
+                                            <td><?= $p['nama_depan']; ?> <?= $p['nama_belakang']; ?></td>
+                                            <td><?= $p['jekel'] == 0 ? "Laki-Laki" : "Perempuan" ?></td>
+                                            <td><?= $p['tempat_lahir']; ?>, <?= format_indo($p['tanggal_lahir']); ?></td>
+                                            <td><?= $p['alamat']; ?></td>
+                                            <td>
+                                                <div class="btn-group">
+                                                    <a href="#" class="btn btn-sm btn-info">
+                                                        <i class="fas fa-bars"></i>
+                                                    </a>
+                                                    <a href="#" class="btn btn-sm btn-warning">
+                                                        <i class="fas fa-pencil-alt"></i>
+                                                    </a>
+                                                    <a href="#" class="btn btn-sm btn-danger">
+                                                        <i class="fas fa-trash"></i>
+                                                    </a>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    <?php $no++;
+                                    endforeach; ?>
+                                </tbody>
+                            </table>
+                        </div>
+                        <!-- /.card-body -->
+                    </div>
+                    <!-- /.card -->
+                </div>
+                <!-- /.col -->
+            </div>
+            <!-- /.row -->
         </div>
-    </div>
+        <!-- /.container-fluid -->
+    </section>
+    <!-- /.content -->
 </div>
-<!-- /page content -->
+<!-- /.content-wrapper -->
 <?= $this->endSection('content'); ?>
