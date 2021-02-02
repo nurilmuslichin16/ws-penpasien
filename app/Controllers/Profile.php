@@ -7,8 +7,11 @@ class Profile extends BaseController
     public function index()
     {
         $data = [
-            'title'         => "Profile | Penpas Rawat Jalan",
-            'breadCrumb'    => "Profile \ Ubah Profile"
+            'title'         => "Ubah Profile | SIPENPAS",
+            'menu_open'     => "Profile",
+            'menu_active'   => "Ubah Profile",
+            'breadCrumb'    => ["Profile", "Ubah Profile"],
+            //'antrian'     => $this->pasienModel->findAll()
         ];
 
         return view('pages/profile/ubah-profile', $data);
@@ -17,8 +20,11 @@ class Profile extends BaseController
     public function ubahPassword()
     {
         $data = [
-            'title'         => "Profile | Penpas Rawat Jalan",
-            'breadCrumb'    => "Profile \ Ubah Password"
+            'title'         => "Ubah Password | SIPENPAS",
+            'menu_open'     => "Profile",
+            'menu_active'   => "Ubah Password",
+            'breadCrumb'    => ["Profile", "Ubah Password"],
+            //'antrian'     => $this->pasienModel->findAll()
         ];
 
         return view('pages/profile/ubah-password', $data);

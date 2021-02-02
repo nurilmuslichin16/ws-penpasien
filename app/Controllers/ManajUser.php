@@ -2,13 +2,28 @@
 
 namespace App\Controllers;
 
+use App\Models\PenggunaMobileModel;
+use App\Models\PenggunaWebModel;
+
 class ManajUser extends BaseController
 {
+    protected $webModel;
+    protected $mobileModel;
+
+    public function __construct()
+    {
+        $this->webModel = new PenggunaWebModel();
+        $this->mobileModel = new PenggunaMobileModel();
+    }
+
     public function index()
     {
         $data = [
-            'title'         => "Pengguna Web | Penpas Rawat Jalan",
-            'breadCrumb'    => "Manajemen Pengguna \ Pengguna Web"
+            'title'         => "Pengguna Web | SIPENPAS",
+            'menu_open'     => "Manajemen Pengguna",
+            'menu_active'   => "Pengguna Web",
+            'breadCrumb'    => ["Manajemen Pengguna", "Pengguna Web"],
+            'web'           => $this->webModel->findAll()
         ];
 
         return view('pages/manaj-user/user-web', $data);
@@ -17,21 +32,14 @@ class ManajUser extends BaseController
     public function userMobile()
     {
         $data = [
-            'title'         => "Pengguna Mobile | Penpas Rawat Jalan",
-            'breadCrumb'    => "Manajemen Pengguna \ Pengguna Mobile"
+            'title'         => "Pengguna Mobile | SIPENPAS",
+            'menu_open'     => "Manajemen Pengguna",
+            'menu_active'   => "Pengguna Mobile",
+            'breadCrumb'    => ["Manajemen Pengguna", "Pengguna Mobile"],
+            'mobile'        => $this->mobileModel->findAll()
         ];
 
         return view('pages/manaj-user/user-mobile', $data);
-    }
-
-    public function cetakUserMobile()
-    {
-        $data = [
-            'title'         => "Cetak Data Pengguna Mobile | Penpas Rawat Jalan",
-            'breadCrumb'    => "Manajemen Pengguna \ Pengguna Mobile \ Cetak Data"
-        ];
-
-        return view('pages/manaj-user/cetak-user-mobile', $data);
     }
 
     //--------------------------------------------------------------------

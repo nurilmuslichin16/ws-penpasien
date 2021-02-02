@@ -202,8 +202,8 @@
                     </ul>
                 </li>
                 <li class="nav-header">Non Fungsional</li>
-                <li class="nav-item">
-                    <a href="#" class="nav-link">
+                <li class="<?= $menu_open == "Profile" ? "nav-item menu-open" : "nav-item"; ?>">
+                    <a href="#" class="<?= $menu_open == "Profile" ? "nav-link active" : "nav-link"; ?>">
                         <i class="nav-icon far fa-user-circle"></i>
                         <p>
                             Profile
@@ -212,7 +212,7 @@
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="/ubah-profile" class="nav-link">
+                            <a href="/ubah-profile" class="<?= $menu_active == "Ubah Profile" ? "nav-link active" : "nav-link"; ?>">
                                 &nbsp;
                                 &nbsp;
                                 &nbsp;
@@ -222,7 +222,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="/ubah-password" class="nav-link">
+                            <a href="/ubah-password" class="<?= $menu_active == "Ubah Password" ? "nav-link active" : "nav-link"; ?>">
                                 &nbsp;
                                 &nbsp;
                                 &nbsp;
@@ -233,8 +233,8 @@
                         </li>
                     </ul>
                 </li>
-                <li class="nav-item">
-                    <a href="#" class="nav-link">
+                <li class="<?= $menu_open == "Manajemen Pengguna" ? "nav-item menu-open" : "nav-item"; ?>">
+                    <a href="#" class="<?= $menu_open == "Manajemen Pengguna" ? "nav-link active" : "nav-link"; ?>">
                         <i class="nav-icon fas fa-users"></i>
                         <p>
                             Manajemen Pengguna
@@ -243,7 +243,7 @@
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="/pengguna-web" class="nav-link">
+                            <a href="/pengguna-web" class="<?= $menu_active == "Pengguna Web" ? "nav-link active" : "nav-link"; ?>">
                                 &nbsp;
                                 &nbsp;
                                 &nbsp;
@@ -253,7 +253,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="/pengguna-mobile" class="nav-link">
+                            <a href="/pengguna-mobile" class="<?= $menu_active == "Pengguna Mobile" ? "nav-link active" : "nav-link"; ?>">
                                 &nbsp;
                                 &nbsp;
                                 &nbsp;

@@ -1,75 +1,92 @@
 <?= $this->extend('layout/template'); ?>
 
 <?= $this->section('content'); ?>
-<!-- page content -->
-<div class="right_col" role="main">
-    <div class="">
-        <div class="page-title mb-4">
-            <div class="title_left">
-                &nbsp;<?= $breadCrumb; ?>
+<!-- Content Wrapper. Contains page content -->
+<div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-sm-6">
+                    <ol class="breadcrumb float-sm-left">
+                        <?php foreach ($breadCrumb as $key => $b) : ?>
+                            <li class="<?= $key === array_key_last($breadCrumb) ? "breadcrumb-item active" : "breadcrumb-item" ?>"><?= $b; ?></li>
+                        <?php endforeach; ?>
+                    </ol>
+                </div>
             </div>
-        </div>
+        </div><!-- /.container-fluid -->
+    </section>
 
-        <div class="row" style="display: block; margin-top: 12px;">
-            <div class="col-md-6 col-sm-6 ">
-                <div class="x_panel">
-                    <div class="x_title">
-                        <h2>Ubah Profile</h2>
-                        <div class="clearfix"></div>
-                    </div>
-                    <div class="x_content">
-                        <form id="demo-form2" data-parsley-validate class="form-horizontal form-label-left">
+    <!-- Main content -->
+    <section class="content">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-6 col-sm-12">
+                    <div class="card card-primary">
+                        <div class="card-header">
+                            <h3 class="card-title"><i class="fa fa-pencil-alt"></i> &nbsp;Ubah Profile</h3>
+                        </div>
+                        <!-- /.card-header -->
+                        <!-- form start -->
+                        <form>
+                            <div class="card-body">
+                                <div class="row mb-3 align-items-center">
+                                    <div class="col-4">
+                                        <div class="text-center">
+                                            <img class="profile-user-img img-fluid img-circle" style="width: 150px;" src="/dist/img/user4-128x128.jpg" alt="User profile picture">
+                                        </div>
+                                    </div>
+                                    <div class="col-8">
+                                        <div class="form-group">
+                                            <label for="foto">Foto</label>
+                                            <div class="input-group">
+                                                <div class="custom-file">
+                                                    <input type="file" class="custom-file-input" id="foto" name="foto">
+                                                    <label class="custom-file-label" for="foto">Choose file</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-12">
+                                        <div class="form-group">
+                                            <label for="nama_lengkap">Nama Lengkap</label>
+                                            <input type="text" class="form-control" id="nama_lengkap" name="nama_lengkap" value="Contoh: Nuril Muslichin">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="email">Email</label>
+                                            <input type="email" class="form-control" id="email" name="email" value="Contoh: nurilmuslichin16@gmail.com">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="jekel">Jenis Kelamin</label><br />
+                                            <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                                                <label class="btn btn-secondary active">
+                                                    <input type="radio" name="jekel" id="jekel_laki" autocomplete="off" checked> Laki-Laki
+                                                </label>
+                                                <label class="btn btn-secondary">
+                                                    <input type="radio" name="jekel" id="jekel_perempuan" autocomplete="off"> Perempuan
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- /.card-body -->
 
-                            <div class="item form-group">
-                                <div class="col-form-label col-md-3 col-sm-3 label-align">
-                                    <img src="/production/images/img.jpg" alt="foto-profile" class="img-circle img-fluid">
-                                </div>
-                                <div class="col-md-9 col-sm-9 align-self-center">
-                                    <input type="file" id="first-name" class="form-control ">
-                                </div>
+                            <div class="card-footer">
+                                <button type="submit" class="btn btn-primary">Submit</button> &nbsp;
+                                <button type="reset" class="btn btn-default float-right">Reset</button>
                             </div>
-
-                            <div class="item form-group">
-                                <label class="col-form-label col-md-3 col-sm-3 label-align" for="first-name">Nama Lengkap <span class="required">*</span>
-                                </label>
-                                <div class="col-md-9 col-sm-9 ">
-                                    <input type="text" id="first-name" required="required" class="form-control">
-                                </div>
-                            </div>
-                            <div class="item form-group">
-                                <label for="middle-name" class="col-form-label col-md-3 col-sm-3 label-align">Email <span class="required">*</span></label>
-                                <div class="col-md-9 col-sm-9 ">
-                                    <input id="middle-name" class="form-control" type="email" name="middle-name">
-                                </div>
-                            </div>
-                            <div class="item form-group">
-                                <label class="col-form-label col-md-3 col-sm-3 label-align">Jenis Kelamin <span class="required">*</span></label>
-                                <div class="col-md-9 col-sm-9 ">
-                                    <p class="mt-2 mb-0">
-                                        Laki-Laki&nbsp;
-                                        <input type="radio" class="flat" name="gender" id="genderM" value="M" checked="" required />
-                                        &nbsp;
-                                        &nbsp;
-                                        Perempuan&nbsp;
-                                        <input type="radio" class="flat" name="gender" id="genderF" value="F" />
-                                    </p>
-                                </div>
-                            </div>
-                            <div class="ln_solid"></div>
-                            <div class="item form-group">
-                                <div class="col-md-9 col-sm-9 offset-md-3">
-                                    <button class="btn btn-primary" type="button">Cancel</button>
-                                    <button class="btn btn-primary" type="reset">Reset</button>
-                                    <button type="submit" class="btn btn-success">Submit</button>
-                                </div>
-                            </div>
-
                         </form>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
+        <!-- /.container-fluid -->
+    </section>
+    <!-- /.content -->
 </div>
-<!-- /page content -->
+<!-- /.content-wrapper -->
 <?= $this->endSection('content'); ?>

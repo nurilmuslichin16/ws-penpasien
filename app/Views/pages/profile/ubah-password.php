@@ -1,60 +1,67 @@
 <?= $this->extend('layout/template'); ?>
 
 <?= $this->section('content'); ?>
-<!-- page content -->
-<div class="right_col" role="main">
-    <div class="">
-        <div class="page-title mb-4">
-            <div class="title_left">
-                &nbsp;<?= $breadCrumb; ?>
+<!-- Content Wrapper. Contains page content -->
+<div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-sm-6">
+                    <ol class="breadcrumb float-sm-left">
+                        <?php foreach ($breadCrumb as $key => $b) : ?>
+                            <li class="<?= $key === array_key_last($breadCrumb) ? "breadcrumb-item active" : "breadcrumb-item" ?>"><?= $b; ?></li>
+                        <?php endforeach; ?>
+                    </ol>
+                </div>
             </div>
-        </div>
+        </div><!-- /.container-fluid -->
+    </section>
 
-        <div class="row" style="display: block; margin-top: 12px;">
-            <div class="col-md-6 col-sm-6 ">
-                <div class="x_panel">
-                    <div class="x_title">
-                        <h2>Ubah Password</h2>
-                        <div class="clearfix"></div>
-                    </div>
-                    <div class="x_content">
-                        <form id="demo-form2" data-parsley-validate class="form-horizontal form-label-left">
-                            <div class="item form-group">
-                                <label class="col-form-label col-md-3 col-sm-3 label-align" for="first-name">Current Password <span class="required">*</span>
-                                </label>
-                                <div class="col-md-9 col-sm-9 ">
-                                    <input type="password" id="first-name" required="required" class="form-control">
+    <!-- Main content -->
+    <section class="content">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-4 col-sm-12">
+                    <div class="card card-primary">
+                        <div class="card-header">
+                            <h3 class="card-title"><i class="fa fa-key"></i> &nbsp;Ubah Password</h3>
+                        </div>
+                        <!-- /.card-header -->
+                        <!-- form start -->
+                        <form>
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-12">
+                                        <div class="form-group">
+                                            <label for="current_password">Current Password</label>
+                                            <input type="password" class="form-control" id="current_password" name="current_password">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="new_password">New Password</label>
+                                            <input type="password" class="form-control" id="new_password" name="new_password">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="validate_password">Validate Password</label>
+                                            <input type="password" class="form-control" id="validate_password" name="validate_password">
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="item form-group">
-                                <label class="col-form-label col-md-3 col-sm-3 label-align" for="last-name">New Password <span class="required">*</span>
-                                </label>
-                                <div class="col-md-9 col-sm-9 ">
-                                    <input type="password" id="last-name" name="last-name" required="required" class="form-control">
-                                </div>
-                            </div>
-                            <div class="item form-group">
-                                <label class="col-form-label col-md-3 col-sm-3 label-align" for="last-name">Validate Password <span class="required">*</span>
-                                </label>
-                                <div class="col-md-9 col-sm-9 ">
-                                    <input type="password" id="last-name" name="last-name" required="required" class="form-control">
-                                </div>
-                            </div>
-                            <div class="ln_solid"></div>
-                            <div class="item form-group">
-                                <div class="col-md-9 col-sm-9 offset-md-3">
-                                    <button class="btn btn-primary" type="button">Cancel</button>
-                                    <button class="btn btn-primary" type="reset">Reset</button>
-                                    <button type="submit" class="btn btn-success">Submit</button>
-                                </div>
-                            </div>
+                            <!-- /.card-body -->
 
+                            <div class="card-footer">
+                                <button type="submit" class="btn btn-primary">Submit</button> &nbsp;
+                                <button type="reset" class="btn btn-default float-right">Reset</button>
+                            </div>
                         </form>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
+        <!-- /.container-fluid -->
+    </section>
+    <!-- /.content -->
 </div>
-<!-- /page content -->
+<!-- /.content-wrapper -->
 <?= $this->endSection('content'); ?>
