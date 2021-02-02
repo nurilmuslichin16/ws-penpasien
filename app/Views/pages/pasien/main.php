@@ -29,7 +29,7 @@
                         </div>
                         <!-- /.card-header -->
                         <div class="card-body">
-                            <a href="/tambah-pasien" class="btn btn-primary mb-3">
+                            <a href="/tambah-pasien" class="btn btn-success mb-3">
                                 <i class="fas fa-plus-square"></i>&nbsp; Tambah Pasien
                             </a>
                             <table id="example1" class="table table-bordered table-hover">
@@ -87,6 +87,7 @@
         <!-- /.container-fluid -->
     </section>
     <!-- /.content -->
+
 </div>
 <!-- /.content-wrapper -->
 <?= $this->endSection('content'); ?>

@@ -23,46 +23,6 @@
         <div class="container-fluid">
             <div class="row">
                 <!-- col -->
-                <div class="col-sm-12 col-md-8">
-                    <div class="card card-primary">
-                        <div class="card-header">
-                            <h3 class="card-title"><i class="fa fa-plus-square"></i> &nbsp;Tambah Cuti</h3>
-                        </div>
-                        <!-- /.card-header -->
-                        <!-- form start -->
-                        <form>
-                            <div class="card-body">
-                                <div class="row">
-                                    <div class="col-sm-12 col-md-6">
-                                        <div class="form-group">
-                                            <label for="dokter">Dokter</label>
-                                            <select class="form-control select2" id="dokter" name="dokter" style="width: 100%;">
-                                                <option selected="selected">Pilih Dokter</option>
-                                                <option value="Bedah Umum">Nuril Muslichin</option>
-                                                <option>Titan Yusro</option>
-                                                <option>Ningsih</option>
-                                                <option>Andi Raharjo</option>
-                                                <option>Tyas</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-12 col-md-6">
-                                        <div class="form-group">
-                                            <label for="tanggal">Tanggal Cuti</label>
-                                            <input type="date" class="form-control" id="tanggal" name="tanggal">
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- /.card-body -->
-
-                            <div class="card-footer">
-                                <button type="submit" class="btn btn-primary">Submit</button> &nbsp;
-                                <button type="reset" class="btn btn-default">Reset</button>
-                            </div>
-                        </form>
-                    </div>
-                </div>
                 <div class="col-12">
                     <div class="card card-primary">
                         <div class="card-header">
@@ -70,6 +30,10 @@
                         </div>
                         <!-- /.card-header -->
                         <div class="card-body">
+                            <button type="button" class="btn btn-success" data-toggle="modal" data-target="#modal-tambah">
+                                <i class="fas fa-plus-square"></i>&nbsp; Tambah Cuti Dokter
+                            </button>
+                            <hr>
                             <table id="example1" class="table table-bordered table-hover">
                                 <thead>
                                     <tr>
@@ -114,6 +78,53 @@
         <!-- /.container-fluid -->
     </section>
     <!-- /.content -->
+
+    <!-- Modal -->
+    <div class="modal fade" id="modal-tambah">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header bg-success">
+                    <h4 class="modal-title"><i class="fa fa-plus-square"></i> &nbsp;Tambah Cuti Dokter</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <form>
+                    <div class="modal-body">
+                        <div class="row">
+                            <div class="col-sm-12 col-md-6">
+                                <div class="form-group">
+                                    <label for="dokter">Dokter</label>
+                                    <select class="form-control select2" id="dokter" name="dokter" style="width: 100%;">
+                                        <option selected="selected">Pilih Dokter</option>
+                                        <option value="Bedah Umum">Nuril Muslichin</option>
+                                        <option>Titan Yusro</option>
+                                        <option>Ningsih</option>
+                                        <option>Andi Raharjo</option>
+                                        <option>Tyas</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-sm-12 col-md-6">
+                                <div class="form-group">
+                                    <label for="tanggal">Tanggal Cuti</label>
+                                    <input type="date" class="form-control" id="tanggal" name="tanggal">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer justify-content-between">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Tutup</button>
+                        <button type="submit" class="btn btn-success">Tambah</button>
+                    </div>
+                </form>
+            </div>
+            <!-- /.modal-content -->
+        </div>
+        <!-- /.modal-dialog -->
+    </div>
+    <!-- /.modal -->
+
 </div>
 <!-- /.content-wrapper -->
 <?= $this->endSection('content'); ?>

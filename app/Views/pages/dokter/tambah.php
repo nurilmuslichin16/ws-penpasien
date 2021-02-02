@@ -26,7 +26,7 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="col-12">
-                    <div class="card card-primary">
+                    <div class="card card-success">
                         <div class="card-header">
                             <h3 class="card-title"><i class="fa fa-plus-square"></i> &nbsp;Tambah Dokter</h3>
                         </div>
@@ -111,8 +111,8 @@
                             <!-- /.card-body -->
 
                             <div class="card-footer">
-                                <button type="submit" class="btn btn-primary">Submit</button> &nbsp;
                                 <button type="reset" class="btn btn-default">Reset</button>
+                                <button type="submit" class="btn btn-success float-right">Tambah</button>
                             </div>
                         </form>
                     </div>

@@ -31,7 +31,7 @@
                             <h1 style="text-align: center;">A-001</h1>
                         </div>
                         <div class="card-footer">
-                            <a href="#" class="btn btn-warning">
+                            <a href="#" class="btn btn-secondary">
                                 <i class="fas fa-chevron-left"></i>&nbsp; Prev
                             </a>
                             &nbsp;
@@ -50,7 +50,7 @@
                             <h1 style="text-align: center;">B-001</h1>
                         </div>
                         <div class="card-footer">
-                            <a href="#" class="btn btn-warning">
+                            <a href="#" class="btn btn-secondary">
                                 <i class="fas fa-chevron-left"></i>&nbsp; Prev
                             </a>
                             &nbsp;
