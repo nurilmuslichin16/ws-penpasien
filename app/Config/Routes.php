@@ -32,21 +32,32 @@ $routes->setAutoRoute(true);
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
 $routes->get('/', 'Home::index');
+
 $routes->get('/tambah-dokter', 'Dokter::tambah');
 $routes->get('/cetak-dokter', 'Dokter::cetak');
+
 $routes->get('/jadwal-dokter', 'JadwalDokter::index');
 $routes->get('/jadwal-dokter/detail', 'JadwalDokter::detail');
 $routes->get('/cetak-jadwal-dokter', 'JadwalDokter::cetak');
+
 $routes->get('/cuti-dokter', 'CutiDokter::index');
+
 $routes->get('/rawat-jalan', 'Pendaftaran::index');
+$routes->get('/tambah-rawat-jalan', 'Pendaftaran::tambahRawatJalan');
 $routes->get('/cetak-rawat-jalan', 'Pendaftaran::cetakRawatJalan');
+
 $routes->get('/rawat-inap', 'Pendaftaran::rawatInap');
+$routes->get('/tambah-rawat-inap', 'Pendaftaran::tambahRawatInap');
 $routes->get('/cetak-rawat-inap', 'Pendaftaran::cetakRawatInap');
+
 $routes->get('/nomor-antrian', 'Antrian::index');
+
 $routes->get('/tambah-pasien', 'Pasien::tambah');
 $routes->get('/cetak-pasien', 'Pasien::cetak');
+
 $routes->get('/ubah-profile', 'Profile::index');
 $routes->get('/ubah-password', 'Profile::ubahPassword');
+
 $routes->get('/pengguna-web', 'ManajUser::index');
 $routes->get('/pengguna-mobile', 'ManajUser::userMobile');
 $routes->get('/cetak-pengguna-mobile', 'ManajUser::cetakUserMobile');
