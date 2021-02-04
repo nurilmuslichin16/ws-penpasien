@@ -29,21 +29,13 @@ class Pasien extends BaseController
     public function tambah()
     {
         $data = [
-            'title'         => "Tambah Data Pasien | Penpas Rawat Jalan",
-            'breadCrumb'    => "Pasien \ Tambah Data"
+            'title'         => "Tambah Pasien | SIPENPAS",
+            'menu_open'     => "Pasien",
+            'menu_active'   => "-",
+            'breadCrumb'    => ["Pasien", "Tambah Pasien"]
         ];
 
         return view('pages/pasien/tambah', $data);
-    }
-
-    public function cetak()
-    {
-        $data = [
-            'title'         => "Cetak Data Pasien | Penpas Rawat Jalan",
-            'breadCrumb'    => "Pasien \ Cetak Data"
-        ];
-
-        return view('pages/pasien/cetak', $data);
     }
 
     //--------------------------------------------------------------------

@@ -29,9 +29,9 @@
                         </div>
                         <!-- /.card-header -->
                         <div class="card-body">
-                            <a href="/tambah-pengguna-web" class="btn btn-primary mb-3">
+                            <button href="/tambah-pengguna-web" class="btn btn-success mb-3" data-toggle="modal" data-target="#modal-tambah">
                                 <i class="fas fa-plus-square"></i>&nbsp; Tambah Pengguna Web
-                            </a>
+                            </button>
                             <table id="example1" class="table table-bordered table-hover">
                                 <thead>
                                     <tr>
@@ -98,4 +98,69 @@
     <!-- /.content -->
 </div>
 <!-- /.content-wrapper -->
+
+<!-- Modal -->
+<div class="modal fade" id="modal-tambah">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header bg-success">
+                <h4 class="modal-title"><i class="fa fa-plus-square"></i> &nbsp;Tambah Pengguna Web</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <form>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="form-group">
+                                <label for="nama_lengkap">Nama Lengkap</label>
+                                <input type="text" class="form-control" id="nama_lengkap" name="nama_lengkap" placeholder="Contoh: Bedah Saraf">
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email</label>
+                                <input type="text" class="form-control" id="email" name="email" placeholder="Contoh: Bedah Saraf">
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputFile">Jenis Kelamin</label><br />
+                                <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                                    <label class="btn btn-secondary active">
+                                        <input type="radio" name="jekel" id="jekel_laki" autocomplete="off" checked> Laki-Laki
+                                    </label>
+                                    <label class="btn btn-secondary">
+                                        <input type="radio" name="jekel" id="jekel_perempuan" autocomplete="off"> Perempuan
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="level">Level</label>
+                                <select class="form-control select2" id="level" name="level" style="width: 100%;">
+                                    <option selected="selected">Pilih Level</option>
+                                    <option value="">Admin</option>
+                                    <option value="press">Petugas</option>
+                                    <option value="net">Kepala Pendaftaran</option>
+                                </select>
+                            </div>
+                            <p>
+                                <strong>Note</strong>
+                                <br />
+                                <i><small>*Password default adalah "sipenpas"</small></i>
+                                <br />
+                                <i><small>*Status user default adalah aktif</small></i>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer justify-content-between">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Tutup</button>
+                    <button type="submit" class="btn btn-success">Tambah</button>
+                </div>
+            </form>
+        </div>
+        <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+</div>
+<!-- /.modal -->
+
 <?= $this->endSection('content'); ?>

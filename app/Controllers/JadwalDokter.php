@@ -39,16 +39,6 @@ class JadwalDokter extends BaseController
         return view('pages/jadwal-dokter/detail', $data);
     }
 
-    public function cetak()
-    {
-        $data = [
-            'title'         => "Cetak Data Jadwal Dokter | Penpas Rawat Jalan",
-            'breadCrumb'    => "Data Masters \ Jadwal Dokter \ Cetak Data"
-        ];
-
-        return view('pages/jadwal-dokter/cetak', $data);
-    }
-
     //--------------------------------------------------------------------
 
 }

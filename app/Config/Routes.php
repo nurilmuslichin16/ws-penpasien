@@ -31,36 +31,47 @@ $routes->setAutoRoute(true);
 
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
+// Dashboard
 $routes->get('/', 'Home::index');
 
+// Dokter
 $routes->get('/tambah-dokter', 'Dokter::tambah');
-$routes->get('/cetak-dokter', 'Dokter::cetak');
 
+// Jadwal Dokter
 $routes->get('/jadwal-dokter', 'JadwalDokter::index');
 $routes->get('/jadwal-dokter/detail', 'JadwalDokter::detail');
-$routes->get('/cetak-jadwal-dokter', 'JadwalDokter::cetak');
 
+// Cuti Dokter
 $routes->get('/cuti-dokter', 'CutiDokter::index');
 
+// Rawat Jalan
 $routes->get('/rawat-jalan', 'Pendaftaran::index');
 $routes->get('/tambah-rawat-jalan', 'Pendaftaran::tambahRawatJalan');
-$routes->get('/cetak-rawat-jalan', 'Pendaftaran::cetakRawatJalan');
 
+// Rawat Inap
 $routes->get('/rawat-inap', 'Pendaftaran::rawatInap');
 $routes->get('/tambah-rawat-inap', 'Pendaftaran::tambahRawatInap');
-$routes->get('/cetak-rawat-inap', 'Pendaftaran::cetakRawatInap');
 
+// Nomor Antrian
 $routes->get('/nomor-antrian', 'Antrian::index');
 
+// Tambah Pasien
 $routes->get('/tambah-pasien', 'Pasien::tambah');
-$routes->get('/cetak-pasien', 'Pasien::cetak');
 
+// Laporan
+$routes->get('/laporan-dokter', 'Laporan::index');
+$routes->get('/laporan-jadwal-dokter', 'Laporan::jadwalDokter');
+$routes->get('/laporan-pasien', 'Laporan::pasien');
+$routes->get('/laporan-rawat-jalan', 'Laporan::rawatJalan');
+$routes->get('/laporan-rawat-inap', 'Laporan::rawatInap');
+
+// Profile
 $routes->get('/ubah-profile', 'Profile::index');
 $routes->get('/ubah-password', 'Profile::ubahPassword');
 
+// Manajemen Pengguna
 $routes->get('/pengguna-web', 'ManajUser::index');
 $routes->get('/pengguna-mobile', 'ManajUser::userMobile');
-$routes->get('/cetak-pengguna-mobile', 'ManajUser::cetakUserMobile');
 
 /**
  * --------------------------------------------------------------------

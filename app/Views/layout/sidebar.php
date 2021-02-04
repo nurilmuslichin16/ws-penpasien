@@ -140,8 +140,8 @@
                         </p>
                     </a>
                 </li>
-                <li class="nav-item">
-                    <a href="#" class="nav-link">
+                <li class="<?= $menu_open == "Laporan" ? "nav-item menu-open" : "nav-item"; ?>">
+                    <a href="#" class="<?= $menu_open == "Laporan" ? "nav-link active" : "nav-link"; ?>">
                         <i class="nav-icon fas fa-chart-pie"></i>
                         <p>
                             Laporan
@@ -150,7 +150,7 @@
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="/laporan-dokter" class="nav-link">
+                            <a href="/laporan-dokter" class="<?= $menu_active == "Laporan Dokter" ? "nav-link active" : "nav-link"; ?>">
                                 &nbsp;
                                 &nbsp;
                                 &nbsp;
@@ -160,7 +160,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="/laporan-jadwal-dokter" class="nav-link">
+                            <a href="/laporan-jadwal-dokter" class="<?= $menu_active == "Laporan Jadwal Dokter" ? "nav-link active" : "nav-link"; ?>">
                                 &nbsp;
                                 &nbsp;
                                 &nbsp;
@@ -170,7 +170,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="/laporan-pasien" class="nav-link">
+                            <a href="/laporan-pasien" class="<?= $menu_active == "Laporan Pasien" ? "nav-link active" : "nav-link"; ?>">
                                 &nbsp;
                                 &nbsp;
                                 &nbsp;
@@ -180,7 +180,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="/laporan-rawat-jalan" class="nav-link">
+                            <a href="/laporan-rawat-jalan" class="<?= $menu_active == "Laporan Rawat Jalan" ? "nav-link active" : "nav-link"; ?>">
                                 &nbsp;
                                 &nbsp;
                                 &nbsp;
@@ -190,7 +190,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="/laporan-rawat-inap" class="nav-link">
+                            <a href="/laporan-rawat-inap" class="<?= $menu_active == "Laporan Rawat Inap" ? "nav-link active" : "nav-link"; ?>">
                                 &nbsp;
                                 &nbsp;
                                 &nbsp;
