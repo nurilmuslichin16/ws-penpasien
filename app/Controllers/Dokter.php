@@ -26,17 +26,27 @@ class Dokter extends BaseController
         return view('pages/dokter/main', $data);
     }
 
-    //--------------------------------------------------------------------
-
     public function tambah()
     {
         $data = [
             'title'         => "Tambah Dokter | SIPENPAS",
             'menu_open'     => "Data Master",
             'menu_active'   => "Dokter",
-            'breadCrumb'    => ["Data Master", "Dokter", "Tambah Dokter"]
+            'breadCrumb'    => ["Data Master", "Dokter", "Tambah"]
         ];
 
         return view('pages/dokter/tambah', $data);
+    }
+
+    public function detail()
+    {
+        $data = [
+            'title'         => "Detail Dokter | SIPENPAS",
+            'menu_open'     => "Data Master",
+            'menu_active'   => "Dokter",
+            'breadCrumb'    => ["Data Master", "Dokter", "Detail"]
+        ];
+
+        return view('pages/dokter/detail', $data);
     }
 }

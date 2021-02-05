@@ -33,7 +33,7 @@
                             <div class="row mt-3">
                                 <?php foreach ($poliklinik as $p) : ?>
                                     <div class="col-md-3 col-sm-12 mb-3">
-                                        <a href="#" class="btn btn-block btn-outline-primary btn-sm"><?= $p['nama_poliklinik']; ?></a>
+                                        <a href="/detail-jadwal-dokter" class="btn btn-block btn-outline-primary btn-sm"><?= $p['nama_poliklinik']; ?></a>
                                     </div>
                                 <?php endforeach; ?>
                             </div>

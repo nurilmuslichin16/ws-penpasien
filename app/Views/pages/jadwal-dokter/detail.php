@@ -1,350 +1,177 @@
 <?= $this->extend('layout/template'); ?>
 
 <?= $this->section('content'); ?>
-<!-- page content -->
-<div class="right_col" role="main">
-    <div class="">
-        <div class="page-title">
-            <div class="title_left">
-                <a href="/jadwal-dokter" class="btn btn-secondary btn-sm">
-                    <i class="fa fa-arrow-left"></i>&nbsp; Kembali
-                </a>
-                <?= $breadCrumb; ?>
+<!-- Content Wrapper. Contains page content -->
+<div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-sm-12">
+                    <ol class="breadcrumb float-sm-left">
+                        <?php foreach ($breadCrumb as $key => $b) : ?>
+                            <li class="<?= $key === array_key_last($breadCrumb) ? "breadcrumb-item active" : "breadcrumb-item" ?>"><?= $b; ?></li>
+                        <?php endforeach; ?>
+                    </ol>
+                </div>
             </div>
+        </div><!-- /.container-fluid -->
+    </section>
+
+    <!-- Main content -->
+    <section class="content">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-12">
+                    <div class="card card-primary">
+                        <div class="card-header">
+                            <h3 class="card-title"><i class="fa fa-list"></i> &nbsp;Jadwal Poliklinik Bedah Umum</h3>
+                        </div>
+                        <!-- /.card-header -->
+                        <div class="card-body">
+                            <button type="button" class="btn btn-success" data-toggle="modal" data-target="#modal-tambah">
+                                <i class="fas fa-plus-square"></i>&nbsp; Tambah Jadwal Dokter
+                            </button>
+                            <hr>
+                            <p>
+                                <i class="fas fa-filter"></i>&nbsp; <strong>Filter</strong>
+                            </p>
+                            <div class="row">
+                                <div class="col-sm-12 col-md-6">
+                                    <div class="form-group">
+                                        <label for="hari_filter">Hari</label>
+                                        <select class="form-control select2" id="hari_filter" name="hari_filter" style="width: 100%;">
+                                            <option selected="selected">Pilih Hari</option>
+                                            <option value="press">Senin</option>
+                                            <option value="net">Selasa</option>
+                                            <option value="mouth">Rabu</option>
+                                            <option value="mouth">Kamis</option>
+                                            <option value="mouth">Jum'at</option>
+                                            <option value="mouth">Sabtu</option>
+                                            <option value="mouth">Minggu</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-sm-12 col-md-6">
+                                    <div class="form-group">
+                                        <label for="dokter_filter">Dokter</label>
+                                        <select class="form-control select2" id="dokter_filter" name="dokter_filter" style="width: 100%;">
+                                            <option selected="selected">Pilih Dokter</option>
+                                            <option value="press">Dr. Nuril</option>
+                                            <option value="net">Dr. Muslichin</option>
+                                            <option value="mouth">Dr. Titan</option>
+                                            <option value="mouth">Dr. Choriul</option>
+                                            <option value="mouth">Dr. Ningsih'at</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <table id="example1" class="table table-bordered table-hover">
+                                <thead>
+                                    <tr>
+                                        <th width="5%">#</th>
+                                        <th>Hari</th>
+                                        <th>Jam Kerja</th>
+                                        <th>Dokter</th>
+                                        <th width="10%">Aksi</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>Senin</td>
+                                        <td>08.00 - 12.00</td>
+                                        <td>Dr. Nuril Muslichin</td>
+                                        <td>
+                                            <div class="btn-group">
+                                                <a href="#" class="btn btn-sm btn-default">
+                                                    <i class="fas fa-bars"></i>
+                                                </a>
+                                                <a href="#" class="btn btn-sm btn-warning">
+                                                    <i class="fas fa-pencil-alt"></i>
+                                                </a>
+                                                <a href="#" class="btn btn-sm btn-danger">
+                                                    <i class="fas fa-trash"></i>
+                                                </a>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <!-- /.card-body -->
+                    </div>
+                    <!-- /.card -->
+                </div>
+                <!-- /.col -->
+            </div>
+            <!-- /.row -->
         </div>
+        <!-- /.container-fluid -->
+    </section>
+    <!-- /.content -->
+</div>
+<!-- /.content-wrapper -->
 
-        <div class="clearfix"></div>
-
-        <div class="row mt-3 mb-3">
-            <div class="col-md-12 col-sm-12 ">
-                <button type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target=".bs-example-modal-lg">
-                    <i class="fa fa-plus"></i>&nbsp; Tambah Jadwal Dokter
+<!-- Modal -->
+<div class="modal fade" id="modal-tambah">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header bg-success">
+                <h4 class="modal-title"><i class="fa fa-plus-square"></i> &nbsp;Tambah JadwalDokter</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-        </div>
-
-        <div class="clearfix"></div>
-
-        <div class="row">
-            <div class="col-3">
-                <i class="fa fa-check-square-o"></i>
-                <label for="heard">Hari:</label>
-                <select id="heard" class="form-control">
-                    <option value="">All</option>
-                    <option value="press">Senin</option>
-                    <option value="net">Selasa</option>
-                    <option value="mouth">Rabu</option>
-                    <option value="mouth">Kamis</option>
-                    <option value="mouth">Jum'at</option>
-                    <option value="mouth">Sabtu</option>
-                    <option value="mouth">Minggu</option>
-                </select>
-            </div>
-            <div class="col-3">
-                <i class="fa fa-user-md"></i>
-                <label for="heard">Dokter:</label>
-                <select id="heard" class="form-control">
-                    <option value="">All</option>
-                    <option value="press">Dr. Nuril</option>
-                    <option value="net">Dr. Muslichin</option>
-                    <option value="mouth">Dr. Titan</option>
-                    <option value="mouth">Dr. Choriul</option>
-                    <option value="mouth">Dr. Ningsih'at</option>
-                </select>
-            </div>
-        </div>
-
-        <div class="row" style="display: block; margin-top: 12px;">
-            <div class="col-md-12 col-sm-12 ">
-                <div class="x_panel">
-                    <div class="x_title">
-                        <h2>Jadwal Dokter -<small>Klinik Bedah Umum</small></h2>
-                        <div class="clearfix"></div>
-                    </div>
-                    <div class="x_content">
-                        <div class="row">
-                            <div class="col-sm-12">
-                                <div class="card-box table-responsive">
-                                    <table id="datatable" class="table table-hover" style="width:100%">
-                                        <thead>
-                                            <tr>
-                                                <th width="5%">#</th>
-                                                <th>Hari</th>
-                                                <th>Jam Kerja</th>
-                                                <th>Dokter</th>
-                                                <th width="10%">Aksi</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr>
-                                                <th>1</th>
-                                                <td>Senin</td>
-                                                <td>13.00 - 17.00</td>
-                                                <td>Dr. Nuril</td>
-                                                <td>
-                                                    <a href="#" class="btn btn-warning btn-sm">
-                                                        <i class="fa fa-pencil"></i>
-                                                    </a>
-                                                    <a href="#" class="btn btn-danger btn-sm">
-                                                        <i class="fa fa-trash"></i>
-                                                    </a>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <th>2</th>
-                                                <td>Jum'at</td>
-                                                <td>08.00 - 13.00</td>
-                                                <td>Dr. Muslichin</td>
-                                                <td>
-                                                    <a href="#" class="btn btn-warning btn-sm">
-                                                        <i class="fa fa-pencil"></i>
-                                                    </a>
-                                                    <a href="#" class="btn btn-danger btn-sm">
-                                                        <i class="fa fa-trash"></i>
-                                                    </a>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <th>3</th>
-                                                <td>Kamis</td>
-                                                <td>10.00 - 14.00</td>
-                                                <td>Dr. Titan</td>
-                                                <td>
-                                                    <a href="#" class="btn btn-warning btn-sm">
-                                                        <i class="fa fa-pencil"></i>
-                                                    </a>
-                                                    <a href="#" class="btn btn-danger btn-sm">
-                                                        <i class="fa fa-trash"></i>
-                                                    </a>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <th>3</th>
-                                                <td>Kamis</td>
-                                                <td>10.00 - 14.00</td>
-                                                <td>Dr. Titan</td>
-                                                <td>
-                                                    <a href="#" class="btn btn-warning btn-sm">
-                                                        <i class="fa fa-pencil"></i>
-                                                    </a>
-                                                    <a href="#" class="btn btn-danger btn-sm">
-                                                        <i class="fa fa-trash"></i>
-                                                    </a>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <th>3</th>
-                                                <td>Kamis</td>
-                                                <td>10.00 - 14.00</td>
-                                                <td>Dr. Titan</td>
-                                                <td>
-                                                    <a href="#" class="btn btn-warning btn-sm">
-                                                        <i class="fa fa-pencil"></i>
-                                                    </a>
-                                                    <a href="#" class="btn btn-danger btn-sm">
-                                                        <i class="fa fa-trash"></i>
-                                                    </a>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <th>3</th>
-                                                <td>Kamis</td>
-                                                <td>10.00 - 14.00</td>
-                                                <td>Dr. Titan</td>
-                                                <td>
-                                                    <a href="#" class="btn btn-warning btn-sm">
-                                                        <i class="fa fa-pencil"></i>
-                                                    </a>
-                                                    <a href="#" class="btn btn-danger btn-sm">
-                                                        <i class="fa fa-trash"></i>
-                                                    </a>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <th>3</th>
-                                                <td>Kamis</td>
-                                                <td>10.00 - 14.00</td>
-                                                <td>Dr. Titan</td>
-                                                <td>
-                                                    <a href="#" class="btn btn-warning btn-sm">
-                                                        <i class="fa fa-pencil"></i>
-                                                    </a>
-                                                    <a href="#" class="btn btn-danger btn-sm">
-                                                        <i class="fa fa-trash"></i>
-                                                    </a>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <th>3</th>
-                                                <td>Kamis</td>
-                                                <td>10.00 - 14.00</td>
-                                                <td>Dr. Titan</td>
-                                                <td>
-                                                    <a href="#" class="btn btn-warning btn-sm">
-                                                        <i class="fa fa-pencil"></i>
-                                                    </a>
-                                                    <a href="#" class="btn btn-danger btn-sm">
-                                                        <i class="fa fa-trash"></i>
-                                                    </a>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <th>3</th>
-                                                <td>Kamis</td>
-                                                <td>10.00 - 14.00</td>
-                                                <td>Dr. Titan</td>
-                                                <td>
-                                                    <a href="#" class="btn btn-warning btn-sm">
-                                                        <i class="fa fa-pencil"></i>
-                                                    </a>
-                                                    <a href="#" class="btn btn-danger btn-sm">
-                                                        <i class="fa fa-trash"></i>
-                                                    </a>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <th>3</th>
-                                                <td>Kamis</td>
-                                                <td>10.00 - 14.00</td>
-                                                <td>Dr. Titan</td>
-                                                <td>
-                                                    <a href="#" class="btn btn-warning btn-sm">
-                                                        <i class="fa fa-pencil"></i>
-                                                    </a>
-                                                    <a href="#" class="btn btn-danger btn-sm">
-                                                        <i class="fa fa-trash"></i>
-                                                    </a>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <th>3</th>
-                                                <td>Kamis</td>
-                                                <td>10.00 - 14.00</td>
-                                                <td>Dr. Titan</td>
-                                                <td>
-                                                    <a href="#" class="btn btn-warning btn-sm">
-                                                        <i class="fa fa-pencil"></i>
-                                                    </a>
-                                                    <a href="#" class="btn btn-danger btn-sm">
-                                                        <i class="fa fa-trash"></i>
-                                                    </a>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <th>3</th>
-                                                <td>Kamis</td>
-                                                <td>10.00 - 14.00</td>
-                                                <td>Dr. Titan</td>
-                                                <td>
-                                                    <a href="#" class="btn btn-warning btn-sm">
-                                                        <i class="fa fa-pencil"></i>
-                                                    </a>
-                                                    <a href="#" class="btn btn-danger btn-sm">
-                                                        <i class="fa fa-trash"></i>
-                                                    </a>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <th>3</th>
-                                                <td>Kamis</td>
-                                                <td>10.00 - 14.00</td>
-                                                <td>Dr. Titan</td>
-                                                <td>
-                                                    <a href="#" class="btn btn-warning btn-sm">
-                                                        <i class="fa fa-pencil"></i>
-                                                    </a>
-                                                    <a href="#" class="btn btn-danger btn-sm">
-                                                        <i class="fa fa-trash"></i>
-                                                    </a>
-                                                </td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
+            <form>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="form-group">
+                                <label for="hari">Hari</label>
+                                <select class="form-control select2" id="hari" name="hari" style="width: 100%;">
+                                    <option selected="selected">Pilih Hari</option>
+                                    <option value="Bedah Umum">Senin</option>
+                                    <option>Selasa</option>
+                                    <option>Rabu</option>
+                                    <option>Kamis</option>
+                                    <option>Jum'at</option>
+                                    <option>Sabtu</option>
+                                    <option>Minggu</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="jam_mulai">Jam Mulai</label>
+                                <input type="time" class="form-control" id="jam_mulai" name="jam_mulai" placeholder="Contoh: Bedah Saraf">
+                            </div>
+                            <div class="form-group">
+                                <label for="jam_selesai">Jam Selesai</label>
+                                <input type="time" class="form-control" id="jam_selesai" name="jam_selesai" placeholder="Contoh: Bedah Saraf">
+                            </div>
+                            <div class="form-group">
+                                <label for="dokter">Dokter</label>
+                                <select class="form-control select2" id="dokter" name="dokter" style="width: 100%;">
+                                    <option selected="selected">Pilih Dokter</option>
+                                    <option value="Bedah Umum">Nuril Muslichin</option>
+                                    <option>Titan Yusro</option>
+                                    <option>Ningsih</option>
+                                    <option>Andi Raharjo</option>
+                                    <option>Tyas</option>
+                                </select>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- /page content -->
-
-<!-- modals -->
-<div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-hidden="true">
-    <div class="modal-dialog modal-lg">
-        <div class="modal-content">
-
-            <form id="demo-form2" data-parsley-validate class="form-horizontal form-label-left">
-                <div class="modal-header">
-                    <h2 class="modal-title" id="myModalLabel">Tambah Jadwal Dokter</h2>
-                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-
-                    <div class="item form-group">
-                        <label class="col-form-label col-md-2 col-sm-2 label-align" for="first-name">Hari <span class="required">*</span>
-                        </label>
-                        <div class="col-md-9 col-sm-9 ">
-                            <select id="heard" class="form-control">
-                                <option value="">All</option>
-                                <option value="press">Senin</option>
-                                <option value="net">Selasa</option>
-                                <option value="mouth">Rabu</option>
-                                <option value="mouth">Kamis</option>
-                                <option value="mouth">Jum'at</option>
-                                <option value="mouth">Sabtu</option>
-                                <option value="mouth">Minggu</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="item form-group">
-                        <label class="col-form-label col-md-2 col-sm-2 label-align" for="last-name">Dokter <span class="required">*</span>
-                        </label>
-                        <div class="col-md-9 col-sm-9 ">
-                            <select id="heard" class="form-control">
-                                <option value="">All</option>
-                                <option value="press">Dr. Nuril</option>
-                                <option value="net">Dr. Muslichin</option>
-                                <option value="mouth">Dr. Titan</option>
-                                <option value="mouth">Dr. Choriul</option>
-                                <option value="mouth">Dr. Ningsih'at</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="item form-group">
-                        <label class="col-form-label col-md-2 col-sm-2 label-align">Jam Mulai <span class="required">*</span>
-                        </label>
-                        <div class="col-md-9 col-sm-9 ">
-                            <input class="form-control" class='date' type="time" name="date" required='required' />
-                        </div>
-                    </div>
-                    <div class="item form-group">
-                        <label class="col-form-label col-md-2 col-sm-2 label-align">Jam Selesai <span class="required">*</span>
-                        </label>
-                        <div class="col-md-9 col-sm-9 ">
-                            <input class="form-control" class='date' type="time" name="date" required='required' />
-                        </div>
-                    </div>
-                    <div class="item form-group">
-                        <label class="col-form-label col-md-2 col-sm-2 label-align" for="last-name">Poliklinik <span class="required">*</span>
-                        </label>
-                        <div class="col-md-9 col-sm-9 ">
-                            <input type="text" id="last-name" value="Bedah Umum" name="last-name" required="required" class="form-control" readonly>
-                        </div>
-                    </div>
-
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Tutup</button>
-                    <button type="submit" class="btn btn-primary">Simpan</button>
+                <div class="modal-footer justify-content-between">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Tutup</button>
+                    <button type="submit" class="btn btn-success">Tambah</button>
                 </div>
             </form>
-
         </div>
+        <!-- /.modal-content -->
     </div>
+    <!-- /.modal-dialog -->
 </div>
-<!-- /modals -->
+<!-- /.modal -->
+
 <?= $this->endSection('content'); ?>

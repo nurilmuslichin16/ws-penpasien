@@ -36,10 +36,11 @@ $routes->get('/', 'Home::index');
 
 // Dokter
 $routes->get('/tambah-dokter', 'Dokter::tambah');
+$routes->get('/detail-dokter', 'Dokter::detail');
 
 // Jadwal Dokter
 $routes->get('/jadwal-dokter', 'JadwalDokter::index');
-$routes->get('/jadwal-dokter/detail', 'JadwalDokter::detail');
+$routes->get('/detail-jadwal-dokter', 'JadwalDokter::detail');
 
 // Cuti Dokter
 $routes->get('/cuti-dokter', 'CutiDokter::index');

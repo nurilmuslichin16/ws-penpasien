@@ -31,7 +31,8 @@
                         <!-- form start -->
                         <form>
                             <div class="card-body">
-                                <div class="row">
+                                <small>*Jika ingin mencetak semua data langsung klik tombol <strong>Cetak</strong></small>
+                                <div class="row mt-2">
                                     <div class="col-md-6 col-sm-12">
                                         <div class="form-group">
                                             <label for="umur_mulai">Umur <small>[Dari]</small></label>

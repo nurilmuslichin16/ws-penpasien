@@ -32,8 +32,11 @@ class JadwalDokter extends BaseController
     public function detail()
     {
         $data = [
-            'title'         => "Detail | Penpas Rawat Jalan",
-            'breadCrumb'    => "Data Masters \ Jadwal Dokter \ Detail"
+            'title'         => "Detail Jadwal Dokter | SIPENPAS",
+            'menu_open'     => "Data Master",
+            'menu_active'   => "Jadwal Dokter",
+            'breadCrumb'    => ["Data Master", "Jadwal Dokter", "Detail"],
+            //'poliklinik'    => $poliklinik->findAll()
         ];
 
         return view('pages/jadwal-dokter/detail', $data);

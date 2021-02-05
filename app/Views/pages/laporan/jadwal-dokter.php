@@ -31,7 +31,8 @@
                         <!-- form start -->
                         <form>
                             <div class="card-body">
-                                <div class="form-group">
+                                <small>*Jika ingin mencetak semua data langsung klik tombol <strong>Cetak</strong></small>
+                                <div class="form-group mt-2">
                                     <label for="poliklinik">Poliklinik</label>
                                     <select class="form-control select2" id="poliklinik" name="poliklinik" style="width: 100%;">
                                         <option selected="selected">Pilih Poliklinik</option>
