@@ -59,7 +59,7 @@
                                             <td><?= $p['alamat']; ?></td>
                                             <td>
                                                 <div class="btn-group">
-                                                    <a href="/detail-pasien" class="btn btn-sm btn-default">
+                                                    <a href="/pasien/<?= $p['no_rm']; ?>" class="btn btn-sm btn-default">
                                                         <i class="fas fa-bars"></i>
                                                     </a>
                                                     <a href="#" class="btn btn-sm btn-warning">

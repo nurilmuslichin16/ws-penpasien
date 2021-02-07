@@ -37,47 +37,53 @@
                             <ul class="list-group list-group-unbordered mb-3">
                                 <li class="list-group-item" style="border-top: 0px;">
                                     <i class="fas fa-bookmark mr-1"></i> <b>No. Pendaftaran</b>
-                                    <div class="float-right text-muted">123098765342</div>
+                                    <div class="float-right text-muted"><?= $rawat_inap['no_pendaftaran']; ?></div>
                                 </li>
                                 <li class="list-group-item" style="border-top: 0px;">
                                     <i class="fas fa-book-medical mr-1"></i> <b>Nomor Rekam Medis</b>
-                                    <div class="float-right text-muted">00000001</div>
+                                    <div class="float-right text-muted"><?= $rawat_inap['no_rm']; ?></div>
                                 </li>
                                 <li class="list-group-item">
                                     <i class="fas fa-user-injured mr-1"></i> <b>Nama Pasien</b>
-                                    <div class="float-right text-muted">Budi Sajono</div>
+                                    <div class="float-right text-muted">Join ? ? ?</div>
                                 </li>
                                 <li class="list-group-item">
                                     <i class="fas fa-venus-mars mr-1"></i> <b>Jenis Kelamin</b>
-                                    <div class="float-right text-muted">Laki-Laki</div>
+                                    <div class="float-right text-muted">Join ? ? ?</div>
                                 </li>
                                 <li class="list-group-item">
                                     <i class="fas fa-user-clock mr-1"></i> <b>Umur</b>
-                                    <div class="float-right text-muted">29 Tahun</div>
+                                    <div class="float-right text-muted">Join ? ? ?</div>
                                 </li>
                                 <li class="list-group-item">
                                     <i class="fas fa-calendar mr-1"></i> <b>Tanggal Pendaftaran</b>
-                                    <div class="float-right text-muted">18 Februari 2021</div>
+                                    <div class="float-right text-muted"><?= $rawat_inap['tanggal_daftar']; ?></div>
                                 </li>
                                 <li class="list-group-item">
                                     <i class="fas fa-bed mr-1"></i> <b>Kamar</b>
-                                    <div class="float-right text-muted">Melati</div>
+                                    <div class="float-right text-muted">Join ? ? ?</div>
                                 </li>
                                 <li class="list-group-item">
                                     <i class="fas fa-clinic-medical mr-1"></i> <b>Asuransi</b>
-                                    <div class="float-right text-muted">BPJS</div>
+                                    <div class="float-right text-muted"><?= $rawat_inap['asuransi']; ?></div>
                                 </li>
                                 <li class="list-group-item">
                                     <i class="fas fa-circle mr-1"></i> <b>No Asuransi</b>
-                                    <div class="float-right text-muted">09200921</div>
+                                    <div class="float-right text-muted"><?= $rawat_inap['no_asuransi'] == "" ? "-" : $rawat_inap['no_asuransi']; ?></div>
                                 </li>
                                 <li class="list-group-item" style="border-bottom: 0px;">
                                     <i class="fas fa-info-circle mr-1"></i> <b>Status</b>
-                                    <span class="float-right badge badge-warning">Menunggu</span>
+                                    <?php if ($rawat_inap['status'] == 0) { ?>
+                                        <span class="float-right badge badge-warning">Menunggu</span>
+                                    <?php } else if ($rawat_inap['status'] == 1) { ?>
+                                        <span class="float-right badge badge-success">Terdaftar</span>
+                                    <?php } else { ?>
+                                        <span class="float-right badge badge-danger">Batal</span>
+                                    <?php } ?>
                                 </li>
                             </ul>
 
-                            <a href="#" class="btn btn-block btn-success mb-4">
+                            <a href="#" class="btn btn-block btn-success mb-4 <?= $rawat_inap['status'] == 0 ? '' : 'disabled' ?>">
                                 <i class="fas fa-check"></i> &nbsp;
                                 Konfirmasi Pendaftaran
                             </a>

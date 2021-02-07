@@ -9,7 +9,7 @@
             <div class="row">
                 <div class="col-sm-12">
                     <ol class="breadcrumb float-sm-left">
-                        <a href="/dokter" class="btn btn-sm btn-secondary mr-3">
+                        <a href="/pasien" class="btn btn-sm btn-secondary mr-3">
                             <i class="fas fa-arrow-left"></i>&nbsp; Kembali
                         </a>
                         <?php foreach ($breadCrumb as $key => $b) : ?>
@@ -36,71 +36,71 @@
                             <ul class="list-group list-group-unbordered">
                                 <li class="list-group-item" style="border-top: 0px;">
                                     <i class="fas fa-book-medical mr-1"></i> <b>Nomor Rekam Medis</b>
-                                    <div class="float-right text-muted">00002299</div>
+                                    <div class="float-right text-muted"><?= $pasien['no_rm']; ?></div>
                                 </li>
                                 <li class="list-group-item">
                                     <i class="fas fa-id-badge mr-1"></i> <b>NIK</b>
-                                    <div class="float-right text-muted">330726522617257</div>
+                                    <div class="float-right text-muted"><?= $pasien['nik']; ?></div>
                                 </li>
                                 <li class="list-group-item">
                                     <i class="fas fa-id-card mr-1"></i> <b>Nama Depan</b>
-                                    <div class="float-right text-muted">Nuril</div>
+                                    <div class="float-right text-muted"><?= $pasien['nama_depan']; ?></div>
                                 </li>
                                 <li class="list-group-item">
                                     <i class="fas fa-id-card mr-1"></i> <b>Nama Belakang</b>
-                                    <div class="float-right text-muted">Muslichin</div>
+                                    <div class="float-right text-muted"><?= $pasien['nama_belakang']; ?></div>
                                 </li>
                                 <li class="list-group-item">
                                     <i class="fas fa-venus-mars mr-1"></i> <b>Jenis Kelamin</b>
-                                    <div class="float-right text-muted">Laki-Laki</div>
+                                    <div class="float-right text-muted"><?= $pasien['jekel'] == 0 ? "Laki-Laki" : "Perempuan"; ?></div>
                                 </li>
                                 <li class="list-group-item">
                                     <i class="fas fa-calendar mr-1"></i> <b>Tempat & Tanggal Lahir</b>
-                                    <div class="float-right text-muted">Pekalongan, 16 Februari 2021</div>
+                                    <div class="float-right text-muted"><?= $pasien['tempat_lahir']; ?>, <?= $pasien['tanggal_lahir']; ?></div>
                                 </li>
                                 <li class="list-group-item">
                                     <i class="fas fa-pray mr-1"></i> <b>Agama</b>
-                                    <div class="float-right text-muted">Islam</div>
+                                    <div class="float-right text-muted"><?= $pasien['agama']; ?></div>
                                 </li>
                                 <li class="list-group-item">
                                     <i class="fas fa-graduation-cap mr-1"></i> <b>Pendidikan Terakhir</b>
-                                    <div class="float-right text-muted">S1 / Sarjana</div>
+                                    <div class="float-right text-muted"><?= $pasien['pendidikan_terakhir']; ?></div>
                                 </li>
                                 <li class="list-group-item">
                                     <i class="fas fa-heart mr-1"></i> <b>Status Perkawinan</b>
-                                    <div class="float-right text-muted">Menikah</div>
+                                    <div class="float-right text-muted"><?= $pasien['status_perkawinan'] == 0 ? "Belum Menikah" : "Menikah"; ?></div>
                                 </li>
                                 <li class="list-group-item">
                                     <i class="fas fa-passport mr-1"></i> <b>Kewarganegaraan</b>
-                                    <div class="float-right text-muted">Indonesia</div>
+                                    <div class="float-right text-muted"><?= $pasien['kewarganegaraan']; ?></div>
                                 </li>
                                 <li class="list-group-item">
                                     <i class="fas fa-phone mr-1"></i> <b>No. HP</b>
-                                    <div class="float-right text-muted">0852 2953 1170</div>
+                                    <div class="float-right text-muted"><?= $pasien['no_hp']; ?></div>
                                 </li>
                                 <li class="list-group-item">
                                     <i class="fas fa-at mr-1"></i> <b>Email</b>
-                                    <div class="float-right text-muted">nurilmuslichin16@gmail.com</div>
+                                    <div class="float-right text-muted"><?= $pasien['email']; ?></div>
                                 </li>
                                 <li class="list-group-item">
                                     <i class="fas fa-map-marker-alt mr-1"></i> <b>Provinsi</b>
-                                    <div class="float-right text-muted">Jawa Tengah</div>
+                                    <div class="float-right text-muted"><?= $pasien['prov']; ?></div>
                                 </li>
                                 <li class="list-group-item">
                                     <i class="fas fa-map-marker-alt mr-1"></i> <b>Kota / Kabupaten</b>
-                                    <div class="float-right text-muted">Kota Pekalongan</div>
+                                    <div class="float-right text-muted"><?= $pasien['kota_kab']; ?></div>
                                 </li>
                                 <li class="list-group-item">
                                     <i class="fas fa-map-marker-alt mr-1"></i> <b>Kecamatan</b>
-                                    <div class="float-right text-muted">Pekalongan Barat</div>
+                                    <div class="float-right text-muted"><?= $pasien['kec']; ?></div>
                                 </li>
                                 <li class="list-group-item">
                                     <i class="fas fa-map-marker-alt mr-1"></i> <b>Kelurahan</b>
-                                    <div class="float-right text-muted">PasirKratonKramat</div>
+                                    <div class="float-right text-muted"><?= $pasien['kel']; ?></div>
                                 </li>
                                 <li class="list-group-item" style="border-bottom: 0px;">
                                     <i class="fas fa-map-marker-alt mr-1"></i> <b>Alamat</b>
-                                    <div class="float-right text-muted">Jl Kramatsari 2 Gg.8 No.20A Kota Pekalongan</div>
+                                    <div class="float-right text-muted"><?= $pasien['alamat']; ?></div>
                                 </li>
                             </ul>
                         </div>

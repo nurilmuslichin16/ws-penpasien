@@ -9,4 +9,13 @@ class RawatInapModel extends Model
     protected $table = "tb_rawat_inap";
     protected $primaryKey = "id_rawat_inap";
     protected $allowedFields = ['no_pendaftaran', 'no_rm', 'tanggal_daftar', 'id_kamar', 'asuransi', 'no_asuransi', 'status'];
+
+    public function getRawatInap($id = false)
+    {
+        if ($id == false) {
+            return $this->findAll();
+        }
+
+        return $this->where(['id_rawat_inap' => $id])->first();
+    }
 }

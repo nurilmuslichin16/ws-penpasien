@@ -47,19 +47,19 @@ $routes->get('/cuti-dokter', 'CutiDokter::index');
 
 // Rawat Jalan
 $routes->get('/rawat-jalan', 'Pendaftaran::index');
-$routes->get('/detail-rawat-jalan', 'Pendaftaran::detailRawatJalan');
+$routes->get('/rawat-jalan/(:segment)', 'Pendaftaran::detailRawatJalan/$1');
 $routes->get('/tambah-rawat-jalan', 'Pendaftaran::tambahRawatJalan');
 
 // Rawat Inap
 $routes->get('/rawat-inap', 'Pendaftaran::rawatInap');
-$routes->get('/detail-rawat-inap', 'Pendaftaran::detailRawatInap');
+$routes->get('/rawat-inap/(:segment)', 'Pendaftaran::detailRawatInap/$1');
 $routes->get('/tambah-rawat-inap', 'Pendaftaran::tambahRawatInap');
 
 // Nomor Antrian
 $routes->get('/nomor-antrian', 'Antrian::index');
 
 // Pasien
-$routes->get('/detail-pasien', 'Pasien::detail');
+$routes->get('/pasien/(:segment)', 'Pasien::detail/$1');
 $routes->get('/tambah-pasien', 'Pasien::tambah');
 
 // Laporan

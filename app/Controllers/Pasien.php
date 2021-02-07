@@ -20,20 +20,20 @@ class Pasien extends BaseController
             'menu_open'     => "Pasien",
             'menu_active'   => "-",
             'breadCrumb'    => ["Pasien"],
-            'pasien'        => $this->pasienModel->findAll()
+            'pasien'        => $this->pasienModel->getPasien()
         ];
 
         return view('pages/pasien/main', $data);
     }
 
-    public function detail()
+    public function detail($no_rm)
     {
         $data = [
             'title'         => "Detail Pasien | SIPENPAS",
             'menu_open'     => "Pasien",
             'menu_active'   => "-",
             'breadCrumb'    => ["Pasien", "Detail"],
-            // 'pasien'        => $this->pasienModel->findAll()
+            'pasien'        => $this->pasienModel->getPasien($no_rm)
         ];
 
         return view('pages/pasien/detail', $data);

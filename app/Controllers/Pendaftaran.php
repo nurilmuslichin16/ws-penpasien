@@ -23,20 +23,20 @@ class Pendaftaran extends BaseController
             'menu_open'     => "Pendaftaran",
             'menu_active'   => "Rawat Jalan",
             'breadCrumb'    => ["Pendaftaran", "Rawat Jalan"],
-            'rawat_jalan'   => $this->rawatJalan->findAll()
+            'rawat_jalan'   => $this->rawatJalan->getRawatJalan()
         ];
 
         return view('pages/rawat-jalan/main', $data);
     }
 
-    public function detailRawatJalan()
+    public function detailRawatJalan($id)
     {
         $data = [
             'title'         => "Detail Rawat Jalan | SIPENPAS",
             'menu_open'     => "Pendaftaran",
             'menu_active'   => "Rawat Jalan",
             'breadCrumb'    => ["Pendaftaran", "Rawat Jalan", "Detail"],
-            // 'rawat_jalan'   => $this->rawatJalan->findAll()
+            'rawat_jalan'   => $this->rawatJalan->getRawatJalan($id)
         ];
 
         return view('pages/rawat-jalan/detail', $data);
@@ -48,7 +48,7 @@ class Pendaftaran extends BaseController
             'title'         => "Tambah Pendaftaran Rawat Jalan | SIPENPAS",
             'menu_open'     => "Pendaftaran",
             'menu_active'   => "Rawat Jalan",
-            'breadCrumb'    => ["Pendaftaran", "Rawat Jalan", "Tambah Pendaftaran Rawat Jalan"],
+            'breadCrumb'    => ["Pendaftaran", "Rawat Jalan", "Tambah"],
             // 'rawat_jalan'   => $this->rawatJalan->findAll()
         ];
 
@@ -66,20 +66,20 @@ class Pendaftaran extends BaseController
             'menu_open'     => "Pendaftaran",
             'menu_active'   => "Rawat Inap",
             'breadCrumb'    => ["Pendaftaran", "Rawat Inap"],
-            'rawat_inap'    => $this->rawatInap->findAll()
+            'rawat_inap'    => $this->rawatInap->getRawatInap()
         ];
 
         return view('pages/rawat-inap/main', $data);
     }
 
-    public function detailRawatInap()
+    public function detailRawatInap($id)
     {
         $data = [
             'title'         => "Detail Rawat Inap | SIPENPAS",
             'menu_open'     => "Pendaftaran",
             'menu_active'   => "Rawat Inap",
             'breadCrumb'    => ["Pendaftaran", "Rawat Inap", "Detail"],
-            // 'rawat_jalan'   => $this->rawatJalan->findAll()
+            'rawat_inap'   => $this->rawatInap->getRawatInap($id)
         ];
 
         return view('pages/rawat-inap/detail', $data);
@@ -91,7 +91,7 @@ class Pendaftaran extends BaseController
             'title'         => "Tambah Pendaftaran Rawat Inap | SIPENPAS",
             'menu_open'     => "Pendaftaran",
             'menu_active'   => "Rawat Inap",
-            'breadCrumb'    => ["Pendaftaran", "Rawat Inap", "Tambah Pendaftaran Rawat Inap"],
+            'breadCrumb'    => ["Pendaftaran", "Rawat Inap", "Tambah"],
             // 'rawat_jalan'   => $this->rawatJalan->findAll()
         ];
 
