@@ -26,13 +26,26 @@ class Pasien extends BaseController
         return view('pages/pasien/main', $data);
     }
 
+    public function detail()
+    {
+        $data = [
+            'title'         => "Detail Pasien | SIPENPAS",
+            'menu_open'     => "Pasien",
+            'menu_active'   => "-",
+            'breadCrumb'    => ["Pasien", "Detail"],
+            // 'pasien'        => $this->pasienModel->findAll()
+        ];
+
+        return view('pages/pasien/detail', $data);
+    }
+
     public function tambah()
     {
         $data = [
             'title'         => "Tambah Pasien | SIPENPAS",
             'menu_open'     => "Pasien",
             'menu_active'   => "-",
-            'breadCrumb'    => ["Pasien", "Tambah Pasien"]
+            'breadCrumb'    => ["Pasien", "Tambah"]
         ];
 
         return view('pages/pasien/tambah', $data);

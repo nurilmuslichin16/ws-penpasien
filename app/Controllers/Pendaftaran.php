@@ -29,6 +29,19 @@ class Pendaftaran extends BaseController
         return view('pages/rawat-jalan/main', $data);
     }
 
+    public function detailRawatJalan()
+    {
+        $data = [
+            'title'         => "Detail Rawat Jalan | SIPENPAS",
+            'menu_open'     => "Pendaftaran",
+            'menu_active'   => "Rawat Jalan",
+            'breadCrumb'    => ["Pendaftaran", "Rawat Jalan", "Detail"],
+            // 'rawat_jalan'   => $this->rawatJalan->findAll()
+        ];
+
+        return view('pages/rawat-jalan/detail', $data);
+    }
+
     public function tambahRawatJalan()
     {
         $data = [
@@ -57,6 +70,19 @@ class Pendaftaran extends BaseController
         ];
 
         return view('pages/rawat-inap/main', $data);
+    }
+
+    public function detailRawatInap()
+    {
+        $data = [
+            'title'         => "Detail Rawat Inap | SIPENPAS",
+            'menu_open'     => "Pendaftaran",
+            'menu_active'   => "Rawat Inap",
+            'breadCrumb'    => ["Pendaftaran", "Rawat Inap", "Detail"],
+            // 'rawat_jalan'   => $this->rawatJalan->findAll()
+        ];
+
+        return view('pages/rawat-inap/detail', $data);
     }
 
     public function tambahRawatInap()

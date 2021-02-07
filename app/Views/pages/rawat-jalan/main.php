@@ -124,7 +124,7 @@
                                             </td>
                                             <td>
                                                 <div class="btn-group">
-                                                    <a href="#" class="btn btn-sm btn-default">
+                                                    <a href="/detail-rawat-jalan" class="btn btn-sm btn-default">
                                                         <i class="fas fa-bars"></i>
                                                     </a>
                                                     <a href="#" class="btn btn-sm btn-warning">
