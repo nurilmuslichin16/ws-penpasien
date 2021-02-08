@@ -16,6 +16,6 @@ class RawatJalanModel extends Model
             return $this->findAll();
         }
 
-        return $this->where(['id_rawat_jalan' => $id])->first();
+        return $this->find($id);
     }
 }

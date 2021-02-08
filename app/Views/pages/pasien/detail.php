@@ -56,7 +56,7 @@
                                 </li>
                                 <li class="list-group-item">
                                     <i class="fas fa-calendar mr-1"></i> <b>Tempat & Tanggal Lahir</b>
-                                    <div class="float-right text-muted"><?= $pasien['tempat_lahir']; ?>, <?= $pasien['tanggal_lahir']; ?></div>
+                                    <div class="float-right text-muted"><?= $pasien['tempat_lahir']; ?>, <?= format_indo($pasien['tanggal_lahir']); ?></div>
                                 </li>
                                 <li class="list-group-item">
                                     <i class="fas fa-pray mr-1"></i> <b>Agama</b>

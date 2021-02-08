@@ -26,6 +26,15 @@ class Poliklinik extends BaseController
         return view('pages/poliklinik/main', $data);
     }
 
+    public function tambah()
+    {
+        $this->poliklinikModel->save([
+            'nama_poliklinik' => $this->request->getVar('nama_poliklinik')
+        ]);
+
+        return redirect()->to('/poliklinik');
+    }
+
     //--------------------------------------------------------------------
 
 }

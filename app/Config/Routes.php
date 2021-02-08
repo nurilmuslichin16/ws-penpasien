@@ -36,7 +36,7 @@ $routes->get('/', 'Home::index');
 
 // Dokter
 $routes->get('/tambah-dokter', 'Dokter::tambah');
-$routes->get('/detail-dokter', 'Dokter::detail');
+$routes->get('/dokter/(:segment)', 'Dokter::detail/$1');
 
 // Jadwal Dokter
 $routes->get('/jadwal-dokter', 'JadwalDokter::index');
@@ -44,6 +44,9 @@ $routes->get('/detail-jadwal-dokter', 'JadwalDokter::detail');
 
 // Cuti Dokter
 $routes->get('/cuti-dokter', 'CutiDokter::index');
+
+// Poliklinik
+$routes->post('/poliklinik', 'Poliklinik::tambah');
 
 // Rawat Jalan
 $routes->get('/rawat-jalan', 'Pendaftaran::index');

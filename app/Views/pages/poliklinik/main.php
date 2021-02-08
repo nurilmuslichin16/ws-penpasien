@@ -86,13 +86,13 @@
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
-                <form>
+                <form action="/poliklinik" method="POST">
                     <div class="modal-body">
                         <div class="row">
                             <div class="col-12">
                                 <div class="form-group">
                                     <label for="nama_poliklinik">Nama Poliklinik</label>
-                                    <input type="text" class="form-control" id="nama_poliklinik" name="nama_poliklinik" placeholder="Contoh: Bedah Saraf">
+                                    <input type="text" class="form-control" id="nama_poliklinik" name="nama_poliklinik" placeholder="Contoh: Bedah Saraf" required>
                                 </div>
                             </div>
                         </div>

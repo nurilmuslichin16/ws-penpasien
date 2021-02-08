@@ -17,6 +17,6 @@ class PasienModel extends Model
             return $this->findAll();
         }
 
-        return $this->where(['no_rm' => $no_rm])->first();
+        return $this->find($no_rm);
     }
 }

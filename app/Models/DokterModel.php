@@ -10,4 +10,13 @@ class DokterModel extends Model
     protected $primaryKey = "id_dokter";
     protected $allowedFields = ['nama_depan', 'nama_belakang', 'jekel', 'tempat_lahir', 'tanggal_lahir', 'alamat', 'no_hp', 'email', 'id_poli', 'lulusan', 'tahun_lulus', 'foto'];
     protected $useTimestamps = true;
+
+    public function getDokter($id = false)
+    {
+        if ($id == false) {
+            return $this->findAll();
+        }
+
+        return $this->find($id);
+    }
 }

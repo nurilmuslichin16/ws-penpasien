@@ -37,43 +37,43 @@
                                 <img class="profile-user-img img-fluid img-circle" style="width: 200px;" src="/dist/img/profil_fix.jpg" alt="User profile picture">
                             </div>
 
-                            <h3 class="profile-username text-center mt-2">Dr. Nuril Muslichin</h3>
+                            <h3 class="profile-username text-center mt-2">Dr. <?= $dokter['nama_depan'] . " " . $dokter['nama_belakang']; ?></h3>
 
-                            <p class="text-muted text-center">Spesialis Umum</p>
+                            <p class="text-muted text-center">Spesialis Join ???</p>
 
                             <ul class="list-group list-group-unbordered mb-3">
                                 <li class="list-group-item">
                                     <i class="fas fa-venus-mars mr-1"></i> <b>Jenis Kelamin</b>
-                                    <div class="float-right text-muted">Laki-Laki</div>
+                                    <div class="float-right text-muted"><?= $dokter['jekel'] == 0 ? "Laki-Laki" : "Perempuan"; ?></div>
                                 </li>
                                 <li class="list-group-item">
                                     <i class="fas fa-map-marker mr-1"></i> <b>Tempat Lahir</b>
-                                    <div class="float-right text-muted">Kota Pekalongan</div>
+                                    <div class="float-right text-muted"><?= $dokter['tempat_lahir']; ?></div>
                                 </li>
                                 <li class="list-group-item">
                                     <i class="fas fa-calendar mr-1"></i> <b>Tanggal Lahir</b>
-                                    <div class="float-right text-muted">16 Februari 1999</div>
+                                    <div class="float-right text-muted"><?= format_indo($dokter['tanggal_lahir']); ?></div>
                                 </li>
                                 <li class="list-group-item">
                                     <i class="fas fa-phone mr-1"></i> <b>Nomor HP</b>
-                                    <div class="float-right text-muted">0852 2953 1170</div>
+                                    <div class="float-right text-muted"><?= $dokter['no_hp']; ?></div>
                                 </li>
                                 <li class="list-group-item">
                                     <i class="fas fa-at mr-1"></i> <b>Email</b>
-                                    <div class="float-right text-muted">nurilmuslichin16@gmail.com</div>
+                                    <div class="float-right text-muted"><?= $dokter['email']; ?></div>
                                 </li>
                             </ul>
                             <strong><i class="fas fa-graduation-cap mr-1"></i> Lulusan</strong>
 
                             <p class="text-muted">
-                                STMIK Widya Pratam Kota Pekalongan - 2020
+                                <?= $dokter['lulusan'] . " - " . $dokter['tahun_lulus']; ?>
                             </p>
 
                             <hr>
 
                             <strong><i class="fas fa-map-marker-alt mr-1"></i> Alamat</strong>
 
-                            <p class="text-muted">Jl Kramatsari 2 Gg.8 No.20A Kota Pekalongan.</p>
+                            <p class="text-muted"><?= $dokter['alamat']; ?></p>
                         </div>
                         <!-- /.card-body -->
                     </div>

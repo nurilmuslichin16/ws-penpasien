@@ -16,6 +16,6 @@ class RawatInapModel extends Model
             return $this->findAll();
         }
 
-        return $this->where(['id_rawat_inap' => $id])->first();
+        return $this->find($id);
     }
 }

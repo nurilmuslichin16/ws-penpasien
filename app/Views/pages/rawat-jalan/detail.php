@@ -43,7 +43,7 @@
                             <p class="text-muted text-center mb-4"><?= $rawat_jalan['no_pendaftaran']; ?></p>
 
                             <div class="container-fluid">
-                                <a href="#" class="btn btn-block btn-success mb-4">
+                                <a href="#" class="btn btn-block btn-success mb-4 <?= $rawat_jalan['status'] == 0 ? "" : "disabled"; ?>">
                                     <i class="fas fa-check"></i> &nbsp;
                                     Konfirmasi Pendaftaran
                                 </a>
@@ -70,11 +70,11 @@
                                 </li>
                                 <li class="list-group-item">
                                     <i class="fas fa-calendar mr-1"></i> <b>Tanggal Pendaftaran</b>
-                                    <div class="float-right text-muted"><?= $rawat_jalan['tgl_daftar']; ?></div>
+                                    <div class="float-right text-muted"><?= format_indo($rawat_jalan['tgl_daftar']); ?></div>
                                 </li>
                                 <li class="list-group-item">
                                     <i class="fas fa-calendar-check mr-1"></i> <b>Tanggal Periksa</b>
-                                    <div class="float-right text-muted"><?= $rawat_jalan['tgl_periksa']; ?></div>
+                                    <div class="float-right text-muted"><?= format_indo($rawat_jalan['tgl_periksa']); ?></div>
                                 </li>
                                 <li class="list-group-item">
                                     <i class="fas fa-stethoscope mr-1"></i> <b>Tujuan Poliklinik</b>
