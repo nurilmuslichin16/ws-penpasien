@@ -18,4 +18,15 @@ class Home extends BaseController
 
 	//--------------------------------------------------------------------
 
+	public function profile()
+	{
+		$data = [
+			'title'         => "Profile | SIPENPAS",
+			'menu_open'     => "-",
+			'menu_active'   => "-",
+			'breadCrumb'    => ["Profile"],
+		];
+
+		return view('pages/profile', $data);
+	}
 }

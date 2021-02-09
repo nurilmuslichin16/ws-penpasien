@@ -34,6 +34,9 @@ $routes->setAutoRoute(true);
 // Dashboard
 $routes->get('/', 'Home::index');
 
+// Profile
+$routes->get('/profile', 'Home::profile');
+
 // Dokter
 $routes->get('/tambah-dokter', 'Dokter::tambah');
 $routes->get('/dokter/(:segment)', 'Dokter::detail/$1');
