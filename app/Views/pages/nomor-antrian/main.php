@@ -22,7 +22,7 @@
     <section class="content">
         <div class="container-fluid">
             <div class="row">
-                <div class="col-sm-12 col-md-3">
+                <div class="col-sm-12 col-md-6">
                     <div class="card card-info">
                         <div class="card-header">
                             <h3 class="mb-0" style="text-align: center;">UMUM</h3>
@@ -41,7 +41,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-sm-12 col-md-3">
+                <div class="col-sm-12 col-md-6">
                     <div class="card card-info">
                         <div class="card-header">
                             <h3 class="mb-0" style="text-align: center;">BPJS</h3>

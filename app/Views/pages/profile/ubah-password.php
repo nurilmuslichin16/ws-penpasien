@@ -22,7 +22,7 @@
     <section class="content">
         <div class="container-fluid">
             <div class="row">
-                <div class="col-md-4 col-sm-12">
+                <div class="col-md-6 col-sm-12">
                     <div class="card card-primary">
                         <div class="card-header">
                             <h3 class="card-title"><i class="fa fa-key"></i> &nbsp;Ubah Password</h3>
