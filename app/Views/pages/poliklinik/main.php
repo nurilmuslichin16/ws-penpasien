@@ -57,7 +57,7 @@
 <!-- /.content-wrapper -->
 
 <script>
-    function dataPoliklikinik() {
+    function dataPoliklinik() {
         $.ajax({
             url: "/poliklinik/getData",
             dataType: "json",
@@ -71,7 +71,7 @@
     }
 
     $(document).ready(function() {
-        dataPoliklikinik()
+        dataPoliklinik()
 
         $('#btn-tambah').click(function(e) {
             e.preventDefault();
@@ -81,6 +81,7 @@
                 dataType: "json",
                 success: function(response) {
                     $('.form-modal').html(response.data).show();
+                    $('.form-tambah')[0].reset();
 
                     $('#modal-tambah').modal('show');
                 },

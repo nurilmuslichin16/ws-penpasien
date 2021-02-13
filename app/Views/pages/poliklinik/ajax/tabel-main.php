@@ -15,12 +15,12 @@
                 <td><?= $p['nama_poliklinik']; ?></td>
                 <td>
                     <div class="btn-group">
-                        <a href="#" class="btn btn-sm btn-warning">
+                        <button type="button" onclick="ubah(<?= $p['id_poli']; ?>)" class="btn btn-sm btn-warning">
                             <i class="fas fa-pencil-alt"></i>
-                        </a>
-                        <a href="#" class="btn btn-sm btn-danger">
+                        </button>
+                        <button type="button" onclick="hapus(<?= $p['id_poli']; ?>, '<?= $p['nama_poliklinik']; ?>')" class="btn btn-sm btn-danger">
                             <i class="fas fa-trash"></i>
-                        </a>
+                        </button>
                     </div>
                 </td>
             </tr>
@@ -31,11 +31,66 @@
 
 <script>
     $(document).ready(function() {
-        $("#tabelMain").DataTable({
-            "responsive": true,
-            "lengthChange": false,
-            "autoWidth": false,
-            "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]
-        }).buttons().container().appendTo('#tabelMain_wrapper .col-md-6:eq(0)');
+        $("#tabelMain").DataTable();
     });
+
+    function ubah(id) {
+        $.ajax({
+            type: 'POST',
+            url: "/poliklinik/formUbah",
+            data: {
+                id_poli: id
+            },
+            dataType: "json",
+            success: function(response) {
+                if (response.data) {
+                    $('.form-modal').html(response.data).show();
+                    $('.form-ubah')[0].reset();
+
+                    $('#modal-ubah').modal('show');
+                }
+            },
+            error: function(xhr, ajaxOptions, thrownError) {
+                alert(xhr.status + "\n" + xhr.responseText + "\n" + thrownError);
+            }
+        })
+    }
+
+    function hapus(id, nama) {
+        Swal.fire({
+            title: 'Peringatan!',
+            text: `Yakin ingin menghapus data poliklinik ${nama}?`,
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            cancelButtonText: 'Tidak',
+            confirmButtonText: 'Ya, Hapus!'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                $.ajax({
+                    type: 'POST',
+                    url: "/poliklinik/hapus",
+                    data: {
+                        id_poli: id,
+                        nama_poli: nama
+                    },
+                    dataType: "json",
+                    success: function(response) {
+                        if (response.sukses) {
+                            Swal.fire(
+                                'Terhapus!',
+                                response.sukses,
+                                'success'
+                            );
+                            dataPoliklinik();
+                        }
+                    },
+                    error: function(xhr, ajaxOptions, thrownError) {
+                        alert(xhr.status + "\n" + xhr.responseText + "\n" + thrownError);
+                    }
+                })
+            }
+        })
+    }
 </script>

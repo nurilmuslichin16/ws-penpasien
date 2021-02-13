@@ -7,16 +7,15 @@
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-            <?= form_open('/poliklinik', ['class' => 'form-modal']) ?>
+            <?= form_open('/poliklinik', ['class' => 'form-tambah']) ?>
+            <?= csrf_field(); ?>
             <div class="modal-body">
                 <div class="row">
                     <div class="col-12">
                         <div class="form-group">
                             <label for="nama_poliklinik">Nama Poliklinik</label>
                             <input type="text" class="form-control" id="nama_poliklinik" name="nama_poliklinik" placeholder="Contoh: Bedah Saraf">
-                            <div class="invalid-feedback" id="error-nama">
-                                Error Guys!
-                            </div>
+                            <div class="invalid-feedback" id="error-nama"></div>
                         </div>
                     </div>
                 </div>
@@ -33,8 +32,23 @@
 </div>
 
 <script>
+    function bersihkan_form() {
+        $('#nama_poliklinik').removeClass('is-invalid');
+        $('#error-nama').empty();
+    }
+
+    function notif_sukses(pesan) {
+        Swal.fire({
+            title: 'Data Tersimpan',
+            text: pesan,
+            icon: 'success',
+            showConfirmButton: false,
+            timer: 2000
+        })
+    }
+
     $(document).ready(function() {
-        $('.form-modal').submit(function(e) {
+        $('.form-tambah').submit(function(e) {
             e.preventDefault()
             $.ajax({
                 type: "POST",
@@ -55,6 +69,12 @@
                             $('#nama_poliklinik').addClass('is-invalid');
                             $('#error-nama').html(response.error.nama_poliklinik);
                         }
+                    } else {
+                        bersihkan_form();
+                        notif_sukses(response.sukses);
+
+                        $('#modal-tambah').modal('hide');
+                        dataPoliklinik();
                     }
                 },
                 error: function(xhr, ajaxOptions, thrownError) {
