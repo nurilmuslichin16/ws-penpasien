@@ -51,6 +51,9 @@ $routes->get('/cuti-dokter', 'CutiDokter::index');
 // Poliklinik
 $routes->post('/poliklinik', 'Poliklinik::tambah');
 
+// Kamar
+$routes->post('/kamar', 'Kamar::tambah');
+
 // Rawat Jalan
 $routes->get('/rawat-jalan', 'Pendaftaran::index');
 $routes->get('/rawat-jalan/(:segment)', 'Pendaftaran::detailRawatJalan/$1');

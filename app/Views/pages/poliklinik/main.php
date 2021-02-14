@@ -33,7 +33,7 @@
                                 <i class="fas fa-plus-square"></i>&nbsp; Tambah Poliklinik
                             </button>
                             <hr>
-                            <div class="tabelMain">
+                            <div class="tabel-main">
 
                             </div>
                         </div>
@@ -62,7 +62,7 @@
             url: "/poliklinik/getData",
             dataType: "json",
             success: function(response) {
-                $('.tabelMain').html(response.data);
+                $('.tabel-main').html(response.data);
             },
             error: function(xhr, ajaxOptions, thrownError) {
                 alert(xhr.status + "\n" + xhr.responseText + "\n" + thrownError);
