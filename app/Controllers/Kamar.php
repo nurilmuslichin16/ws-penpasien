@@ -64,7 +64,7 @@ class Kamar extends BaseController
         if ($this->request->isAJAX()) {
             $validation = \Config\Services::validation();
 
-            $valid = $this->_validasi();
+            $valid = $this->_validasi("tambah");
 
             if (!$valid) {
                 $msg = [
@@ -125,7 +125,7 @@ class Kamar extends BaseController
         if ($this->request->isAJAX()) {
             $validation = \Config\Services::validation();
 
-            $valid = $this->_validasi();
+            $valid = $this->_validasi("ubah");
 
             if (!$valid) {
                 $msg = [
@@ -172,32 +172,60 @@ class Kamar extends BaseController
         }
     }
 
-    private function _validasi()
+    private function _validasi($type)
     {
-        $valid = $this->validate([
-            'nama_kamar' => [
-                'label'     => 'Nama Kamar',
-                'rules'     => 'required|is_unique[tb_kamar.nama_kamar]',
-                'errors'    => [
-                    'required'  => '{field} tidak boleh kosong',
-                    'is_unique' => '{field} tidak boleh ada yang sama, silahkan coba yang lain'
+        if ($type == "tambah") {
+            $valid = $this->validate([
+                'nama_kamar' => [
+                    'label'     => 'Nama Kamar',
+                    'rules'     => 'required|is_unique[tb_kamar.nama_kamar]',
+                    'errors'    => [
+                        'required'  => '{field} tidak boleh kosong',
+                        'is_unique' => '{field} tidak boleh ada yang sama, silahkan coba yang lain'
+                    ]
+                ],
+                'tipe_kamar' => [
+                    'label'     => 'Tipe Kamar',
+                    'rules'     => 'required|not_in_list[Pilih Tipe]',
+                    'errors'    => [
+                        'required'      => '{field} tidak boleh kosong',
+                        'not_in_list'   => 'Pilih salah satu {field} dahulu'
+                    ]
+                ],
+                'jumlah_tempat_tidur' => [
+                    'label'     => 'Jumlah Tempat Tidur',
+                    'rules'     => 'required',
+                    'errors'    => [
+                        'required'  => '{field} tidak boleh kosong'
+                    ]
                 ]
-            ],
-            'tipe_kamar' => [
-                'label'     => 'Tipe Kamar',
-                'rules'     => 'required',
-                'errors'    => [
-                    'required'  => '{field} tidak boleh kosong'
+            ]);
+        } else {
+            $valid = $this->validate([
+                'nama_kamar' => [
+                    'label'     => 'Nama Kamar',
+                    'rules'     => 'required',
+                    'errors'    => [
+                        'required'  => '{field} tidak boleh kosong'
+                    ]
+                ],
+                'tipe_kamar' => [
+                    'label'     => 'Tipe Kamar',
+                    'rules'     => 'required|not_in_list[Pilih Tipe]',
+                    'errors'    => [
+                        'required'      => '{field} tidak boleh kosong',
+                        'not_in_list'   => 'Pilih salah satu {field} dahulu'
+                    ]
+                ],
+                'jumlah_tempat_tidur' => [
+                    'label'     => 'Jumlah Tempat Tidur',
+                    'rules'     => 'required',
+                    'errors'    => [
+                        'required'  => '{field} tidak boleh kosong'
+                    ]
                 ]
-            ],
-            'jumlah_tempat_tidur' => [
-                'label'     => 'Jumlah Tempat Tidur',
-                'rules'     => 'required',
-                'errors'    => [
-                    'required'  => '{field} tidak boleh kosong'
-                ]
-            ]
-        ]);
+            ]);
+        }
 
         return $valid;
     }

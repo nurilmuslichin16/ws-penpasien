@@ -15,7 +15,7 @@
                     <div class="col-sm-12 col-md-4">
                         <div class="form-group">
                             <label for="nama_kamar">Nama Kamar</label>
-                            <input type="text" class="form-control" id="nama_kamar" name="nama_kamar" value="<?= $nama; ?>">
+                            <input type="text" class="form-control" id="nama_kamar" name="nama_kamar" value="<?= $nama; ?>" readonly>
                             <div class="invalid-feedback" id="error-nama"></div>
                         </div>
                     </div>
