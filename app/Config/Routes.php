@@ -47,6 +47,7 @@ $routes->get('/detail-jadwal-dokter', 'JadwalDokter::detail');
 
 // Cuti Dokter
 $routes->get('/cuti-dokter', 'CutiDokter::index');
+$routes->post('/cutiDokter', 'CutiDokter::tambah');
 
 // Poliklinik
 $routes->post('/poliklinik', 'Poliklinik::tambah');
