@@ -85,6 +85,8 @@ $routes->get('/ubah-password', 'Profile::ubahPassword');
 
 // Manajemen Pengguna
 $routes->get('/pengguna-web', 'ManajUser::index');
+$routes->post('/pengguna-web', 'ManajUser::tambahWeb');
+
 $routes->get('/pengguna-mobile', 'ManajUser::userMobile');
 
 /**

@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Waktu pembuatan: 27 Jan 2021 pada 07.25
--- Versi server: 8.0.22-0ubuntu0.20.04.3
--- Versi PHP: 7.4.3
+-- Generation Time: Feb 17, 2021 at 09:52 AM
+-- Server version: 8.0.23-0ubuntu0.20.04.1
+-- PHP Version: 7.4.3
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -25,21 +25,29 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tb_cuti_dokter`
+-- Table structure for table `tb_cuti_dokter`
 --
 
 CREATE TABLE `tb_cuti_dokter` (
   `id_cuti` int NOT NULL,
   `id_dokter` int NOT NULL,
   `tanggal_cuti` date NOT NULL,
-  `created_by` datetime NOT NULL,
-  `updated_by` datetime NOT NULL
+  `created_at` datetime NOT NULL,
+  `updated_at` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Dumping data for table `tb_cuti_dokter`
+--
+
+INSERT INTO `tb_cuti_dokter` (`id_cuti`, `id_dokter`, `tanggal_cuti`, `created_at`, `updated_at`) VALUES
+(1, 1, '2021-02-16', '2021-02-16 08:05:13', '2021-02-16 08:05:13'),
+(3, 2, '2021-03-13', '2021-02-16 08:06:59', '2021-02-16 08:06:59');
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tb_dokter`
+-- Table structure for table `tb_dokter`
 --
 
 CREATE TABLE `tb_dokter` (
@@ -63,7 +71,7 @@ CREATE TABLE `tb_dokter` (
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tb_jadwal_dokter`
+-- Table structure for table `tb_jadwal_dokter`
 --
 
 CREATE TABLE `tb_jadwal_dokter` (
@@ -80,7 +88,7 @@ CREATE TABLE `tb_jadwal_dokter` (
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tb_kamar`
+-- Table structure for table `tb_kamar`
 --
 
 CREATE TABLE `tb_kamar` (
@@ -89,14 +97,25 @@ CREATE TABLE `tb_kamar` (
   `tipe` varchar(20) NOT NULL,
   `stok_tempat_tidur` int NOT NULL,
   `tempat_tidur_terpakai` int NOT NULL,
-  `created_by` datetime NOT NULL,
-  `updated_by` datetime NOT NULL
+  `created_at` datetime NOT NULL,
+  `updated_at` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Dumping data for table `tb_kamar`
+--
+
+INSERT INTO `tb_kamar` (`id_kamar`, `nama_kamar`, `tipe`, `stok_tempat_tidur`, `tempat_tidur_terpakai`, `created_at`, `updated_at`) VALUES
+(1, 'Melati', 'Kelas A', 3, 0, '2021-02-13 18:38:21', '2021-02-13 18:38:21'),
+(2, 'Anggrek', 'Kelas C', 8, 0, '2021-02-13 18:38:38', '2021-02-13 18:41:47'),
+(5, 'Semar', 'Kelas A', 3, 0, '2021-02-15 16:34:15', '2021-02-15 16:46:24'),
+(6, 'Merak', 'VVIP', 1, 0, '2021-02-15 16:46:45', '2021-02-15 16:46:45'),
+(7, 'Mawar', 'Kelas B', 6, 0, '2021-02-15 17:33:23', '2021-02-15 17:34:07');
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tb_kec`
+-- Table structure for table `tb_kec`
 --
 
 CREATE TABLE `tb_kec` (
@@ -106,7 +125,7 @@ CREATE TABLE `tb_kec` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Dumping data untuk tabel `tb_kec`
+-- Dumping data for table `tb_kec`
 --
 
 INSERT INTO `tb_kec` (`id`, `id_kota_kab`, `nama_kec`) VALUES
@@ -7333,7 +7352,7 @@ INSERT INTO `tb_kec` (`id`, `id_kota_kab`, `nama_kec`) VALUES
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tb_kel`
+-- Table structure for table `tb_kel`
 --
 
 CREATE TABLE `tb_kel` (
@@ -7343,7 +7362,7 @@ CREATE TABLE `tb_kel` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Dumping data untuk tabel `tb_kel`
+-- Dumping data for table `tb_kel`
 --
 
 INSERT INTO `tb_kel` (`id`, `id_kec`, `nama_kel`) VALUES
@@ -82409,7 +82428,7 @@ INSERT INTO `tb_kel` (`id`, `id_kec`, `nama_kel`) VALUES
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tb_kota_kab`
+-- Table structure for table `tb_kota_kab`
 --
 
 CREATE TABLE `tb_kota_kab` (
@@ -82419,7 +82438,7 @@ CREATE TABLE `tb_kota_kab` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Dumping data untuk tabel `tb_kota_kab`
+-- Dumping data for table `tb_kota_kab`
 --
 
 INSERT INTO `tb_kota_kab` (`id`, `id_provinsi`, `nama_kota_kab`) VALUES
@@ -82941,7 +82960,7 @@ INSERT INTO `tb_kota_kab` (`id`, `id_provinsi`, `nama_kota_kab`) VALUES
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tb_nomor_antrian`
+-- Table structure for table `tb_nomor_antrian`
 --
 
 CREATE TABLE `tb_nomor_antrian` (
@@ -82954,7 +82973,7 @@ CREATE TABLE `tb_nomor_antrian` (
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tb_pasien`
+-- Table structure for table `tb_pasien`
 --
 
 CREATE TABLE `tb_pasien` (
@@ -82983,7 +83002,7 @@ CREATE TABLE `tb_pasien` (
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tb_pengguna_mobile`
+-- Table structure for table `tb_pengguna_mobile`
 --
 
 CREATE TABLE `tb_pengguna_mobile` (
@@ -82998,38 +83017,61 @@ CREATE TABLE `tb_pengguna_mobile` (
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tb_pengguna_web`
+-- Table structure for table `tb_pengguna_web`
 --
 
 CREATE TABLE `tb_pengguna_web` (
   `id_user_web` int NOT NULL,
   `nama_lengkap` varchar(255) NOT NULL,
   `email` varchar(255) NOT NULL,
-  `jekel` int NOT NULL,
-  `level_user` int NOT NULL,
+  `jekel` int NOT NULL COMMENT '0 = Laki-Laki | 1 = Perempuan',
+  `level_user` int NOT NULL COMMENT '0 = Admin | 1 = Petugas | 2 = Kepala Pendaftaran ',
   `password` varchar(255) NOT NULL,
-  `status` int NOT NULL,
-  `created_by` datetime NOT NULL,
-  `updated_by` datetime NOT NULL
+  `status` int NOT NULL COMMENT '0 = Tidak Aktif | 1 = Aktif',
+  `created_at` datetime NOT NULL,
+  `updated_at` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Dumping data for table `tb_pengguna_web`
+--
+
+INSERT INTO `tb_pengguna_web` (`id_user_web`, `nama_lengkap`, `email`, `jekel`, `level_user`, `password`, `status`, `created_at`, `updated_at`) VALUES
+(1, 'Nuril Muslichin', 'nurilmuslichin16@gmail.com', 0, 0, '[?U??S<?u???????goy?wyZd????׸?׬??K\\N??????s?@?E????J \Z??R6>?Y??LO?u?\\ķl', 1, '2021-02-16 19:53:35', '2021-02-16 20:51:55'),
+(2, 'Ningsih', 'ningsih@gmail.com', 1, 1, 'Va???b??:r??Ѥ??	[;??HU????tl?V??`H0??]r?m??Z???:$?K??k?gӼ\0e)????M??????yH~??P', 0, '2021-02-16 19:54:09', '2021-02-16 20:51:35'),
+(3, 'Andi Raharjo', 'andiraharjo@gmail.com', 0, 2, 'd??>?}2???v}L.f????dE~?PK?BhI??+????,???4?]???0Ҏ??#?Ժ?#	???잫ҩu!??&?)w???,', 1, '2021-02-16 19:54:30', '2021-02-16 19:54:30');
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tb_poliklinik`
+-- Table structure for table `tb_poliklinik`
 --
 
 CREATE TABLE `tb_poliklinik` (
   `id_poli` int NOT NULL,
   `nama_poliklinik` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
-  `created_by` datetime NOT NULL,
-  `updated_by` datetime NOT NULL
+  `created_at` datetime NOT NULL,
+  `updated_at` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Dumping data for table `tb_poliklinik`
+--
+
+INSERT INTO `tb_poliklinik` (`id_poli`, `nama_poliklinik`, `created_at`, `updated_at`) VALUES
+(30, 'Bedah Umum', '2021-02-12 19:15:09', '2021-02-12 19:15:09'),
+(31, 'Umum', '2021-02-12 19:15:14', '2021-02-12 19:15:32'),
+(32, 'Gigi dan Mulut', '2021-02-12 19:23:32', '2021-02-12 19:23:32'),
+(33, 'Bedah Saraf', '2021-02-12 19:26:26', '2021-02-12 19:27:03'),
+(34, 'Kulit dan Kelamin', '2021-02-12 19:28:41', '2021-02-12 19:29:03'),
+(35, 'Ortophedi', '2021-02-12 19:42:41', '2021-02-12 19:42:41'),
+(36, 'Forensik', '2021-02-12 19:42:49', '2021-02-12 19:43:00'),
+(39, 'Anak dan Ibu', '2021-02-13 16:13:09', '2021-02-13 16:13:09');
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tb_prov`
+-- Table structure for table `tb_prov`
 --
 
 CREATE TABLE `tb_prov` (
@@ -83038,7 +83080,7 @@ CREATE TABLE `tb_prov` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Dumping data untuk tabel `tb_prov`
+-- Dumping data for table `tb_prov`
 --
 
 INSERT INTO `tb_prov` (`id`, `nama_prov`) VALUES
@@ -83080,7 +83122,7 @@ INSERT INTO `tb_prov` (`id`, `nama_prov`) VALUES
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tb_rawat_inap`
+-- Table structure for table `tb_rawat_inap`
 --
 
 CREATE TABLE `tb_rawat_inap` (
@@ -83097,7 +83139,7 @@ CREATE TABLE `tb_rawat_inap` (
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tb_rawat_jalan`
+-- Table structure for table `tb_rawat_jalan`
 --
 
 CREATE TABLE `tb_rawat_jalan` (
@@ -83117,7 +83159,7 @@ CREATE TABLE `tb_rawat_jalan` (
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tb_token`
+-- Table structure for table `tb_token`
 --
 
 CREATE TABLE `tb_token` (
@@ -83132,176 +83174,176 @@ CREATE TABLE `tb_token` (
 --
 
 --
--- Indeks untuk tabel `tb_cuti_dokter`
+-- Indexes for table `tb_cuti_dokter`
 --
 ALTER TABLE `tb_cuti_dokter`
   ADD PRIMARY KEY (`id_cuti`);
 
 --
--- Indeks untuk tabel `tb_dokter`
+-- Indexes for table `tb_dokter`
 --
 ALTER TABLE `tb_dokter`
   ADD PRIMARY KEY (`id_dokter`);
 
 --
--- Indeks untuk tabel `tb_jadwal_dokter`
+-- Indexes for table `tb_jadwal_dokter`
 --
 ALTER TABLE `tb_jadwal_dokter`
   ADD PRIMARY KEY (`id_jadwal_dokter`);
 
 --
--- Indeks untuk tabel `tb_kamar`
+-- Indexes for table `tb_kamar`
 --
 ALTER TABLE `tb_kamar`
   ADD PRIMARY KEY (`id_kamar`);
 
 --
--- Indeks untuk tabel `tb_kec`
+-- Indexes for table `tb_kec`
 --
 ALTER TABLE `tb_kec`
   ADD PRIMARY KEY (`id`),
   ADD KEY `districts_id_index` (`id_kota_kab`);
 
 --
--- Indeks untuk tabel `tb_kel`
+-- Indexes for table `tb_kel`
 --
 ALTER TABLE `tb_kel`
   ADD PRIMARY KEY (`id`),
   ADD KEY `villages_district_id_index` (`id_kec`);
 
 --
--- Indeks untuk tabel `tb_kota_kab`
+-- Indexes for table `tb_kota_kab`
 --
 ALTER TABLE `tb_kota_kab`
   ADD PRIMARY KEY (`id`),
   ADD KEY `regencies_province_id_index` (`id_provinsi`);
 
 --
--- Indeks untuk tabel `tb_nomor_antrian`
+-- Indexes for table `tb_nomor_antrian`
 --
 ALTER TABLE `tb_nomor_antrian`
   ADD PRIMARY KEY (`id_nomor_antrian`);
 
 --
--- Indeks untuk tabel `tb_pasien`
+-- Indexes for table `tb_pasien`
 --
 ALTER TABLE `tb_pasien`
   ADD PRIMARY KEY (`no_rm`);
 
 --
--- Indeks untuk tabel `tb_pengguna_mobile`
+-- Indexes for table `tb_pengguna_mobile`
 --
 ALTER TABLE `tb_pengguna_mobile`
   ADD PRIMARY KEY (`id_pengguna_mobile`);
 
 --
--- Indeks untuk tabel `tb_pengguna_web`
+-- Indexes for table `tb_pengguna_web`
 --
 ALTER TABLE `tb_pengguna_web`
   ADD PRIMARY KEY (`id_user_web`);
 
 --
--- Indeks untuk tabel `tb_poliklinik`
+-- Indexes for table `tb_poliklinik`
 --
 ALTER TABLE `tb_poliklinik`
   ADD PRIMARY KEY (`id_poli`);
 
 --
--- Indeks untuk tabel `tb_prov`
+-- Indexes for table `tb_prov`
 --
 ALTER TABLE `tb_prov`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indeks untuk tabel `tb_rawat_inap`
+-- Indexes for table `tb_rawat_inap`
 --
 ALTER TABLE `tb_rawat_inap`
   ADD PRIMARY KEY (`id_rawat_inap`);
 
 --
--- Indeks untuk tabel `tb_rawat_jalan`
+-- Indexes for table `tb_rawat_jalan`
 --
 ALTER TABLE `tb_rawat_jalan`
   ADD PRIMARY KEY (`id_rawat_jalan`);
 
 --
--- Indeks untuk tabel `tb_token`
+-- Indexes for table `tb_token`
 --
 ALTER TABLE `tb_token`
   ADD PRIMARY KEY (`id_token`);
 
 --
--- AUTO_INCREMENT untuk tabel yang dibuang
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT untuk tabel `tb_cuti_dokter`
+-- AUTO_INCREMENT for table `tb_cuti_dokter`
 --
 ALTER TABLE `tb_cuti_dokter`
-  MODIFY `id_cuti` int NOT NULL AUTO_INCREMENT;
+  MODIFY `id_cuti` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- AUTO_INCREMENT untuk tabel `tb_dokter`
+-- AUTO_INCREMENT for table `tb_dokter`
 --
 ALTER TABLE `tb_dokter`
   MODIFY `id_dokter` int NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT untuk tabel `tb_jadwal_dokter`
+-- AUTO_INCREMENT for table `tb_jadwal_dokter`
 --
 ALTER TABLE `tb_jadwal_dokter`
   MODIFY `id_jadwal_dokter` int NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT untuk tabel `tb_kamar`
+-- AUTO_INCREMENT for table `tb_kamar`
 --
 ALTER TABLE `tb_kamar`
-  MODIFY `id_kamar` int NOT NULL AUTO_INCREMENT;
+  MODIFY `id_kamar` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
--- AUTO_INCREMENT untuk tabel `tb_nomor_antrian`
+-- AUTO_INCREMENT for table `tb_nomor_antrian`
 --
 ALTER TABLE `tb_nomor_antrian`
   MODIFY `id_nomor_antrian` int NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT untuk tabel `tb_pasien`
+-- AUTO_INCREMENT for table `tb_pasien`
 --
 ALTER TABLE `tb_pasien`
   MODIFY `no_rm` int(11) UNSIGNED ZEROFILL NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT untuk tabel `tb_pengguna_mobile`
+-- AUTO_INCREMENT for table `tb_pengguna_mobile`
 --
 ALTER TABLE `tb_pengguna_mobile`
   MODIFY `id_pengguna_mobile` int NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT untuk tabel `tb_pengguna_web`
+-- AUTO_INCREMENT for table `tb_pengguna_web`
 --
 ALTER TABLE `tb_pengguna_web`
-  MODIFY `id_user_web` int NOT NULL AUTO_INCREMENT;
+  MODIFY `id_user_web` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
--- AUTO_INCREMENT untuk tabel `tb_poliklinik`
+-- AUTO_INCREMENT for table `tb_poliklinik`
 --
 ALTER TABLE `tb_poliklinik`
-  MODIFY `id_poli` int NOT NULL AUTO_INCREMENT;
+  MODIFY `id_poli` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=40;
 
 --
--- AUTO_INCREMENT untuk tabel `tb_rawat_inap`
+-- AUTO_INCREMENT for table `tb_rawat_inap`
 --
 ALTER TABLE `tb_rawat_inap`
   MODIFY `id_rawat_inap` int NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT untuk tabel `tb_rawat_jalan`
+-- AUTO_INCREMENT for table `tb_rawat_jalan`
 --
 ALTER TABLE `tb_rawat_jalan`
   MODIFY `id_rawat_jalan` int NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT untuk tabel `tb_token`
+-- AUTO_INCREMENT for table `tb_token`
 --
 ALTER TABLE `tb_token`
   MODIFY `id_token` int NOT NULL AUTO_INCREMENT;

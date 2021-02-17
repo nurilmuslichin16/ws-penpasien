@@ -9,7 +9,7 @@
             <div class="row">
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-left">
-                        <a href="/dokter" class="btn btn-sm btn-secondary mr-3">
+                        <a href="/pasien" class="btn btn-sm btn-secondary mr-3">
                             <i class="fas fa-arrow-left"></i>&nbsp; Kembali
                         </a>
                         <?php foreach ($breadCrumb as $key => $b) : ?>
